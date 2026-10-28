@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" width="800" height="1000" role="img" aria-label="Placeholder portrait (replace with official photo)"><title>Placeholder portrait (replace with official photo)</title><defs></defs>
+    <defs><linearGradient id="pp" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2c5b3a"/><stop offset="1" stop-color="#16301f"/></linearGradient></defs><rect width="800" height="1000" fill="url(#pp)"/><rect x="67.2" y="464" width="25.6" height="96" fill="#5b3b25"/><circle cx="80" cy="393.6" r="96" fill="#3d8a52"/><circle cx="22.4" cy="438.4" r="64" fill="#3d8a52"/><circle cx="137.6" cy="438.4" r="64" fill="#3d8a52"/><rect x="237.2" y="484" width="25.6" height="96" fill="#5b3b25"/><circle cx="250" cy="413.6" r="96" fill="#3d8a52"/><circle cx="192.4" cy="458.4" r="64" fill="#3d8a52"/><circle cx="307.6" cy="458.4" r="64" fill="#3d8a52"/><rect x="547.2" y="504" width="25.6" height="96" fill="#5b3b25"/><circle cx="560" cy="433.6" r="96" fill="#3d8a52"/><circle cx="502.4" cy="478.4" r="64" fill="#3d8a52"/><circle cx="617.6" cy="478.4" r="64" fill="#3d8a52"/><rect x="687.2" y="524" width="25.6" height="96" fill="#5b3b25"/><circle cx="700" cy="453.6" r="96" fill="#3d8a52"/><circle cx="642.4" cy="498.4" r="64" fill="#3d8a52"/><circle cx="757.6" cy="498.4" r="64" fill="#3d8a52"/>
+    <path d="M70 1000 Q70 620 260 575 L400 640 L540 575 Q730 620 730 1000 Z" fill="#1d3a6e"/>
+    <path d="M305 585 L400 700 L495 585 L460 560 L340 560 Z" fill="#f4f4f1"/>
+    <path d="M382 660 L418 660 L426 860 L400 900 L374 860 Z" fill="#d1141f"/>
+    <path d="M384 720 L416 720 M382 780 L418 780 M380 840 L420 840" stroke="#1d3a8c" stroke-width="7"/>
+    <rect x="358" y="470" width="84" height="100" rx="20" fill="#bb8560"/>
+    <ellipse cx="400" cy="370" rx="132" ry="162" fill="#c8956d"/>
+    <path d="M260 350 Q270 170 400 165 Q530 170 540 350 Q518 250 400 260 Q282 250 260 350 Z" fill="#1a1a1f"/>
+    <path d="M280 400 Q400 550 520 400 Q500 500 400 510 Q300 500 280 400 Z" fill="#2a211c" fill-opacity=".85"/>
+    <rect x="210" y="820" width="380" height="180" fill="#8a5a32"/><rect x="210" y="820" width="380" height="14" fill="#a5703f"/><rect x="460" y="690" width="6" height="140" fill="#222"/><circle cx="463" cy="684" r="12" fill="#222"/>
+    <text x="400" y="950" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" fill="#fff" fill-opacity=".6">PHOTO PLACEHOLDER</text></svg>

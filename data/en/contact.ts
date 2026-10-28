@@ -1,0 +1,116 @@
+import type { ContactContent } from "@/types/content";
+
+export const contactEn: ContactContent = {
+  hero: {
+    eyebrow: "Get in Touch",
+    title: "Let's Build a Stronger Sylhet",
+    accent: "Together",
+    text: "Your ideas, suggestions and support matter. I'm always open to listening, learning and working with you for a cleaner, greener and more prosperous Sylhet.",
+    quote: { text: "The voice of the people is the inspiration on my path.", author: "— Jahid Khan" },
+    portraitAlt: "Placeholder portrait of Jahid Khan",
+  },
+  cards: [
+    { key: "email", icon: "mail", title: "Email Us", note: "For general inquiries" },
+    { key: "phone", icon: "phone", title: "Call Us", note: "Mon – Fri, 9AM – 6PM (PST)" },
+    { key: "whatsapp", icon: "message", title: "WhatsApp", note: "Quick responses" },
+    { key: "location", icon: "pin", title: "Our Location", value: "California, USA", note: "Currently based in USA" },
+    { key: "meeting", icon: "users", title: "Meet or Discuss", value: "Virtual or In-Person", note: "Let's connect" },
+  ],
+  form: {
+    eyebrow: "Send a Message",
+    title: "I'd Love to Hear From You",
+    text: "Have a question, suggestion, collaboration idea or just want to say hello? Fill out the form and it will open as a ready-to-send WhatsApp message.",
+    fields: {
+      name: { label: "Your Name", placeholder: "Enter your full name" },
+      email: { label: "Email Address", placeholder: "your@email.com" },
+      countryCode: { label: "Country code" },
+      phone: { label: "Phone Number (optional)", placeholder: "(201) 555-0123" },
+      subject: {
+        label: "Subject",
+        placeholder: "Select a subject",
+        options: {
+          general: "General inquiry",
+          support: "Support the campaign",
+          volunteer: "Volunteer",
+          business: "Business or partnership",
+          media: "Media request",
+          other: "Other",
+        },
+      },
+      message: { label: "Your Message", placeholder: "Type your message here…" },
+    },
+    submit: "Send via WhatsApp",
+    submitting: "Opening WhatsApp…",
+    privacy: "Your details are only used to prepare this WhatsApp message. Nothing is stored on this website.",
+    noBackendNote:
+      "This form doesn't store or deliver messages automatically. Saving submissions and automatic delivery need a backend or a supported integration, which will be added later.",
+    errors: {
+      required: "This field is required.",
+      email: "Enter a valid email address.",
+      phone: "Enter a valid phone number (7–15 digits).",
+      nameShort: "Enter at least 2 characters.",
+      messageShort: "Write at least 10 characters.",
+      subject: "Select a subject.",
+    },
+    toast: {
+      success: "Your details are ready in WhatsApp. Please press Send to complete your message.",
+      notConfigured: "This contact option isn't available yet. Please try again later.",
+      error: "We couldn't open WhatsApp. Check that WhatsApp is installed or try WhatsApp Web, then try again.",
+    },
+    whatsapp: {
+      heading: "New message from the Jahid Khan website",
+      labels: { name: "Name", email: "Email", phone: "Phone", subject: "Subject", message: "Message" },
+    },
+  },
+  location: {
+    eyebrow: "Our Location",
+    title: "California, USA",
+    text: "I am currently based in California, USA, while actively working for the people of Sylhet and staying connected with my community.",
+    mapTitle: "Map showing California, USA",
+    addressLabel: "Current Address",
+    address: "California, USA",
+    addressNote: "Exact address shared upon request.",
+    directions: "Get Directions",
+    hoursLabel: "Working Hours",
+    hours: "Monday – Friday",
+    hoursValue: "9:00 AM – 6:00 PM (PST)",
+    meetingLabel: "Preferred Meeting",
+    meeting: "Online (Zoom/Google Meet)",
+    meetingNote: "Or in person when in Sylhet",
+  },
+  connect: {
+    eyebrow: "Let's Connect",
+    title: "Open to Discussions, Collaborations & Ideas",
+    text: "Whether you're a community member, business owner, organization or fellow changemaker, I'm always open to meaningful conversations.",
+    cta: { label: "Schedule a Meeting", href: "#contact-form" },
+    items: [
+      { icon: "lightbulb", title: "Community Suggestions" },
+      { icon: "handshake", title: "Collaboration & Partnerships" },
+      { icon: "trend", title: "Investment Opportunities" },
+      { icon: "handHeart", title: "Volunteer & Support" },
+    ],
+  },
+  faq: {
+    eyebrow: "Frequently Asked Questions",
+    title: "Quick Answers",
+    text: "Find answers to common questions. If you still have any, feel free to contact me directly.",
+    // PLACEHOLDER answers — confirm wording with Jahid Khan.
+    items: [
+      { question: "How can I support Jahid Khan's campaign?", answer: "You can share your ideas, volunteer, spread the word in your community, or get in touch through the form above to discuss other ways to help." },
+      { question: "Can I meet in person when I'm in Sylhet?", answer: "In-person meetings may be possible when Jahid is in Sylhet. Send a message with your preferred timing and topic, and mention that you'd like to meet in person." },
+      { question: "Do you work with organizations and businesses?", answer: "Yes — collaboration and partnership enquiries are welcome. Choose “Business or partnership” as the subject and share a short summary." },
+      { question: "How can I share my ideas or suggestions?", answer: "Use the contact form and select “General inquiry” or “Support the campaign”. Please be specific about the issue and where in Sylhet it matters." },
+    ],
+  },
+  join: {
+    title: "Be Part of the Change",
+    text: "Your support, ideas and participation can help build a cleaner, greener and more prosperous Sylhet. Let's work together for a brighter future.",
+    cta: { label: "Join the Movement", href: "#contact-form" },
+    items: [
+      { icon: "leaf", title: "Cleaner Environment" },
+      { icon: "building", title: "Better Infrastructure" },
+      { icon: "briefcase", title: "More Opportunities" },
+      { icon: "shield", title: "Safer & Stronger Sylhet" },
+    ],
+  },
+};

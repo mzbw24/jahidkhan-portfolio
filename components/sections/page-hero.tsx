@@ -121,7 +121,7 @@ export function PageHero({
               ) : null}
               {content.secondaryCta?.video ? (
                 <Button asChild variant="outline" size="lg" className="border-white/25 bg-white/5 text-white hover:bg-white/15 hover:text-white">
-                  <Link href="/media">
+                  <Link href="/media?filter=videos#videos">
                     {content.secondaryCta.label}
                     <ArrowRight className="h-4 w-4" aria-hidden="true" />
                   </Link>

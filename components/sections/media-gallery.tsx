@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Search } from "lucide-react";
 import { availableFilters, filterItems, fmt } from "@/lib/media";
 import { FilterBar } from "./filter-bar";
@@ -11,6 +11,10 @@ import type { GalleryFilter, GalleryItem, MediaPageContent } from "@/types/galle
 export function MediaGallery({ content }: { content: MediaPageContent }) {
   const [filter, setFilter] = useState<GalleryFilter>("all");
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  useEffect(() => {
+    if (new URLSearchParams(window.location.search).get("filter") === "videos") setFilter("videos");
+  }, []);
   const [query, setQuery] = useState("");
 
   const filters = useMemo(() => availableFilters(content.items), [content.items]);
@@ -38,7 +42,7 @@ export function MediaGallery({ content }: { content: MediaPageContent }) {
         </div>
       </div>
 
-      <section className="section-y" aria-label={content.hero.title}>
+      <section id="videos" className="section-y scroll-mt-28" aria-label={content.hero.title}>
         <div className="container">
           <p role="status" aria-live="polite" className="mb-5 text-xs text-muted-foreground">
             {fmt(content.results, { count: visible.length, total: content.items.length })}

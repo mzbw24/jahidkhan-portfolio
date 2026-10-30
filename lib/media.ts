@@ -32,7 +32,8 @@ export function countByKind(items: GalleryItem[]) {
 export function availableFilters(items: GalleryItem[]): GalleryFilter[] {
   const { images, videos } = countByKind(items);
   const filters: GalleryFilter[] = ["all"];
-  if (images > 0 && videos > 0) filters.push("images", "videos");
+  if (images > 0) filters.push("images");
+  if (videos > 0) filters.push("videos");
   const present = new Set(items.map((item) => item.category));
   for (const category of CATEGORY_ORDER) if (present.has(category)) filters.push(category);
   return filters;

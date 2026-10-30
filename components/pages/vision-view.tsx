@@ -26,10 +26,12 @@ export function VisionView({ content, featured, media }: { content: Localized<Vi
     <div ref={scope}>
       <PageHero
         content={c.hero}
-        portrait="portrait"
+        background="crowd"
+        portrait="portraitFull"
         quotePosition="right"
         uppercaseTitle
         overlap={false}
+        variant="vision"
       />
       <VisionIntro content={c.intro} video={visionVideo} labels={mediaContent.labels} />
       <FeaturedMedia items={featuredItems} />

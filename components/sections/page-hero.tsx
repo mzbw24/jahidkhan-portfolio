@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, Quote } from "lucide-react";
+import { ArrowRight, Quote, VideoIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { HeadingText } from "@/components/shared/heading-text";
 import { IconBadge, toneAt } from "@/components/shared/icon-badge";
@@ -122,8 +122,8 @@ export function PageHero({
               {content.secondaryCta?.video ? (
                 <Button asChild variant="outline" size="lg" className="border-white/25 bg-white/5 text-white hover:bg-white/15 hover:text-white">
                   <Link href="/media?filter=videos#videos">
+                    <VideoIcon className="h-4 w-4" aria-hidden="true" />
                     {content.secondaryCta.label}
-                    <ArrowRight className="h-4 w-4" aria-hidden="true" />
                   </Link>
                 </Button>
               ) : null}

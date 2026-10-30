@@ -13,7 +13,6 @@ import { useLocalized } from "@/hooks/use-language";
 import type { Localized } from "@/types/common";
 import type { VisionContent } from "@/types/content";
 import type { GalleryItem } from "@/types/gallery";
-import { TodayTomorrow } from "../sections/today-tomorrow";
 
 export function VisionView({ content, featured }: { content: Localized<VisionContent>; featured: Localized<GalleryItem[]> }) {
   const c = useLocalized(content);
@@ -33,7 +32,6 @@ export function VisionView({ content, featured }: { content: Localized<VisionCon
       />
       <VisionIntro content={c.intro} />
       <FeaturedMedia items={featuredItems} />
-      {/* <TodayTomorrow content={c.compare} /> */}
       <ChallengesSection content={c.challenges} />
       <TenPointPlan content={c.plan} />
       <GlobalBand content={c.global} />

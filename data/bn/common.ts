@@ -11,6 +11,7 @@ export const commonBn: CommonContent = {
     business: "ব্যবসা ও উদ্যোগ",
     projects: "প্রকল্প",
     media: "মিডিয়া",
+    family: "পরিবার",
     contact: "যোগাযোগ",
     support: "জাহিদকে সমর্থন করুন",
     openMenu: "মেনু খুলুন",

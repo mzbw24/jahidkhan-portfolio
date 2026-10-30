@@ -1,5 +1,6 @@
 import type { Localized } from "./common";
 import type { GalleryItem, MediaPageContent } from "./gallery";
+import type { FamilyPageContent } from "./family";
 import type {
   AboutContent,
   CommonContent,
@@ -14,6 +15,7 @@ export interface ContentRepository {
   getAbout(): Promise<Localized<AboutContent>>;
   getVision(): Promise<Localized<VisionContent>>;
   getContact(): Promise<Localized<ContactContent>>;
+  getFamily(): Promise<Localized<FamilyPageContent>>;
   /** Full gallery (all items + localized UI strings). */
   getMedia(): Promise<Localized<MediaPageContent>>;
   /** Featured subset used by teaser sections on other pages. */

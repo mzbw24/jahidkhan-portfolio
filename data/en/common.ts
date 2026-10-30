@@ -11,6 +11,7 @@ export const commonEn: CommonContent = {
     business: "Business & Ventures",
     projects: "Projects",
     media: "Media",
+    family: "Family",
     contact: "Contact",
     support: "Support Jahid",
     openMenu: "Open menu",

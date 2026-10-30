@@ -11,13 +11,10 @@ import { cn } from "@/lib/utils";
 
 interface PageHeroProps {
   content: HeroContent;
-  /** Optional photo behind the hero. Without it a navy gradient is used (no decorative stock art). */
   background?: MediaKey;
   portrait: MediaKey;
-  /** Which side the pull-quote sits on (copy goes to the other side). */
   quotePosition?: "left" | "right";
   uppercaseTitle?: boolean;
-  /** Reserve space for a floating strip (trust strip / contact cards) that overlaps the hero bottom. */
   overlap?: boolean;
 }
 

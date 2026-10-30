@@ -13,7 +13,7 @@ export const contactEn: ContactContent = {
     { key: "email", icon: "mail", title: "Email Us", note: "For general inquiries" },
     { key: "phone", icon: "phone", title: "Call Us", note: "Mon – Fri, 9AM – 6PM (PST)" },
     { key: "whatsapp", icon: "message", title: "WhatsApp", note: "Quick responses" },
-    { key: "location", icon: "pin", title: "Our Location", value: "California, USA", note: "Currently based in USA" },
+    { key: "location", icon: "pin", title: "Our Location", value: "Jahid A khan 8684 188 st Hollis NY 11423", note: "Currently based in USA" },
     { key: "meeting", icon: "users", title: "Meet or Discuss", value: "Virtual or In-Person", note: "Let's connect" },
   ],
   form: {
@@ -64,11 +64,11 @@ export const contactEn: ContactContent = {
   },
   location: {
     eyebrow: "Our Location",
-    title: "California, USA",
+    title: "Jahid A khan 8684 188 st Hollis NY 11423",
     text: "I am currently based in California, USA, while actively working for the people of Sylhet and staying connected with my community.",
     mapTitle: "Map showing California, USA",
     addressLabel: "Current Address",
-    address: "California, USA",
+    address: "Jahid A khan 8684 188 st Hollis NY 11423",
     addressNote: "Exact address shared upon request.",
     directions: "Get Directions",
     hoursLabel: "Working Hours",

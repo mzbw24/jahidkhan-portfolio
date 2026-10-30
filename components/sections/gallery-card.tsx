@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { ImageIcon, Play } from "lucide-react";
-import { fmt, formatTime } from "@/lib/media";
+import { fmt } from "@/lib/media";
 import type { GalleryItem, MediaLabels } from "@/types/gallery";
 
 interface GalleryCardProps {
@@ -10,7 +10,6 @@ interface GalleryCardProps {
   onOpen: () => void;
 }
 
-/** One thumbnail. The whole card is a real <button> so it is keyboard- and screen-reader-operable. */
 export function GalleryCard({ item, position, labels, onOpen }: GalleryCardProps) {
   const isVideo = item.kind === "video";
   const thumb = isVideo ? item.poster : item;
@@ -45,7 +44,7 @@ export function GalleryCard({ item, position, labels, onOpen }: GalleryCardProps
           {isVideo ? (
             <>
               <Play className="h-3 w-3 fill-white" aria-hidden="true" />
-              {formatTime(item.duration)}
+              {/* {formatTime(item.duration)} */}
             </>
           ) : (
             <ImageIcon className="h-3 w-3" aria-hidden="true" />

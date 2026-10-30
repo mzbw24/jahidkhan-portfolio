@@ -11,7 +11,6 @@ export interface MediaAsset {
   src: string;
   width: number;
   height: number;
-  /** CSS object-position, to keep the subject in frame when cropped by `object-cover`. */
   position?: string;
   blur?: string;
 }

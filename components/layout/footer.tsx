@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState, type FormEvent } from "react";
-import { ArrowRight, Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Twitter, Youtube, type LucideIcon } from "lucide-react";
+import { ArrowRight, Facebook, Instagram, Linkedin, LucideFacebook, Mail, MapPin, Phone, Twitter, Youtube, type LucideIcon } from "lucide-react";
 import { toast } from "sonner";
 import { BrandLogo } from "@/components/shared/brand-logo";
 import { Button } from "@/components/ui/button";
@@ -14,7 +14,8 @@ import { isValidEmail } from "@/lib/validation";
 import type { SocialLink } from "@/types/site";
 
 const socialIcons: Record<SocialLink["key"], LucideIcon> = {
-  facebook: Facebook,
+  "facebook-profile": Facebook,
+  "facebook-page": LucideFacebook,
   youtube: Youtube,
   instagram: Instagram,
   linkedin: Linkedin,
@@ -34,7 +35,6 @@ export function Footer() {
       return;
     }
     setError("");
-    // No backend yet: be explicit that nothing was stored.
     toast.info(footer.newsletter.notConnected);
   };
 

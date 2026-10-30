@@ -10,7 +10,6 @@ import type { GalleryItem, MediaLabels } from "@/types/gallery";
 
 interface LightboxProps {
   items: GalleryItem[];
-  /** null = closed */
   index: number | null;
   labels: MediaLabels;
   categoryLabel: (item: GalleryItem) => string;
@@ -20,21 +19,14 @@ interface LightboxProps {
 
 const SWIPE_DISTANCE = 60;
 
-/**
- * Modal viewer built on the native <dialog>: focus is trapped, the page behind is inert, Escape closes,
- * and focus returns to the card that opened it. Backdrop click, arrows and swipe are layered on top.
- */
 export function Lightbox({ items, index, labels, categoryLabel, onIndexChange, onClose }: LightboxProps) {
   const dialogRef = useRef<HTMLDialogElement>(null);
   const thumbRefs = useRef<(HTMLButtonElement | null)[]>([]);
-  /** True when the last pointer gesture was a drag — its trailing click must not count as an outside click. */
   const dragged = useRef(false);
-  /** A click only dismisses if the press also began on a dismiss area (not on a button/image). */
   const pressedOnDismiss = useRef(false);
   const open = index !== null;
   const item = index !== null ? items[index] : undefined;
 
-  // Sync native dialog with state.
   useEffect(() => {
     const dialog = dialogRef.current;
     if (!dialog) return;
@@ -42,7 +34,6 @@ export function Lightbox({ items, index, labels, categoryLabel, onIndexChange, o
     if (!open && dialog.open) dialog.close();
   }, [open]);
 
-  // Lock page scroll while open.
   useEffect(() => {
     if (!open) return;
     const previous = document.body.style.overflow;
@@ -52,7 +43,6 @@ export function Lightbox({ items, index, labels, categoryLabel, onIndexChange, o
     };
   }, [open]);
 
-  // Preload neighbours, keep active thumbnail in view.
   useEffect(() => {
     if (index === null) return;
     for (const delta of [1, -1] as const) {
@@ -73,8 +63,6 @@ export function Lightbox({ items, index, labels, categoryLabel, onIndexChange, o
     [index, items.length, onIndexChange],
   );
 
-  // Arrow keys are handled on the document, not the dialog: if the focused element is removed
-  // (e.g. after "Try again"), key events land on <body>, which a dialog-level handler would miss.
   useEffect(() => {
     if (!open) return;
     const onKeyDown = (event: KeyboardEvent) => {
@@ -93,8 +81,6 @@ export function Lightbox({ items, index, labels, categoryLabel, onIndexChange, o
     return () => document.removeEventListener("keydown", onKeyDown);
   }, [open, go]);
 
-  // Swipe tracking uses window-level listeners so the release is seen even when it lands on an arrow
-  // button or outside the image (pointer capture would retarget plain clicks, so it is not used).
   const swipeCleanup = useRef<(() => void) | null>(null);
   useEffect(() => () => swipeCleanup.current?.(), []);
 
@@ -129,8 +115,6 @@ export function Lightbox({ items, index, labels, categoryLabel, onIndexChange, o
         pressedOnDismiss.current = event.target === event.currentTarget || target.dataset.dismiss === "true";
       }}
       onClick={(event) => {
-        // Backdrop, or empty space around the media (elements marked data-dismiss), closes the viewer —
-        // but only for a genuine click: the press must have started there too and must not be a drag/swipe.
         const wasDrag = dragged.current;
         dragged.current = false;
         const target = event.target as HTMLElement;

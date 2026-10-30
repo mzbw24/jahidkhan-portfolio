@@ -19,10 +19,6 @@ interface WebkitVideo extends HTMLVideoElement {
   webkitSupportsFullscreen?: boolean;
 }
 
-/**
- * Accessible custom video player: play/pause, mute, volume, seek, fullscreen, keyboard shortcuts.
- * Unmounting (closing the lightbox / switching item) pauses and releases the media.
- */
 export function VideoPlayer({ video, title, labels, autoPlay = true, className }: VideoPlayerProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -65,7 +61,7 @@ export function VideoPlayer({ video, title, labels, autoPlay = true, className }
     } else if (container.requestFullscreen) {
       container.requestFullscreen().catch(() => undefined);
     } else if (el.webkitEnterFullscreen) {
-      el.webkitEnterFullscreen(); // iOS Safari: native player takes over
+      el.webkitEnterFullscreen();
     }
   }, []);
 
@@ -109,16 +105,14 @@ export function VideoPlayer({ video, title, labels, autoPlay = true, className }
     return () => document.removeEventListener("fullscreenchange", onChange);
   }, []);
 
-  // Shortcuts live on the document while the player is mounted: the modal moves focus to its Close button,
-  // so listening on the player element alone would never receive them.
   useEffect(() => {
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.defaultPrevented || event.ctrlKey || event.metaKey || event.altKey) return;
       const tag = (event.target as HTMLElement | null)?.tagName;
-      if (tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT") return; // sliders keep their arrow keys
+      if (tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT") return; 
       const key = event.key.toLowerCase();
       if (key === " " || key === "k") {
-        if (key === " " && tag === "BUTTON") return; // a focused button activates itself on Space
+        if (key === " " && tag === "BUTTON") return; 
         event.preventDefault();
         togglePlay();
       } else if (key === "m") {
@@ -150,7 +144,7 @@ export function VideoPlayer({ video, title, labels, autoPlay = true, className }
         preload="metadata"
         playsInline
         aria-label={title}
-        className="h-full max-h-[70vh] w-full bg-black object-contain"
+        className="h-full max-h-[70vh] w-full bg-black object-cover"
         style={{ aspectRatio: `${video.width} / ${video.height}` }}
         onClick={togglePlay}
         onLoadedMetadata={(event) => {

@@ -10,9 +10,7 @@ import { cn } from "@/lib/utils";
 
 interface VisionBandProps {
   content: BandContent;
-  /** Optional photo; falls back to a navy gradient. */
   background?: MediaKey;
-  /** row: heading on top, pillars in a row (home). split: heading left, tiles right (about). */
   layout: "row" | "split";
 }
 

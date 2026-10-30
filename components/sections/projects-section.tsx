@@ -3,7 +3,6 @@ import { PlaceholderBadge } from "@/components/shared/placeholder-badge";
 import { SectionHeading } from "@/components/shared/section-heading";
 import type { HomeContent } from "@/types/content";
 
-/** Mock project data — see data/en/home.ts. */
 export function ProjectsSection({ content }: { content: HomeContent["projects"] }) {
   return (
     <section id="projects" className="section-y">

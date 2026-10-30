@@ -3,7 +3,6 @@ import { HeadingText } from "@/components/shared/heading-text";
 import { countByKind } from "@/lib/media";
 import type { MediaPageContent } from "@/types/gallery";
 
-/** Stats are computed from the real data, never hard-coded. */
 export function MediaHero({ content }: { content: MediaPageContent }) {
   const { images, videos } = countByKind(content.items);
   const topics = new Set(content.items.map((item) => item.category)).size;

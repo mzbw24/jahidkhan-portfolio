@@ -1,19 +1,22 @@
 import type { HeadingContent } from "./content";
 
 export type GalleryCategory =
-  | "healthcare" | "environment" | "infrastructure" | "education"
-  | "economy" | "voice" | "events" | "portraits";
+  | "healthcare"
+  | "environment"
+  | "infrastructure"
+  | "education"
+  | "economy"
+  | "voice"
+  | "events"
+  | "portraits";
 
 export type GalleryFilter = "all" | "images" | "videos" | GalleryCategory;
 
 export interface GalleryImageFields {
-  /** Full-resolution WebP (lightbox). */
   src: string;
-  /** 480px-wide WebP (grid). */
   thumb: string;
   width: number;
   height: number;
-  /** Tiny base64 JPEG used as blur-up placeholder. */
   blur: string;
 }
 
@@ -29,16 +32,13 @@ export interface GalleryImageAsset extends GalleryBase, GalleryImageFields {
 
 export interface VideoSource {
   src: string;
-  /** e.g. "video/mp4", "video/webm" */
   type: string;
 }
 
 export interface GalleryVideoAsset extends GalleryBase {
   kind: "video";
-  /** Ordered by preference; the browser plays the first it supports. */
   sources: VideoSource[];
   poster: GalleryImageFields;
-  /** Seconds. */
   duration: number;
   width: number;
   height: number;
@@ -51,7 +51,6 @@ export interface GalleryItemText {
   alt: string;
 }
 
-/** Asset + localized text — what the UI renders. */
 export type GalleryItem = GalleryAsset & GalleryItemText;
 
 export interface PlayerLabels {
@@ -70,13 +69,11 @@ export interface PlayerLabels {
 }
 
 export interface MediaLabels {
-  /** "{title}" is replaced at runtime. */
   open: string;
   openVideo: string;
   close: string;
   previous: string;
   next: string;
-  /** "{current}" and "{total}" are replaced at runtime. */
   counter: string;
   thumbnails: string;
   viewer: string;
@@ -90,8 +87,8 @@ export interface MediaPageStrings {
   hero: HeadingContent & { eyebrow: string; text: string };
   stats: { photos: string; videos: string; topics: string };
   filterLabel: string;
-  filters: Record<"all" | "images" | "videos", string> & Record<GalleryCategory, string>;
-  /** "{count}" and "{total}" are replaced at runtime. */
+  filters: Record<"all" | "images" | "videos", string> &
+    Record<GalleryCategory, string>;
   results: string;
   empty: string;
   labels: MediaLabels;

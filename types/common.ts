@@ -1,6 +1,5 @@
 export type Lang = "en" | "bn";
 
-/** Content that exists once per supported language. */
 export type Localized<T> = Record<Lang, T>;
 
 export type IconName =

@@ -1,7 +1,6 @@
 import { IconBadge, toneAt } from "@/components/shared/icon-badge";
 import type { IconItem } from "@/types/common";
 
-/** Floating summary card that overlaps the bottom of the hero. */
 export function TrustStrip({ items }: { items: IconItem[] }) {
   return (
     <div className="container relative z-10 -mt-14">

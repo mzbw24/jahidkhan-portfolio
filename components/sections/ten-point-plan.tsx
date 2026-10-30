@@ -4,7 +4,6 @@ import { IconBadge, toneAt } from "@/components/shared/icon-badge";
 import { useLanguage } from "@/hooks/use-language";
 import type { VisionContent } from "@/types/content";
 
-/** The plan is a real ordered sequence, so numbering carries meaning here. */
 export function TenPointPlan({ content }: { content: VisionContent["plan"] }) {
   const { lang } = useLanguage();
   const format = new Intl.NumberFormat(lang === "bn" ? "bn-BD" : "en", { minimumIntegerDigits: 2 });

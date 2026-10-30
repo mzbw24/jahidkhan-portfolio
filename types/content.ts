@@ -1,11 +1,8 @@
 import type { Cta, IconItem, IconName } from "./common";
 import type { MediaKey } from "./media";
 
-/* ---------- Shared building blocks ---------- */
-
 export interface HeadingContent {
   eyebrow?: string;
-  /** Heading is rendered as `title` + `accent` (brand red) + `titleEnd`. Empty strings are skipped. */
   title: string;
   accent?: string;
   titleEnd?: string;
@@ -21,7 +18,6 @@ export interface HeroContent extends HeadingContent {
   eyebrow: string;
   text: string;
   primaryCta?: Cta;
-  /** `video: true` renders a "watch" button that is wired to siteConfig.videos. */
   secondaryCta?: { label: string; video?: boolean };
   quote?: QuoteContent;
   scriptTagline?: string;
@@ -46,8 +42,6 @@ export interface StatItem {
   value: string;
   label: string;
 }
-
-/* ---------- Common (layout-level) content ---------- */
 
 export type NavKey =
   | "home" | "about" | "vision" | "service" | "business" | "projects" | "media" | "contact";
@@ -97,8 +91,6 @@ export interface CommonContent {
   notFound: { title: string; text: string; button: string };
 }
 
-/* ---------- Home ---------- */
-
 export interface HomeContent {
   hero: HeroContent;
   trust: IconItem[];
@@ -131,8 +123,6 @@ export interface HomeContent {
   stats: StatItem[];
 }
 
-/* ---------- About ---------- */
-
 export interface AboutContent {
   hero: HeroContent;
   trust: IconItem[];
@@ -161,8 +151,6 @@ export interface AboutContent {
   };
   commitment: { eyebrow: string; quote: string; signatureCaption: string };
 }
-
-/* ---------- Vision & plan ---------- */
 
 export interface VisionContent {
   hero: HeroContent;
@@ -194,8 +182,6 @@ export interface VisionContent {
   };
 }
 
-/* ---------- Contact ---------- */
-
 export type ContactCardKey = "email" | "phone" | "whatsapp" | "location" | "meeting";
 export type SubjectKey = "general" | "support" | "volunteer" | "business" | "media" | "other";
 
@@ -203,7 +189,6 @@ export interface ContactCard {
   key: ContactCardKey;
   icon: IconName;
   title: string;
-  /** Localized value; when omitted the value is read from siteConfig. */
   value?: string;
   note: string;
 }

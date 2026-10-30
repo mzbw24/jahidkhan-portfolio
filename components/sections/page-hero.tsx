@@ -12,7 +12,8 @@ import { cn } from "@/lib/utils";
 
 interface PageHeroProps {
   content: HeroContent;
-  background: MediaKey;
+  /** Optional photo behind the hero. Without it a navy gradient is used (no decorative stock art). */
+  background?: MediaKey;
   portrait: MediaKey;
   /** Which side the pull-quote sits on (copy goes to the other side). */
   quotePosition?: "left" | "right";
@@ -35,18 +36,28 @@ export function PageHero({
 
   return (
     <section className="dark-band">
-      <div data-parallax="6" className="absolute inset-x-0 -top-[8%] -z-10 h-[116%]">
-        <MediaImage media={background} fill priority sizes="100vw" className="object-cover" />
-      </div>
+      {background ? (
+        <div data-parallax="6" className="absolute inset-x-0 -top-[8%] -z-10 h-[116%]">
+          <MediaImage media={background} fill priority sizes="100vw" className="object-cover" />
+        </div>
+      ) : (
+        <>
+          <div aria-hidden="true" className="absolute inset-0 -z-10 bg-gradient-to-br from-navy via-navy-soft to-navy" />
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 -z-10 bg-[radial-gradient(55%_90%_at_80%_15%,hsl(var(--primary)/0.30),transparent)]"
+          />
+        </>
+      )}
       <div
         className={cn(
           "absolute inset-0 -z-10",
-          quoteLeft
+          background && (quoteLeft
             ? "bg-gradient-to-l from-navy via-navy/80 to-navy/20"
-            : "bg-gradient-to-r from-navy via-navy/80 to-navy/20",
+            : "bg-gradient-to-r from-navy via-navy/80 to-navy/20"),
         )}
       />
-      <div className="absolute inset-0 -z-10 bg-gradient-to-t from-navy/70 via-transparent to-transparent" />
+      <div aria-hidden="true" className="absolute inset-0 -z-10 bg-gradient-to-t from-navy/70 via-transparent to-transparent" />
 
       <div className={cn(
           "container relative grid min-h-[32rem] gap-8 pt-12 lg:min-h-[37rem] lg:grid-cols-12 lg:items-center",
@@ -64,7 +75,7 @@ export function PageHero({
             fill
             priority
             sizes="(min-width: 1024px) 36vw, 70vw"
-            className="object-contain object-bottom"
+            className="object-cover [-webkit-mask-image:radial-gradient(ellipse_80%_75%_at_50%_38%,#000_52%,transparent_100%)] [mask-image:radial-gradient(ellipse_80%_75%_at_50%_38%,#000_52%,transparent_100%)]"
           />
         </div>
 

@@ -29,7 +29,7 @@ export function AboutStory({ story, values }: AboutStoryProps) {
 
         <figure data-reveal className="relative mx-auto aspect-[4/5] w-full max-w-md overflow-hidden rounded-xl lg:col-span-4 lg:max-w-none">
           <MediaImage
-            media="portraitCard"
+            media="portraitFull"
             alt={story.portraitAlt}
             fill
             sizes="(min-width: 1024px) 33vw, 90vw"

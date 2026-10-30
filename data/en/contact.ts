@@ -7,7 +7,7 @@ export const contactEn: ContactContent = {
     accent: "Together",
     text: "Your ideas, suggestions and support matter. I'm always open to listening, learning and working with you for a cleaner, greener and more prosperous Sylhet.",
     quote: { text: "The voice of the people is the inspiration on my path.", author: "— Jahid Khan" },
-    portraitAlt: "Placeholder portrait of Jahid Khan",
+    portraitAlt: "Portrait of Jahid Khan",
   },
   cards: [
     { key: "email", icon: "mail", title: "Email Us", note: "For general inquiries" },

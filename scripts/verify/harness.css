@@ -1,0 +1,32 @@
+/* Minimal re-implementation of the Tailwind utilities used by the lightbox + player, for layout-faithful behaviour tests. */
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;font-family:sans-serif}
+dialog{padding:0;border:0;background:transparent;color:#fff;margin:0;max-width:none;max-height:none;width:100%;height:100%}
+dialog[open]{position:fixed;inset:0;display:block}
+dialog::backdrop{background:rgba(0,0,0,.85)}
+[class~="flex"]{display:flex}[class~="flex-col"]{flex-direction:column}[class~="flex-1"]{flex:1 1 0%}[class~="shrink-0"]{flex-shrink:0}
+[class~="h-full"]{height:100%}[class~="w-full"]{width:100%}[class~="min-h-0"]{min-height:0}
+[class~="items-center"]{align-items:center}[class~="items-start"]{align-items:flex-start}[class~="justify-center"]{justify-content:center}[class~="justify-between"]{justify-content:space-between}
+[class~="relative"]{position:relative}[class~="absolute"]{position:absolute}
+[class~="max-h-full"]{max-height:100%}[class~="max-w-full"]{max-width:100%}[class~="w-auto"]{width:auto}
+[class~="max-w-6xl"]{max-width:72rem}[class~="max-w-4xl"]{max-width:56rem}[class~="mx-auto"]{margin-left:auto;margin-right:auto}
+[class~="overflow-hidden"]{overflow:hidden}[class~="overflow-x-auto"]{overflow-x:auto}
+[class~="px-3"]{padding-left:.75rem;padding-right:.75rem}[class~="py-3"]{padding-top:.75rem;padding-bottom:.75rem}[class~="px-12"]{padding-left:3rem;padding-right:3rem}
+[class~="left-0"]{left:0}[class~="right-0"]{right:0}[class~="top-1/2"]{top:50%}[class~="-translate-y-1/2"]{transform:translateY(-50%)}
+[class~="z-10"]{z-index:10}[class~="h-11"]{height:2.75rem}[class~="w-11"]{width:2.75rem}[class~="h-14"]{height:3.5rem}[class~="w-11"]{width:2.75rem}
+[class~="gap-2"]{gap:.5rem}[class~="gap-4"]{gap:1rem}[class~="hidden"]{display:none}
+[class~="select-none"]{user-select:none;-webkit-user-select:none}
+[class~="object-contain"]{object-fit:contain}[class~="object-cover"]{object-fit:cover}[class~="bg-black"]{background:#000}
+[class~="rounded-xl"]{border-radius:.75rem}[class~="sr-only"]{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+dialog nav button{position:relative;display:block}dialog nav img{object-fit:cover}
+[data-testid="video-player"]{position:relative;overflow:hidden;background:#000}
+[data-testid="video-player"] video{width:100%;max-height:70vh;display:block;background:#000}
+[data-testid="video-player"]>div,[data-testid="video-player"]>button{position:absolute}
+[data-testid="video-player"]>div:last-child{left:0;right:0;bottom:0}
+ul{list-style:none;margin:0;padding:0}
+[class~="inline-flex"]{display:inline-flex}[class~="rounded-full"]{border-radius:9999px}[class~="h-10"]{height:2.5rem}[class~="w-10"]{width:2.5rem}
+[class~="block"]{display:block}[class~="truncate"]{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}[class~="min-w-0"]{min-width:0}
+dialog button{color:#fff;background:rgba(255,255,255,.12);border:0;cursor:pointer}
+dialog header h2{margin:0}dialog header p{margin:0}
+@media (min-width:640px){[class~="sm:block"]{display:block}[class~="sm:-left-1"]{left:-.25rem}[class~="sm:-right-1"]{right:-.25rem}}
+[class~="w-20"]{width:5rem}

@@ -117,3 +117,66 @@
     @apply relative isolate overflow-hidden bg-navy text-navy-foreground;
   }
 }
+
+/* ---------- Media player & gallery helpers ---------- */
+@layer components {
+  .media-btn {
+    @apply inline-flex h-9 w-9 items-center justify-center rounded-md text-white transition-colors hover:bg-white/15;
+  }
+
+  .no-scrollbar {
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Custom range: red filled portion driven by --fill, thumb sized for touch. */
+  .media-range {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 1.25rem;
+    background: transparent;
+    cursor: pointer;
+  }
+  .media-range::-webkit-slider-runnable-track {
+    height: 4px;
+    border-radius: 9999px;
+    background: linear-gradient(to right, hsl(var(--primary)) var(--fill, 0%), rgb(255 255 255 / 0.3) var(--fill, 0%));
+  }
+  .media-range::-moz-range-track {
+    height: 4px;
+    border-radius: 9999px;
+    background: rgb(255 255 255 / 0.3);
+  }
+  .media-range::-moz-range-progress {
+    height: 4px;
+    border-radius: 9999px;
+    background: hsl(var(--primary));
+  }
+  .media-range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 14px;
+    width: 14px;
+    margin-top: -5px;
+    border-radius: 9999px;
+    background: #fff;
+    box-shadow: 0 0 0 2px hsl(var(--primary));
+  }
+  .media-range::-moz-range-thumb {
+    height: 14px;
+    width: 14px;
+    border: 0;
+    border-radius: 9999px;
+    background: #fff;
+    box-shadow: 0 0 0 2px hsl(var(--primary));
+  }
+}
+
+dialog {
+  color: inherit;
+}
+dialog:not([open]) {
+  display: none;
+}

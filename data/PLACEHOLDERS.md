@@ -23,14 +23,16 @@ Nothing below was verified. Per the project brief, none of it may be presented a
 
 ## Mock data (marked with a visible "Sample content" badge)
 - Statistics (5+, 10+, 1000+, Global Network)
-- Projects (3 placeholder initiatives)
-- News/articles & video entry (titles, dates, tags)
-- "Voices From the Community" testimonials — **sample quotes, not real people**
+- Projects: three placeholder initiatives — **titles/text are mock; the images are real client posters**
+
+Removed in the media pass (they were demo content): fabricated "Voices From the Community" testimonials and avatars,
+mock news items (replaced by a real featured-media strip linking to `/media`), the fake "Sylhet today/tomorrow"
+before/after slider, and every generated placeholder illustration.
 
 Hide the badges with `NEXT_PUBLIC_SHOW_PLACEHOLDER_NOTICES=false` once real content replaces these.
 
 ## Media
-All images in `public/images/*.svg` are generated, faceless illustrations (`scripts/generate-placeholders.mjs`).
-The "portrait" is a generic silhouette, not a likeness. Replace via `data/media.ts`
-(update `src`, `width`, `height`). The handwritten-style name is a font, not a real signature.
-Legal pages (Privacy Policy / Terms) are plain text only — no pages exist yet.
+All site images are the client's real files, optimized by `scripts/process-media.py`. Gaps: no real scenic/Sylhet
+photography exists, so heroes and bands use a navy gradient instead of stock art. The handwritten-style name is a font,
+not a real signature. Legal pages (Privacy Policy / Terms) are plain text only — no pages exist yet.
+See `scripts/MEDIA_REPORT.md` for held-back and flagged files.

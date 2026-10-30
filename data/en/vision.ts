@@ -1,7 +1,6 @@
 import type { VisionContent } from "@/types/content";
 
-// NOTE: The 10-point plan and voices are drawn from the design reference. Plan wording must be approved
-// by Jahid Khan; community voices are SAMPLE testimonials and must be replaced with real, consented quotes.
+// NOTE: The 10-point plan wording is drawn from the design reference and must be approved by Jahid Khan.
 export const visionEn: VisionContent = {
   hero: {
     eyebrow: "Vision for Sylhet",
@@ -12,7 +11,7 @@ export const visionEn: VisionContent = {
     secondaryCta: { label: "Watch My Vision", video: true },
     quote: { text: "You don't need a party to stand with the people — only conscience and humanity.", author: "Jahid Khan" },
     scriptTagline: "Sylhet Deserves Better",
-    portraitAlt: "Placeholder portrait of Jahid Khan",
+    portraitAlt: "Portrait of Jahid Khan",
     chips: [
       { icon: "users", title: "People First" },
       { icon: "shield", title: "Transparent Governance" },
@@ -30,8 +29,6 @@ export const visionEn: VisionContent = {
       { icon: "smartphone", title: "Smart Services" },
       { icon: "trend", title: "Strong Economy" },
     ],
-    videoTitle: "My Vision for Sylhet",
-    videoDuration: "3:45 minutes",
     quote: {
       text: "Real change happens when we listen to people, understand their needs and work with practical solutions.",
       author: "Jahid Khan",
@@ -41,14 +38,7 @@ export const visionEn: VisionContent = {
       { icon: "flag", title: "Currently in California, USA", text: "Building global networks for Sylhet" },
       { icon: "heart", title: "Always for the People", text: "Working beyond politics" },
     ],
-    portraitAlt: "Placeholder portrait of Jahid Khan speaking",
-  },
-  compare: {
-    title: "Sylhet Today & Tomorrow",
-    text: "Preserving our heritage, solving today's challenges, and building a modern Sylhet for future generations.",
-    today: "Today",
-    tomorrow: "Tomorrow",
-    sliderLabel: "Compare Sylhet today and tomorrow",
+    portraitAlt: "Campaign poster featuring Jahid Khan",
   },
   challenges: {
     title: "Key Challenges & Solutions",
@@ -91,14 +81,4 @@ export const visionEn: VisionContent = {
     californiaLabel: "California, USA",
     sylhetLabel: "Sylhet, Bangladesh",
   },
-  // PLACEHOLDER — sample testimonials, not real people.
-  voices: {
-    title: "Voices From the Community",
-    items: [
-      { image: "avatarA", quote: "He always listens to young people and gives importance to our ideas. We believe in his vision for a better Sylhet.", role: "University Student, Sylhet" },
-      { image: "avatarB", quote: "He works for people beyond political differences. Sylhet needs leaders like him.", role: "Local Community Member" },
-      { image: "avatarC", quote: "His focus on healthcare, education and a clean city gives us hope for a brighter future.", role: "Working Professional, Sylhet" },
-    ],
-  },
-  updatesTitle: "Latest Updates",
 };

@@ -1,7 +1,5 @@
 import type { HomeContent } from "@/types/content";
 
-// NOTE: Biography lines, quotes and the candidacy label are taken from the supplied design references
-// and must be confirmed by Jahid Khan before launch. Stats and projects are mock data.
 export const homeEn: HomeContent = {
   hero: {
     eyebrow: "Independent Mayor Candidate",
@@ -13,7 +11,7 @@ export const homeEn: HomeContent = {
     secondaryCta: { label: "Watch My Message", video: true },
     quote: { text: "You don't need a party to stand with the people — only conscience and humanity." },
     scriptTagline: "The Loyal Son of Sylhet",
-    portraitAlt: "Placeholder portrait of Jahid Khan",
+    portraitAlt: "Portrait of Jahid Khan",
   },
   trust: [
     { icon: "users", title: "People First", text: "Always with the people" },
@@ -37,7 +35,7 @@ export const homeEn: HomeContent = {
     quote: "My mission is simple — to work for people, create opportunities and build a better, more liveable Sylhet for everyone.",
     californiaTitle: "Currently in California, USA",
     californiaText: "Working, learning and building global connections for Sylhet.",
-    portraitAlt: "Placeholder portrait of Jahid Khan speaking at a podium",
+    portraitAlt: "Campaign poster featuring Jahid Khan",
   },
   vision: {
     eyebrow: "My Vision For",
@@ -69,8 +67,6 @@ export const homeEn: HomeContent = {
   mission: {
     bannerTitle: "A Cleaner, Greener and More Prosperous Sylhet",
     text: "Preserving our natural beauty while creating new opportunities for generations to come.",
-    videoLabel: "Watch My Vision Video",
-    videoDuration: "3:45 minutes",
     panelTitle: "My Mission",
     items: [
       { icon: "users", title: "Serve the People", text: "Be accessible, listen and take action." },

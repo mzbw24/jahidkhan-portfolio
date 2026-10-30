@@ -10,16 +10,6 @@ if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
 
-/**
- * Page-level animation controller. Elements opt in with data attributes:
- *   data-hero-item  — staggered entrance on load
- *   data-reveal     — fade/slide in when scrolled into view
- *   data-stagger    — children fade/slide in one after another
- *   data-parallax   — subtle scroll parallax (value = % travel, default 6)
- *
- * Nothing is hidden by CSS, so content stays visible without JS or with reduced motion.
- * All tweens/triggers live in a gsap.context + matchMedia and are reverted on unmount.
- */
 export function useGsapAnimations(scope: RefObject<HTMLElement | null>) {
   const { lang } = useLanguage();
 

@@ -20,10 +20,10 @@ export function AboutView({ content }: { content: Localized<AboutContent> }) {
 
   return (
     <div ref={scope}>
-      <PageHero content={c.hero} background="heroCity" portrait="portrait" quotePosition="right" video="story" />
+      <PageHero content={c.hero} portrait="portrait" quotePosition="right" video="story" />
       <TrustStrip items={c.trust} />
       <AboutStory story={c.story} values={c.values} />
-      <VisionBand content={c.vision} background="teaGarden" layout="split" />
+      <VisionBand content={c.vision} layout="split" />
       <div className="pt-12 lg:pt-16">
         <JourneySection content={c.journey} />
       </div>

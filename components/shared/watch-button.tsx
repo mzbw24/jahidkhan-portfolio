@@ -1,9 +1,7 @@
 "use client";
 
 import { Play } from "lucide-react";
-import { toast } from "sonner";
 import { Button, type ButtonProps } from "@/components/ui/button";
-import { useLanguage } from "@/hooks/use-language";
 import { siteConfig } from "@/lib/config/site";
 import { cn } from "@/lib/utils";
 
@@ -18,17 +16,14 @@ interface WatchButtonProps {
   className?: string;
 }
 
-/** Opens the configured video, or tells the visitor it isn't available yet. */
+/** Opens the configured video URL. Renders nothing while `siteConfig.videos[video]` is null. */
 export function WatchButton({ label, video, variant = "glass", circle = false, className }: WatchButtonProps) {
-  const { common } = useLanguage();
+  const url = siteConfig.videos[video];
+  // No video configured → render nothing (never a dead control).
+  if (!url) return null;
 
   const handleClick = () => {
-    const url = siteConfig.videos[video];
-    if (url) {
-      window.open(url, "_blank", "noopener,noreferrer");
-    } else {
-      toast(common.comingSoon);
-    }
+    window.open(url, "_blank", "noopener,noreferrer");
   };
 
   if (circle) {

@@ -52,15 +52,6 @@ export interface StatItem {
 export type NavKey =
   | "home" | "about" | "vision" | "service" | "business" | "projects" | "media" | "contact";
 
-export interface NewsItem {
-  image: MediaKey;
-  tag: string;
-  title: string;
-  date: string;
-  kind: "article" | "video";
-  duration?: string;
-}
-
 export interface CommonContent {
   siteTagline: string;
   skipLink: string;
@@ -101,14 +92,8 @@ export interface CommonContent {
     text: string;
     button: string;
   };
-  news: {
-    title: string;
-    text: string;
-    watchLabel: string;
-    items: NewsItem[];
-  };
+  mediaTeaser: { title: string; text: string; cta: string };
   placeholderBadge: string;
-  comingSoon: string;
   notFound: { title: string; text: string; button: string };
 }
 
@@ -134,8 +119,6 @@ export interface HomeContent {
   mission: {
     bannerTitle: string;
     text: string;
-    videoLabel: string;
-    videoDuration: string;
     panelTitle: string;
     items: IconItem[];
   };
@@ -188,18 +171,9 @@ export interface VisionContent {
     title: string;
     text: string;
     icons: IconItem[];
-    videoTitle: string;
-    videoDuration: string;
     quote: QuoteContent;
     facts: IconItem[];
     portraitAlt: string;
-  };
-  compare: {
-    title: string;
-    text: string;
-    today: string;
-    tomorrow: string;
-    sliderLabel: string;
   };
   challenges: {
     title: string;
@@ -218,11 +192,6 @@ export interface VisionContent {
     californiaLabel: string;
     sylhetLabel: string;
   };
-  voices: {
-    title: string;
-    items: { image: MediaKey; quote: string; role: string }[];
-  };
-  updatesTitle: string;
 }
 
 /* ---------- Contact ---------- */

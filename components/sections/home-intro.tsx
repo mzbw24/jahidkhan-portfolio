@@ -39,7 +39,7 @@ export function HomeIntro({ content }: { content: HomeContent["intro"] }) {
 
         <div data-reveal className="relative mx-auto aspect-[4/5] w-full max-w-md overflow-hidden rounded-2xl lg:col-span-4 lg:max-w-none">
           <MediaImage
-            media="portraitPodium"
+            media="portraitPoster"
             alt={content.portraitAlt}
             fill
             sizes="(min-width: 1024px) 33vw, 90vw"
@@ -57,9 +57,6 @@ export function HomeIntro({ content }: { content: HomeContent["intro"] }) {
             <div className="min-w-0 flex-1 p-4">
               <p className="text-[13px] font-semibold leading-snug">{content.californiaTitle}</p>
               <p className="mt-1 text-xs text-muted-foreground">{content.californiaText}</p>
-            </div>
-            <div className="relative h-full min-h-[84px] w-24 shrink-0 self-stretch">
-              <MediaImage media="globalBand" fill sizes="96px" className="object-cover" />
             </div>
           </div>
         </div>

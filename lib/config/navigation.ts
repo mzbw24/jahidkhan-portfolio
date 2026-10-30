@@ -11,7 +11,7 @@ export const navItems: NavItem[] = [
   { key: "service", href: "/#focus-areas", isRoute: false },
   { key: "business", href: "/#business", isRoute: false },
   { key: "projects", href: "/#projects", isRoute: false },
-  { key: "media", href: "/#news", isRoute: false },
+  { key: "media", href: "/media", isRoute: true },
   { key: "contact", href: "/contact", isRoute: true },
 ];
 

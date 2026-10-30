@@ -11,7 +11,7 @@ export const aboutEn: AboutContent = {
     secondaryCta: { label: "Watch My Story", video: true },
     quote: { text: "Building a developed and humane Sylhet is the goal of my life." },
     scriptTagline: "Sylhet Always in My Heart",
-    portraitAlt: "Placeholder portrait of Jahid Khan",
+    portraitAlt: "Portrait of Jahid Khan",
   },
   trust: [
     { icon: "home", title: "Born in", text: "Sylhet" },
@@ -32,7 +32,7 @@ export const aboutEn: AboutContent = {
       text: "No matter where I am, Sylhet will always be my home, my inspiration and my responsibility.",
       author: "— Jahid Khan",
     },
-    portraitAlt: "Placeholder portrait of Jahid Khan",
+    portraitAlt: "Full-length portrait of Jahid Khan in a suit",
   },
   values: {
     eyebrow: "My Core Values",
@@ -78,7 +78,7 @@ export const aboutEn: AboutContent = {
     title: "For the People, For a Stronger Sylhet",
     text: "I am running for Mayor of Sylhet City Corporation because I believe our city deserves better — better infrastructure, quality healthcare, improved education, more opportunities for youth and a cleaner, safer environment. This campaign is about people, progress and a brighter future for every citizen of Sylhet.",
     cta: { label: "Join the Movement", href: "/contact" },
-    photoAlt: "Placeholder photo of Jahid Khan meeting community members",
+    photoAlt: "Campaign poster showing Jahid Khan with a community member",
   },
   commitment: {
     eyebrow: "Personal Commitment",

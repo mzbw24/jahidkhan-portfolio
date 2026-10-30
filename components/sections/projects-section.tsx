@@ -21,7 +21,7 @@ export function ProjectsSection({ content }: { content: HomeContent["projects"] 
                     media={project.image}
                     fill
                     sizes="(min-width: 768px) 33vw, 100vw"
-                    className="object-cover"
+                    className="object-contain"
                   />
                   <span className="absolute left-3 top-3 rounded bg-navy/85 px-2 py-0.5 text-[11px] font-semibold text-white">
                     {project.tag}

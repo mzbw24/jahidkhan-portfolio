@@ -1,0 +1,433 @@
+{
+ "categories": [
+  "healthcare",
+  "environment",
+  "infrastructure",
+  "education",
+  "economy",
+  "voice",
+  "events",
+  "portraits"
+ ],
+ "items": {
+  "000": {
+   "category": "infrastructure",
+   "en": "Power Savings, Emergency Services Ready",
+   "bn": "বিদ্যুৎ সাশ্রয়, জরুরি সেবা সচল"
+  },
+  "001": {
+   "category": "infrastructure",
+   "en": "Affordable Commuting, Peace of Mind",
+   "bn": "সাশ্রয়ী যাতায়াত, মানুষের স্বস্তি"
+  },
+  "003": {
+   "category": "infrastructure",
+   "en": "Safe Homes, a Planned Sylhet",
+   "bn": "নিরাপদ বাড়ি, পরিকল্পিত সিলেট"
+  },
+  "004": {
+   "category": "voice",
+   "en": "I Spoke Out Then. I Speak Out Now.",
+   "bn": "আমি তখনও বলেছি, এখনও বলছি",
+   "review": "alleges harassment/threats by authorities; names Dr. Yunus"
+  },
+  "005": {
+   "category": "infrastructure",
+   "en": "Advance Notice, Less Disruption",
+   "bn": "আগাম খবর, কম ভোগান্তি"
+  },
+  "007": {
+   "category": "economy",
+   "en": "Diaspora Investment, Jobs in Sylhet",
+   "bn": "প্রবাসী বিনিয়োগ, সিলেটের কর্মসংস্থান"
+  },
+  "008": {
+   "category": "infrastructure",
+   "en": "Publish Power Outage Schedules",
+   "bn": "বিদ্যুৎ বিভ্রাটের সময়সূচি প্রকাশ করুন"
+  },
+  "009": {
+   "category": "voice",
+   "en": "Justice for Hadi's Killing",
+   "bn": "হাদি হত্যার বিচার চাই",
+   "review": "alleges a murder cover-up/suspect detained abroad"
+  },
+  "011": {
+   "category": "economy",
+   "en": "Safe Food, Honest Markets",
+   "bn": "নিরাপদ খাবার, সৎ বাজার",
+   "featured": true
+  },
+  "012": {
+   "category": "infrastructure",
+   "en": "Ready Before the Rain",
+   "bn": "বৃষ্টির আগে প্রস্তুতি"
+  },
+  "013": {
+   "category": "portraits",
+   "en": "Portrait of Jahid Khan",
+   "bn": "জাহিদ খানের প্রতিকৃতি"
+  },
+  "014": {
+   "category": "economy",
+   "en": "Fair Dignity for Labour",
+   "bn": "শ্রমের ন্যায্য মর্যাদা"
+  },
+  "015": {
+   "category": "environment",
+   "en": "Save the Streams, Save Sylhet",
+   "bn": "ছড়া বাঁচলে, সিলেট বাঁচবে",
+   "featured": true
+  },
+  "017": {
+   "category": "economy",
+   "en": "Women Entrepreneurs, Sylhet Forward",
+   "bn": "নারী উদ্যোক্তা, এগিয়ে যাক সিলেট"
+  },
+  "019": {
+   "category": "healthcare",
+   "en": "Clear Standing Water, Stop Dengue",
+   "bn": "জমে থাকা পানি সরাই, ডেঙ্গু ঠেকাই"
+  },
+  "020": {
+   "category": "voice",
+   "en": "Honour for Dedicated Party Workers",
+   "bn": "ত্যাগী কর্মীর সম্মান চাই",
+   "review": "party-affiliation wording (BNP)"
+  },
+  "021": {
+   "category": "education",
+   "en": "Find Talent, Create Opportunity",
+   "bn": "প্রতিভা খুঁজে, সুযোগ গড়ি"
+  },
+  "022": {
+   "category": "infrastructure",
+   "en": "Transparent Tickets, Safe Journeys",
+   "bn": "স্বচ্ছ টিকিট, নিরাপদ যাত্রা"
+  },
+  "023": {
+   "category": "economy",
+   "en": "Safe Tourism, Income for All",
+   "bn": "নিরাপদ পর্যটন, সবার আয়"
+  },
+  "024": {
+   "category": "infrastructure",
+   "en": "Safe Roads, Safe Lives",
+   "bn": "নিরাপদ পথ, নিরাপদ জীবন"
+  },
+  "025": {
+   "category": "events",
+   "en": "Community Gathering",
+   "bn": "সমাজের সমাবেশ"
+  },
+  "026": {
+   "category": "economy",
+   "en": "Transparent Markets, Fair Service",
+   "bn": "স্বচ্ছ বাজার, ন্যায্য সেবা"
+  },
+  "027": {
+   "category": "education",
+   "en": "Teachers Assured, Education Protected",
+   "bn": "শিক্ষক নিশ্চিত, শিক্ষা সুরক্ষিত",
+   "featured": true
+  },
+  "028": {
+   "category": "infrastructure",
+   "en": "Festivals for All, Safety for All",
+   "bn": "উৎসব সবার, নিরাপত্তাও সবার"
+  },
+  "029": {
+   "category": "events",
+   "en": "Gathering at an Event",
+   "bn": "অনুষ্ঠানে সমাবেশ"
+  },
+  "030": {
+   "category": "environment",
+   "en": "Green Sylhet, Healthy Plants",
+   "bn": "সবুজ সিলেট, সুস্থ উদ্ভিদ"
+  },
+  "031": {
+   "category": "infrastructure",
+   "en": "Dependable Digital Services",
+   "bn": "টেকসই ডিজিটাল সেবা"
+  },
+  "032": {
+   "category": "education",
+   "en": "Admission Information for Everyone",
+   "bn": "ভর্তির তথ্য, সবার কাছে"
+  },
+  "035": {
+   "category": "events",
+   "en": "Meeting Room Gathering",
+   "bn": "বৈঠককক্ষে সমাবেশ"
+  },
+  "036": {
+   "category": "healthcare",
+   "en": "Verify Vaccines, Protect Children",
+   "bn": "টিকা যাচাই, শিশুর সুরক্ষা"
+  },
+  "038": {
+   "category": "healthcare",
+   "en": "Vaccinate Dogs, Prevent Rabies",
+   "bn": "কুকুরকে টিকা দিন, জলাতঙ্ক ঠেকান"
+  },
+  "041": {
+   "category": "voice",
+   "en": "I Protest Today, Too",
+   "bn": "আজও প্রতিবাদ করছি",
+   "review": "alleges harassment/threats; names Dr. Yunus"
+  },
+  "042": {
+   "category": "healthcare",
+   "en": "Prevent Dengue Now",
+   "bn": "এখনই ডেঙ্গু প্রতিরোধ"
+  },
+  "044": {
+   "category": "healthcare",
+   "en": "Healthcare, a Right for All",
+   "bn": "চিকিৎসাসেবা, সবার অধিকার",
+   "featured": true
+  },
+  "046": {
+   "category": "healthcare",
+   "en": "Respect for Elders, Everyone's Duty",
+   "bn": "প্রবীণের সম্মান, সবার দায়িত্ব"
+  },
+  "047": {
+   "category": "environment",
+   "en": "Responsible Tourism",
+   "bn": "পর্যটন হোক দায়িত্বশীল"
+  },
+  "048": {
+   "category": "healthcare",
+   "en": "Stopping Dengue Together",
+   "bn": "ডেঙ্গু ঠেকাই একসঙ্গে"
+  },
+  "049": {
+   "category": "infrastructure",
+   "en": "Orderly Roads, a Calmer Sylhet",
+   "bn": "শৃঙ্খলিত সড়ক, স্বস্তির সিলেট",
+   "featured": true
+  },
+  "050": {
+   "category": "events",
+   "en": "People Together Outdoors",
+   "bn": "খোলা জায়গায় একসঙ্গে"
+  },
+  "051": {
+   "category": "healthcare",
+   "en": "Timely Screening, Hope for Health",
+   "bn": "সময়মতো পরীক্ষা, ভালো থাকার আশা"
+  },
+  "052": {
+   "category": "events",
+   "en": "Audience in a Flag-Decorated Hall",
+   "bn": "পতাকায় সাজানো হলে দর্শক"
+  },
+  "053": {
+   "category": "economy",
+   "en": "Check Prices, Keep Receipts",
+   "bn": "দাম দেখুন, রসিদ নিন"
+  },
+  "054": {
+   "category": "voice",
+   "en": "No Compromise Against Terror",
+   "bn": "সন্ত্রাসের বিরুদ্ধে আপসহীন",
+   "review": "political accusation against parties"
+  },
+  "055": {
+   "category": "education",
+   "en": "Girls in Sport, Sylhet Ahead",
+   "bn": "মেয়েদের খেলায়, সিলেট এগিয়ে"
+  },
+  "056": {
+   "category": "infrastructure",
+   "en": "Fair Tickets, Safer Journeys",
+   "bn": "ন্যায্য টিকিট, নিরাপদ যাত্রা"
+  },
+  "057": {
+   "category": "healthcare",
+   "en": "Vaccinate, Prevent Rabies",
+   "bn": "টিকা দিন, জলাতঙ্ক রুখুন"
+  },
+  "060": {
+   "category": "education",
+   "en": "Building Through Sport, a Young Future",
+   "bn": "খেলাধুলায় গড়ি, তরুণ ভবিষ্যৎ"
+  },
+  "061": {
+   "category": "healthcare",
+   "en": "Accurate Information, Fair Support",
+   "bn": "সঠিক তথ্য, ন্যায্য সহায়তা"
+  },
+  "062": {
+   "category": "economy",
+   "en": "Dignity for Working People",
+   "bn": "শ্রমজীবীর সম্মান, সবার দায়িত্ব"
+  },
+  "063": {
+   "category": "healthcare",
+   "en": "Early Checks, Stronger Hope",
+   "bn": "আগাম পরীক্ষা, শক্তিশালী আশা"
+  },
+  "064": {
+   "category": "portraits",
+   "en": "Close Portrait of Jahid Khan",
+   "bn": "জাহিদ খানের ক্লোজ-আপ প্রতিকৃতি"
+  },
+  "065": {
+   "category": "voice",
+   "en": "Project Accounts, the People's Right",
+   "bn": "প্রকল্পের হিসাব, জনতার অধিকার"
+  },
+  "069": {
+   "category": "economy",
+   "en": "Bangla QR, Easy Payments",
+   "bn": "বাংলা কিউআর, সহজ লেনদেন"
+  },
+  "070": {
+   "category": "voice",
+   "en": "The People's Voice, a Call for Change",
+   "bn": "জনতার কণ্ঠ, পরিবর্তনের আহ্বান",
+   "review": "satirical party branding"
+  },
+  "071": {
+   "category": "healthcare",
+   "en": "Vaccines Assured, Children Protected",
+   "bn": "টিকা নিশ্চিত, শিশু সুরক্ষিত"
+  },
+  "072": {
+   "category": "infrastructure",
+   "en": "Safe Footpaths, a Healthy Sylhet",
+   "bn": "হাঁটার পথ, সুস্থ সিলেট"
+  },
+  "073": {
+   "category": "economy",
+   "en": "Farmers' Produce, World Markets",
+   "bn": "কৃষকের পণ্য, বিশ্ববাজারে"
+  },
+  "074": {
+   "category": "environment",
+   "en": "Safe Tourism, Beautiful Sylhet",
+   "bn": "নিরাপদ পর্যটন, সুন্দর সিলেট"
+  },
+  "076": {
+   "category": "voice",
+   "en": "Shame on Brokers and Extortionist Leaders",
+   "bn": "লজ্জা হোক এই দালাল, চাঁদাবাজ নেতাদের!",
+   "review": "party logo (BNP) and title; accuses 'extortionist leaders'"
+  },
+  "078": {
+   "category": "education",
+   "en": "Teachers Today, Brighter Tomorrows",
+   "bn": "আজকের শিক্ষক, উজ্জ্বল আগামী"
+  },
+  "079": {
+   "category": "voice",
+   "en": "Our Expatriates, Bangladesh's Pride",
+   "bn": "আমরা প্রবাসী, বাংলাদেশের গর্ব",
+   "review": "party logo (BNP) and organisational title"
+  },
+  "080": {
+   "category": "education",
+   "en": "Finding Talent Through Sport",
+   "bn": "খেলাধুলায় প্রতিভার খোঁজ"
+  },
+  "081": {
+   "category": "education",
+   "en": "A Light of Culture, a United Sylhet",
+   "bn": "সংস্কৃতির আলো, ঐক্যের সিলেট"
+  },
+  "083": {
+   "category": "voice",
+   "en": "Changing Parties Doesn't Erase Crimes",
+   "bn": "দল বদলালেই অপরাধ মুছে যায় না",
+   "review": "party-affiliation wording (BNP, Jamaat, NCP)"
+  },
+  "084": {
+   "category": "healthcare",
+   "en": "Safe Day-Care",
+   "bn": "নিরাপদ ডে-কেয়ার"
+  },
+  "085": {
+   "category": "infrastructure",
+   "en": "Beside You Every Day in Sylhet's Development",
+   "bn": "সিলেটের উন্নয়নে, প্রতিদিন পাশে",
+   "featured": true
+  },
+  "086": {
+   "category": "voice",
+   "en": "Bangladesh Belongs to All",
+   "bn": "রাজনীতি যার যার, বাংলাদেশ সবার",
+   "review": "names several parties"
+  },
+  "089": {
+   "category": "environment",
+   "en": "Save the Streams, Keep Sylhet Clean",
+   "bn": "ছড়া বাঁচাই, সিলেট বাঁচাই"
+  },
+  "092": {
+   "category": "education",
+   "en": "Learn Skills, Build Work",
+   "bn": "দক্ষতা শিখি, কাজ গড়ি"
+  },
+  "094": {
+   "category": "economy",
+   "en": "Youth Initiative, Jobs in Sylhet",
+   "bn": "তরুণের উদ্যোগ, সিলেটের কর্মসংস্থান"
+  },
+  "095": {
+   "category": "environment",
+   "en": "Healthy Plants, Greener Sylhet",
+   "bn": "স্বাস্থ্যকর গাছ, সবুজ সিলেট"
+  },
+  "096": {
+   "category": "environment",
+   "en": "If Rivers and Hills Live, Sylhet Lives",
+   "bn": "নদী-পাহাড় বাঁচলে, সিলেট বাঁচবে"
+  },
+  "097": {
+   "category": "economy",
+   "en": "Invest in Sylhet From Abroad",
+   "bn": "প্রবাস থেকে সিলেটে বিনিয়োগ"
+  },
+  "098": {
+   "category": "voice",
+   "en": "42 Wards United Against City Corruption",
+   "bn": "শহরের দুর্নীতির বিরুদ্ধে ৪২ ওয়ার্ড ঐক্য গড়ি",
+   "review": "states mayoral candidacy and ward numbers"
+  },
+  "099": {
+   "category": "infrastructure",
+   "en": "Steady Power, Ready Emergency Services",
+   "bn": "নিরন্তর বিদ্যুৎ, প্রস্তুত জরুরি সেবা"
+  }
+ },
+ "hold": {
+  "002": "family photo incl. children, vehicle",
+  "006": "private residence and vehicles",
+  "010": "family photo incl. children",
+  "016": "family photo incl. children",
+  "018": "family photo incl. children",
+  "033": "family photo incl. children",
+  "034": "old personal/family photo of a child",
+  "040": "family photo incl. children",
+  "043": "vehicles/licence plates, residential street",
+  "058": "private photo with unidentified older man",
+  "059": "private residence exterior",
+  "067": "family photo incl. children",
+  "068": "residential street, vehicles",
+  "075": "private photo with unidentified older couple",
+  "077": "family photo incl. children",
+  "082": "family photo incl. children",
+  "087": "family photo incl. children",
+  "091": "family photo incl. children",
+  "093": "photo of children on a motorbike",
+  "037": "quotes and shows a named third party",
+  "039": "identifiable third parties; allegation about a named arrest",
+  "045": "composite with a real public figure (Dr. Yunus) implying association; allegations",
+  "066": "another identifiable person in a satirical party poster",
+  "088": "composite of identifiable political figures; accusations",
+  "090": "magazine cover of unverified authenticity featuring a third party"
+ }
+}

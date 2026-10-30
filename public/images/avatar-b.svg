@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 280" width="240" height="280" role="img" aria-label="Placeholder avatar"><title>Placeholder avatar</title><defs><linearGradient id="s" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d9d2c4"/><stop offset="1" stop-color="#8aa0bd"/></linearGradient></defs><rect width="240" height="280" fill="url(#s)"/><g>
-    <path d="M36.3 300 Q36.3 181.2 120 173.10000000000002 Q203.7 181.2 203.7 300 Z" fill="#f1efe8"/>
-    <rect x="107.85" y="138" width="24.3" height="35.1" fill="#8d5a3b"/>
-    <ellipse cx="120" cy="97.5" rx="29.700000000000003" ry="35.046" fill="#8d5a3b"/>
-    <path d="M88.815 88.59 Q120 41.07 151.185 88.59 Z" fill="#f3f3f0"/>
-    <path d="M93.27 106.41 Q120 153.93 146.73000000000002 106.41 Q120 124.23 93.27 106.41 Z" fill="#ececec"/>
-  </g></svg>

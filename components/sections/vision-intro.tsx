@@ -3,7 +3,6 @@ import { IconBadge, toneAt } from "@/components/shared/icon-badge";
 import { Icon } from "@/components/shared/icon";
 import { MediaImage } from "@/components/shared/media-image";
 import { Signature } from "@/components/shared/signature";
-import { WatchButton } from "@/components/shared/watch-button";
 import type { VisionContent } from "@/types/content";
 
 export function VisionIntro({ content }: { content: VisionContent["intro"] }) {
@@ -26,19 +25,12 @@ export function VisionIntro({ content }: { content: VisionContent["intro"] }) {
 
         <div data-reveal className="relative mx-auto aspect-[4/5] w-full max-w-md overflow-hidden rounded-xl lg:col-span-4 lg:max-w-none">
           <MediaImage
-            media="portraitPodium"
+            media="portraitPoster2"
             alt={content.portraitAlt}
             fill
             sizes="(min-width: 1024px) 33vw, 90vw"
             className="object-cover"
           />
-          <div className="absolute inset-0 flex items-center justify-center bg-black/20">
-            <WatchButton circle label={content.videoTitle} video="vision" />
-          </div>
-          <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-4 text-white">
-            <p className="text-sm font-semibold">{content.videoTitle}</p>
-            <p className="text-xs text-white/75">{content.videoDuration}</p>
-          </div>
         </div>
 
         <div data-reveal className="space-y-3 lg:col-span-3">

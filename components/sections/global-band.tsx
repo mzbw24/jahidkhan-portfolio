@@ -1,16 +1,13 @@
 import { MapPin } from "lucide-react";
 import { HeadingText } from "@/components/shared/heading-text";
 import { IconBadge, toneAt } from "@/components/shared/icon-badge";
-import { MediaImage } from "@/components/shared/media-image";
 import type { VisionContent } from "@/types/content";
 
 export function GlobalBand({ content }: { content: VisionContent["global"] }) {
   return (
     <section className="dark-band">
-      <div data-parallax="5" className="absolute inset-x-0 -top-[10%] -z-10 h-[120%]">
-        <MediaImage media="globalBand" fill sizes="100vw" className="object-cover" />
-      </div>
-      <div className="absolute inset-0 -z-10 bg-gradient-to-r from-navy via-navy/80 to-navy/30" />
+      <div aria-hidden="true" className="absolute inset-0 -z-10 bg-gradient-to-br from-navy via-navy-soft to-navy" />
+      <div aria-hidden="true" className="absolute inset-0 -z-10 bg-[radial-gradient(50%_100%_at_10%_0%,hsl(var(--primary)/0.22),transparent)]" />
 
       <div className="container py-12 lg:py-14">
         <div className="flex flex-wrap items-end justify-between gap-6">

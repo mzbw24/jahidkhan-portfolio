@@ -49,20 +49,12 @@ export const commonEn: CommonContent = {
     text: "Let's work together for a cleaner, greener, more modern and prosperous Sylhet.",
     button: "Support Jahid Khan",
   },
-  news: {
-    title: "Latest News & Insights",
-    text: "Updates, thoughts and activities from Sylhet, USA and beyond.",
-    watchLabel: "Watch on YouTube",
-    // PLACEHOLDER — mock items, replace with real articles.
-    items: [
-      { image: "newsPortrait", tag: "Insights", title: "Why a People-Centered Sylhet Matters", date: "22 Oct 2026", kind: "article" },
-      { image: "newsCity", tag: "Sylhet", title: "Plans for a Smarter and Cleaner Sylhet", date: "18 Oct 2026", kind: "article" },
-      { image: "newsYouth", tag: "Community", title: "Youth Are the Future of Sylhet", date: "12 Oct 2026", kind: "article" },
-      { image: "newsVideo", tag: "Video", title: "My Vision for Sylhet City Corporation", date: "", kind: "video", duration: "7:28" },
-    ],
+  mediaTeaser: {
+    title: "Moments That Tell Our Story",
+    text: "Campaign posters, portraits and moments from gatherings. Explore the full gallery.",
+    cta: "Open the Media Gallery",
   },
   placeholderBadge: "Sample content",
-  comingSoon: "This video isn't available yet.",
   notFound: {
     title: "Page not found",
     text: "The page you are looking for doesn't exist or has moved.",

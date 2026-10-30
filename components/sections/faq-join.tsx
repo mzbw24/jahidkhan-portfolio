@@ -32,7 +32,7 @@ export function FaqJoin({ faq, join }: FaqJoinProps) {
         <div data-reveal className="card-surface overflow-hidden self-start">
           <div className="grid sm:grid-cols-[1fr_1.2fr]">
             <div className="relative min-h-[11rem]">
-              <MediaImage media="cityAerial" fill sizes="(min-width: 640px) 22vw, 100vw" className="object-cover" />
+              <MediaImage media="faqPoster" fill sizes="(min-width: 640px) 22vw, 100vw" className="object-cover" />
             </div>
             <div className="flex items-start gap-3 p-5">
               <IconBadge icon="users" tone="red" size="lg" />

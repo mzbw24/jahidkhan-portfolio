@@ -7,6 +7,8 @@ export const mediaBn: MediaPageStrings = {
     accent: "গল্পের",
     titleEnd: "মুহূর্তগুলো",
     text: "প্রচারণার বার্তা, প্রতিকৃতি এবং সমাবেশের মুহূর্ত — কাজের পেছনের মানুষ, অগ্রাধিকার ও প্রতিশ্রুতির একটি ঝলক।",
+    cta: "ভিডিও গল্প দেখুন",
+    ctaSecondary: "সব মুহূর্ত দেখুন",
   },
   stats: { photos: "ছবি", videos: "ভিডিও", topics: "বিষয়" },
   filterLabel: "বিষয় অনুযায়ী মিডিয়া ছাঁকুন",

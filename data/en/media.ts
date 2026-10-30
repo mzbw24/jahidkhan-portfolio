@@ -6,6 +6,8 @@ export const mediaEn: MediaPageStrings = {
     title: "Moments That Tell Our",
     accent: "Story",
     text: "Campaign messages, portraits and moments from gatherings — a look at the people, priorities and promises behind the work.",
+    cta: "Explore video stories",
+    ctaSecondary: "Browse all moments",
   },
   stats: { photos: "Photos", videos: "Videos", topics: "Topics" },
   filterLabel: "Filter media by topic",

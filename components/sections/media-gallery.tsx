@@ -42,7 +42,7 @@ export function MediaGallery({ content }: { content: MediaPageContent }) {
         </div>
       </div>
 
-      <section id="videos" className="section-y scroll-mt-28" aria-label={content.hero.title}>
+      <section id="media-gallery" className="section-y scroll-mt-28" aria-label={content.hero.title}>
         <div className="container">
           <p role="status" aria-live="polite" className="mb-5 text-xs text-muted-foreground">
             {fmt(content.results, { count: visible.length, total: content.items.length })}

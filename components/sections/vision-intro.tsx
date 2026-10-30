@@ -1,11 +1,13 @@
 import { Quote } from "lucide-react";
+import { VideoPlayer } from "@/components/shared/video-player";
 import { IconBadge, toneAt } from "@/components/shared/icon-badge";
 import { Icon } from "@/components/shared/icon";
 import { MediaImage } from "@/components/shared/media-image";
 import { Signature } from "@/components/shared/signature";
 import type { VisionContent } from "@/types/content";
+import type { GalleryItem, MediaLabels } from "@/types/gallery";
 
-export function VisionIntro({ content }: { content: VisionContent["intro"] }) {
+export function VisionIntro({ content, video, labels }: { content: VisionContent["intro"]; video?: GalleryItem; labels: MediaLabels }) {
   return (
     <section className="section-y">
       <div className="container grid gap-8 lg:grid-cols-12 lg:gap-6">
@@ -34,6 +36,7 @@ export function VisionIntro({ content }: { content: VisionContent["intro"] }) {
         </div>
 
         <div data-reveal className="space-y-3 lg:col-span-3">
+          {video?.kind === "video" ? <VideoPlayer video={video} title={video.title} labels={labels.player} autoPlay={false} className="w-full" /> : null}
           <figure className="rounded-xl bg-tint p-5">
             <Quote className="mb-2 h-6 w-6 fill-primary text-primary" aria-hidden="true" />
             <blockquote className="font-display text-lg font-medium leading-snug">{content.quote.text}</blockquote>

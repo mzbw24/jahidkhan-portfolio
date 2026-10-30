@@ -5,7 +5,6 @@ import { HeadingText } from "@/components/shared/heading-text";
 import { IconBadge, toneAt } from "@/components/shared/icon-badge";
 import { MediaImage } from "@/components/shared/media-image";
 import { Signature } from "@/components/shared/signature";
-import { WatchButton, type VideoKey } from "@/components/shared/watch-button";
 import type { HeroContent } from "@/types/content";
 import type { MediaKey } from "@/types/media";
 import { cn } from "@/lib/utils";
@@ -17,7 +16,6 @@ interface PageHeroProps {
   portrait: MediaKey;
   /** Which side the pull-quote sits on (copy goes to the other side). */
   quotePosition?: "left" | "right";
-  video?: VideoKey;
   uppercaseTitle?: boolean;
   /** Reserve space for a floating strip (trust strip / contact cards) that overlaps the hero bottom. */
   overlap?: boolean;
@@ -28,7 +26,6 @@ export function PageHero({
   background,
   portrait,
   quotePosition = "right",
-  video = "story",
   uppercaseTitle = false,
   overlap = true,
 }: PageHeroProps) {
@@ -123,7 +120,12 @@ export function PageHero({
                 </Button>
               ) : null}
               {content.secondaryCta?.video ? (
-                <WatchButton label={content.secondaryCta.label} video={video} className="h-12 px-6 text-base" />
+                <Button asChild variant="outline" size="lg" className="border-white/25 bg-white/5 text-white hover:bg-white/15 hover:text-white">
+                  <Link href="/media">
+                    {content.secondaryCta.label}
+                    <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                  </Link>
+                </Button>
               ) : null}
             </div>
           ) : null}

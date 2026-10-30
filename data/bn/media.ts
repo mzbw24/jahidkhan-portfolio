@@ -46,6 +46,8 @@ export const mediaBn: MediaPageStrings = {
       seek: "সময় বদলান",
       fullscreen: "পূর্ণ পর্দা",
       exitFullscreen: "পূর্ণ পর্দা থেকে বের হন",
+      pictureInPicture: "পিকচার ইন পিকচার",
+      speed: "প্লেব্যাক গতি",
       error: "এই ভিডিওটি চালানো যায়নি।",
       retry: "আবার চেষ্টা করুন",
     },

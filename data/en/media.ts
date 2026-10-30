@@ -45,6 +45,8 @@ export const mediaEn: MediaPageStrings = {
       seek: "Seek",
       fullscreen: "Fullscreen",
       exitFullscreen: "Exit fullscreen",
+      pictureInPicture: "Picture in picture",
+      speed: "Playback speed",
       error: "This video couldn't be played.",
       retry: "Try again",
     },

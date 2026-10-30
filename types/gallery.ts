@@ -63,6 +63,8 @@ export interface PlayerLabels {
   seek: string;
   fullscreen: string;
   exitFullscreen: string;
+  pictureInPicture: string;
+  speed: string;
   error: string;
   retry: string;
 }

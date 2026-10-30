@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { Search } from "lucide-react";
 import { availableFilters, filterItems, fmt } from "@/lib/media";
 import { FilterBar } from "./filter-bar";
 import { GalleryCard } from "./gallery-card";
@@ -10,9 +11,14 @@ import type { GalleryFilter, GalleryItem, MediaPageContent } from "@/types/galle
 export function MediaGallery({ content }: { content: MediaPageContent }) {
   const [filter, setFilter] = useState<GalleryFilter>("all");
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [query, setQuery] = useState("");
 
   const filters = useMemo(() => availableFilters(content.items), [content.items]);
-  const visible = useMemo(() => filterItems(content.items, filter), [content.items, filter]);
+  const visible = useMemo(() => {
+    const filtered = filterItems(content.items, filter);
+    const normalized = query.trim().toLocaleLowerCase();
+    return normalized ? filtered.filter((item) => `${item.title} ${item.category}`.toLocaleLowerCase().includes(normalized)) : filtered;
+  }, [content.items, filter, query]);
 
   const handleFilter = (next: GalleryFilter) => {
     setOpenIndex(null);
@@ -22,8 +28,13 @@ export function MediaGallery({ content }: { content: MediaPageContent }) {
   return (
     <>
       <div className="sticky top-[72px] z-30 border-b bg-background/90 backdrop-blur supports-[backdrop-filter]:bg-background/75">
-        <div className="container py-3">
+        <div className="container flex flex-col gap-3 py-3 sm:flex-row sm:items-center sm:justify-between">
           <FilterBar filters={filters} active={filter} labels={content.filters} groupLabel={content.filterLabel} onChange={handleFilter} />
+          <label className="relative block w-full sm:max-w-xs">
+            <span className="sr-only">{content.filterLabel}</span>
+            <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" aria-hidden="true" />
+            <input value={query} onChange={(event) => setQuery(event.target.value)} type="search" placeholder="Search media" className="h-10 w-full rounded-full border bg-background pl-9 pr-4 text-sm outline-none transition focus:ring-2 focus:ring-ring" />
+          </label>
         </div>
       </div>
 

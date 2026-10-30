@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState, type CSSProperties } from "react";
-import { Maximize, Minimize, Pause, Play, RotateCcw, Volume1, Volume2, VolumeX } from "lucide-react";
+import { Maximize, Minimize, Pause, PictureInPicture, Play, RotateCcw, Volume1, Volume2, VolumeX } from "lucide-react";
 import { formatTime } from "@/lib/media";
 import { cn } from "@/lib/utils";
 import type { GalleryVideoAsset, PlayerLabels } from "@/types/gallery";
@@ -81,6 +81,15 @@ export function VideoPlayer({ video, title, labels, autoPlay = true, className }
     if (!el) return;
     el.volume = Math.min(Math.max(next, 0), 1);
     el.muted = el.volume === 0;
+  }, []);
+
+  const changeSpeed = useCallback((next: number) => {
+    if (videoRef.current) videoRef.current.playbackRate = next;
+  }, []);
+
+  const enterPictureInPicture = useCallback(async () => {
+    const el = videoRef.current as HTMLVideoElement & { requestPictureInPicture?: () => Promise<unknown> } | null;
+    if (el?.requestPictureInPicture) await el.requestPictureInPicture().catch(() => undefined);
   }, []);
 
   useEffect(() => {
@@ -228,6 +237,16 @@ export function VideoPlayer({ video, title, labels, autoPlay = true, className }
                 {timeText}
               </span>
               <span className="flex-1" />
+              <select aria-label={labels.speed} defaultValue="1" onChange={(event) => changeSpeed(Number(event.target.value))} className="h-8 rounded-md bg-white/10 px-1 text-xs text-white">
+                <option value="0.75" className="text-black">0.75×</option>
+                <option value="1" className="text-black">1×</option>
+                <option value="1.25" className="text-black">1.25×</option>
+                <option value="1.5" className="text-black">1.5×</option>
+                <option value="2" className="text-black">2×</option>
+              </select>
+              {typeof document !== "undefined" && "pictureInPictureEnabled" in document && (videoRef.current as HTMLVideoElement & { requestPictureInPicture?: unknown } | null)?.requestPictureInPicture ? (
+                <button type="button" onClick={enterPictureInPicture} aria-label={labels.pictureInPicture} className="media-btn"><PictureInPicture className="h-5 w-5" aria-hidden="true" /></button>
+              ) : null}
               {fullscreenSupported ? (
                 <button
                   type="button"

@@ -1,4 +1,9 @@
 import type { GalleryItemText } from "@/types/gallery";
 
-/** Titles/alt text for entries in data/gallery/videos.ts (English). Keyed by video id. */
-export const mediaVideosEn: Record<string, GalleryItemText> = {};
+export const mediaVideosEn: Record<string, GalleryItemText> = Object.fromEntries(
+  Array.from({ length: 22 }, (_, index) => {
+    const number = index + 1;
+    const title = number === 22 ? "Vision for Sylhet City Corporation" : `Community update ${number}`;
+    return [`video-${number}`, { title, alt: `${title} video` }];
+  }),
+);

@@ -33,7 +33,7 @@ export function AboutStory({ story, values }: AboutStoryProps) {
             alt={story.portraitAlt}
             fill
             sizes="(min-width: 1024px) 33vw, 90vw"
-            className="object-cover"
+            className="object-contain"
           />
           <figcaption className="absolute inset-x-0 bottom-0 bg-navy/95 p-4 text-white">
             <div className="flex gap-3">

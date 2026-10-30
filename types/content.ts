@@ -43,8 +43,7 @@ export interface StatItem {
   label: string;
 }
 
-export type NavKey =
-  | "home" | "about" | "vision" | "service" | "business" | "projects" | "media" | "family" | "contact";
+export type NavKey = "about" | "vision" | "service" | "business" | "projects" | "media" | "family" | "contact";
 
 export interface CommonContent {
   siteTagline: string;

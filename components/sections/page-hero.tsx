@@ -16,6 +16,7 @@ interface PageHeroProps {
   quotePosition?: "left" | "right";
   uppercaseTitle?: boolean;
   overlap?: boolean;
+  variant?: "home" | "about" | "vision";
 }
 
 export function PageHero({
@@ -25,21 +26,24 @@ export function PageHero({
   quotePosition = "right",
   uppercaseTitle = false,
   overlap = true,
+  variant = "home",
 }: PageHeroProps) {
   const quoteLeft = quotePosition === "left";
+  const isAbout = variant === "about";
+  const isVision = variant === "vision";
 
   return (
-    <section className="dark-band">
+    <section className={cn("dark-band relative isolate overflow-hidden", isAbout && "bg-sky-50 text-navy", isVision && "min-h-[35rem]")}>
       {background ? (
         <div data-parallax="6" className="absolute inset-x-0 -top-[8%] -z-10 h-[116%]">
           <MediaImage media={background} fill priority sizes="100vw" className="object-cover" />
         </div>
       ) : (
         <>
-          <div aria-hidden="true" className="absolute inset-0 -z-10 bg-gradient-to-br from-navy via-navy-soft to-navy" />
+          <div aria-hidden="true" className={cn("absolute inset-0 -z-10 bg-gradient-to-br from-navy via-navy-soft to-navy", isAbout && "from-sky-50 via-white to-sky-100")} />
           <div
             aria-hidden="true"
-            className="absolute inset-0 -z-10 bg-[radial-gradient(55%_90%_at_80%_15%,hsl(var(--primary)/0.30),transparent)]"
+            className={cn("absolute inset-0 -z-10 bg-[radial-gradient(55%_90%_at_80%_15%,hsl(var(--primary)/0.30),transparent)]", isAbout && "bg-[radial-gradient(55%_90%_at_80%_15%,hsl(var(--primary)/0.12),transparent)]")}
           />
         </>
       )}
@@ -51,10 +55,10 @@ export function PageHero({
             : "bg-gradient-to-r from-navy via-navy/80 to-navy/20"),
         )}
       />
-      <div aria-hidden="true" className="absolute inset-0 -z-10 bg-gradient-to-t from-navy/70 via-transparent to-transparent" />
+      <div aria-hidden="true" className={cn("absolute inset-0 -z-10 bg-gradient-to-t from-navy/70 via-transparent to-transparent", isAbout && "from-white/70")} />
 
       <div className={cn(
-          "container relative grid min-h-[32rem] gap-8 pt-12 lg:min-h-[37rem] lg:grid-cols-12 lg:items-center",
+          "container relative grid min-h-[32rem] gap-8 pt-12 lg:min-h-[37rem] lg:grid-cols-12 lg:items-center", isVision && "lg:min-h-[40rem]", isAbout && "lg:min-h-[34rem]", 
           overlap ? "pb-28" : "pb-14",
         )}>
         <div
@@ -79,7 +83,7 @@ export function PageHero({
             quoteLeft ? "lg:col-span-5 lg:col-start-8" : "lg:col-span-6",
           )}
         >
-          <p data-hero-item className="mb-4 text-xs font-medium uppercase tracking-[0.3em] text-white/75">
+          <p data-hero-item className={cn("mb-4 text-xs font-medium uppercase tracking-[0.3em]", isAbout ? "text-primary" : "text-white/75")}>
             {content.eyebrow}
           </p>
           <h1
@@ -91,7 +95,7 @@ export function PageHero({
           >
             <HeadingText title={content.title} accent={content.accent} titleEnd={content.titleEnd} stack />
           </h1>
-          <p data-hero-item className="mt-5 max-w-md text-[15px] leading-relaxed text-white/85 sm:text-base">
+          <p data-hero-item className={cn("mt-5 max-w-md text-[15px] leading-relaxed sm:text-base", isAbout ? "text-navy/75" : "text-white/85")}>
             {content.text}
           </p>
 

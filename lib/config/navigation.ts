@@ -12,6 +12,7 @@ export const navItems: NavItem[] = [
   { key: "business", href: "/#business", isRoute: false },
   { key: "projects", href: "/#projects", isRoute: false },
   { key: "media", href: "/media", isRoute: true },
+  { key: "family", href: "/family", isRoute: true },
   { key: "contact", href: "/contact", isRoute: true },
 ];
 

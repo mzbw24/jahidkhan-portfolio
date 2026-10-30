@@ -8,6 +8,7 @@ export const contentService = {
   getAboutContent: cache(() => contentRepository.getAbout()),
   getVisionContent: cache(() => contentRepository.getVision()),
   getContactContent: cache(() => contentRepository.getContact()),
+  getFamilyContent: cache(() => contentRepository.getFamily()),
   getMediaContent: cache(() => contentRepository.getMedia()),
   getFeaturedMedia: cache(() => contentRepository.getFeaturedMedia()),
 };

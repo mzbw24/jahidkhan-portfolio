@@ -44,7 +44,7 @@ export interface StatItem {
 }
 
 export type NavKey =
-  | "home" | "about" | "vision" | "service" | "business" | "projects" | "media" | "contact";
+  | "home" | "about" | "vision" | "service" | "business" | "projects" | "media" | "family" | "contact";
 
 export interface CommonContent {
   siteTagline: string;

@@ -18,6 +18,8 @@ import { visionEn } from "@/data/en/vision";
 import { visionBn } from "@/data/bn/vision";
 import { contactEn } from "@/data/en/contact";
 import { contactBn } from "@/data/bn/contact";
+import { familyEn } from "@/data/en/family";
+import { familyBn } from "@/data/bn/family";
 
 const itemText: Localized<Record<string, GalleryItemText>> = {
   en: { ...mediaItemsEn, ...mediaVideosEn },
@@ -48,6 +50,9 @@ export const localContentRepository: ContentRepository = {
   },
   async getContact() {
     return { en: contactEn, bn: contactBn };
+  },
+  async getFamily() {
+    return { en: familyEn, bn: familyBn };
   },
   async getMedia() {
     const en: MediaPageContent = { ...mediaEn, items: buildItems("en") };

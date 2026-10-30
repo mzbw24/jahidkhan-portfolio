@@ -31,7 +31,6 @@ export function VisionView({ content, featured, media }: { content: Localized<Vi
         quotePosition="right"
         uppercaseTitle
         overlap={false}
-        variant="vision"
       />
       <VisionIntro content={c.intro} video={visionVideo} labels={mediaContent.labels} />
       <FeaturedMedia items={featuredItems} />

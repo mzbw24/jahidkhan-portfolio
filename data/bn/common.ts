@@ -4,7 +4,6 @@ export const commonBn: CommonContent = {
   siteTagline: "জনগণ · সিলেট · অগ্রগতি",
   skipLink: "মূল বিষয়বস্তুতে যান",
   nav: {
-    home: "হোম",
     about: "পরিচিতি",
     vision: "ভিশন ও পরিকল্পনা",
     service: "জনসেবা",

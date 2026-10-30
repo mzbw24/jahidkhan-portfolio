@@ -4,7 +4,6 @@ export const commonEn: CommonContent = {
   siteTagline: "People · Sylhet · Progress",
   skipLink: "Skip to main content",
   nav: {
-    home: "Home",
     about: "About",
     vision: "Vision & Plan",
     service: "Public Service",

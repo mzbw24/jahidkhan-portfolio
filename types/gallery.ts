@@ -84,7 +84,7 @@ export interface MediaLabels {
 }
 
 export interface MediaPageStrings {
-  hero: HeadingContent & { eyebrow: string; text: string };
+  hero: HeadingContent & { eyebrow: string; text: string; cta: string; ctaSecondary: string };
   stats: { photos: string; videos: string; topics: string };
   filterLabel: string;
   filters: Record<"all" | "images" | "videos", string> &

@@ -26,6 +26,7 @@
     --input: 220 16% 82%;
     --ring: 357 100% 44%;
     --shadow: 222 47% 11%;
+    --media-hero-glow: 207 90% 54%;
     color-scheme: light;
   }
 
@@ -47,6 +48,7 @@
     --input: 222 26% 26%;
     --ring: 357 92% 62%;
     --shadow: 0 0% 0%;
+    --media-hero-glow: 207 100% 64%;
     color-scheme: dark;
   }
 
@@ -110,11 +112,46 @@
   }
 
   .card-hover {
-    @apply transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-lift motion-reduce:transform-none;
+    @apply transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-lift motion-reduce:transform-none;
+  }
+
+  .media-hero a {
+    transform: translateZ(0);
   }
 
   .dark-band {
     @apply relative isolate overflow-hidden bg-navy text-navy-foreground;
+  }
+
+  .media-hero {
+    min-height: min(47rem, 82vh);
+  }
+
+  .media-hero__image {
+    object-position: center 42%;
+    filter: saturate(0.9) contrast(1.05);
+  }
+
+  .media-hero__veil {
+    @apply absolute inset-0 -z-10;
+    background: linear-gradient(90deg, hsl(var(--navy) / 0.98) 0%, hsl(var(--navy) / 0.82) 38%, hsl(var(--navy) / 0.28) 75%, hsl(var(--navy) / 0.58) 100%), linear-gradient(0deg, hsl(var(--navy) / 0.9), transparent 48%);
+  }
+
+  .media-hero__glow {
+    @apply absolute inset-0 -z-10;
+    background: radial-gradient(circle at 76% 22%, hsl(var(--media-hero-glow) / 0.3), transparent 32%);
+  }
+
+  @media (max-width: 640px) {
+    .media-hero {
+      min-height: 42rem;
+    }
+    .media-hero__image {
+      object-position: 62% 42%;
+    }
+    .media-hero__veil {
+      background: linear-gradient(180deg, hsl(var(--navy) / 0.92) 0%, hsl(var(--navy) / 0.7) 52%, hsl(var(--navy) / 0.96) 100%);
+    }
   }
 }
 

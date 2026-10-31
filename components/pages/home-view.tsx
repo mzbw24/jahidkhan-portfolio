@@ -26,7 +26,7 @@ export function HomeView({ content, featured }: { content: Localized<HomeContent
 
   return (
     <div ref={scope}>
-      <PageHero content={c.hero} background="connectBand" portrait="portrait" quotePosition="left" />
+      <PageHero content={c.hero} banner="/images/banners/home.png" portrait="portrait" quotePosition="left" variant="home" />
       <TrustStrip items={c.trust} />
       <HomeIntro content={c.intro} />
       <VisionBand content={c.vision} layout="row" />

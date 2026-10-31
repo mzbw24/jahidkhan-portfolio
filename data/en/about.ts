@@ -15,7 +15,7 @@ export const aboutEn: AboutContent = {
   },
   trust: [
     { icon: "home", title: "Born in", text: "Sylhet" },
-    { icon: "plane", title: "Currently in", text: "California, USA" },
+    { icon: "plane", title: "Currently in", text: "New York, USA" },
     { icon: "graduation", title: "Entrepreneur", text: "& Community Leader" },
     { icon: "heart", title: "Committed to", text: "People & Development" },
     { icon: "building", title: "Independent Mayor Candidate", text: "Sylhet City Corporation" },
@@ -24,7 +24,7 @@ export const aboutEn: AboutContent = {
     eyebrow: "My Story",
     title: "From Sylhet to a Global Perspective",
     paragraphs: [
-      "I am Jahid Khan, a proud son of Sylhet, currently based in California, USA. My journey has been shaped by the values, culture and resilience of Sylhet and its people.",
+      "I am Jahid Khan, a proud son of Sylhet, currently based in New York, USA. My journey has been shaped by the values, culture and resilience of Sylhet and its people.",
       "Living abroad has given me the opportunity to learn, work and build global connections, but my roots and responsibility remain in Sylhet. I believe in practical solutions, transparent leadership and inclusive development that creates real opportunities for every citizen.",
     ],
     signatureCaption: "Independent Mayor Candidate, Sylhet City Corporation",
@@ -63,7 +63,7 @@ export const aboutEn: AboutContent = {
     steps: [
       { icon: "home", title: "Early Life in Sylhet", text: "Grew up with the values, culture and resilience of Sylhet." },
       { icon: "graduation", title: "Education and Learning", text: "Pursued education with a focus on creating a positive impact." },
-      { icon: "plane", title: "Global Exposure", text: "Moved to California, USA, gaining international experience and global connections." },
+      { icon: "plane", title: "Global Exposure", text: "Moved to New York, USA, gaining international experience and global connections." },
       { icon: "users", title: "Community Leadership", text: "Working with people, businesses and communities for a better Sylhet." },
     ],
     gallery: [

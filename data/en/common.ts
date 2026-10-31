@@ -26,7 +26,7 @@ export const commonEn: CommonContent = {
     quickLinks: "Quick Links",
     contactTitle: "Contact Information",
     location: "Sylhet, Bangladesh",
-    locationNote: "(Originally from Sylhet, currently in California, USA)",
+    locationNote: "(Originally from Sylhet, currently in New York, USA)",
     connect: "Let's Connect",
     socialLabel: "Social media",
     rights: "© 2026 Jahid Khan. All rights reserved.",

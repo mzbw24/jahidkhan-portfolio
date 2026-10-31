@@ -26,7 +26,7 @@ export function VisionView({ content, featured, media }: { content: Localized<Vi
     <div ref={scope}>
       <PageHero
         content={c.hero}
-        background="crowd"
+        banner="/images/banners/mission-vision.png"
         portrait="portraitFull"
         quotePosition="right"
         uppercaseTitle

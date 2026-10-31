@@ -65,8 +65,8 @@ export const contactEn: ContactContent = {
   location: {
     eyebrow: "Our Location",
     title: "Jahid A khan 8684 188 st Hollis NY 11423",
-    text: "I am currently based in California, USA, while actively working for the people of Sylhet and staying connected with my community.",
-    mapTitle: "Map showing California, USA",
+    text: "I am currently based in New York, USA, while actively working for the people of Sylhet and staying connected with my community.",
+    mapTitle: "Map showing New York, USA",
     addressLabel: "Current Address",
     address: "Jahid A khan 8684 188 st Hollis NY 11423",
     addressNote: "Exact address shared upon request.",

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Quote, VideoIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -12,27 +13,37 @@ import { cn } from "@/lib/utils";
 interface PageHeroProps {
   content: HeroContent;
   background?: MediaKey;
+  banner?: string;
   portrait: MediaKey;
   quotePosition?: "left" | "right";
   uppercaseTitle?: boolean;
   overlap?: boolean;
+  variant?: "home" | "about" | "vision" | "contact";
 }
 
 export function PageHero({
   content,
   background,
+  banner,
   portrait,
   quotePosition = "right",
   uppercaseTitle = false,
   overlap = true,
 }: PageHeroProps) {
   const quoteLeft = quotePosition === "left";
+  // const isAbout = variant === "about";
+  // const isVision = variant === "vision";
+  const hasImage = Boolean(background || banner);
 
   return (
-    <section className="dark-band">
-      {background ? (
+    <section className={cn("dark-band relative isolate overflow-hidden", "min-h-[35rem]")}>
+      {banner ? (
         <div data-parallax="6" className="absolute inset-x-0 -top-[8%] -z-10 h-[116%]">
-          <MediaImage media={background} fill priority sizes="100vw" className="object-cover" />
+          <Image src={banner} alt="" fill priority sizes="100vw" className="object-cover object-center" />
+        </div>
+      ) : background ? (
+        <div data-parallax="6" className="absolute inset-x-0 -top-[8%] -z-10 h-[116%]">
+          <MediaImage media={background} alt="" fill priority sizes="100vw" className="object-cover" />
         </div>
       ) : (
         <>
@@ -46,7 +57,7 @@ export function PageHero({
       <div
         className={cn(
           "absolute inset-0 -z-10",
-          background && (quoteLeft
+          hasImage && (quoteLeft
             ? "bg-gradient-to-l from-navy via-navy/80 to-navy/20"
             : "bg-gradient-to-r from-navy via-navy/80 to-navy/20"),
         )}
@@ -63,14 +74,14 @@ export function PageHero({
             quoteLeft ? "lg:left-[24%] lg:right-auto" : "lg:left-[41%] lg:right-auto",
           )}
         >
-          <MediaImage
+          {/* <MediaImage
             media={portrait}
             alt={content.portraitAlt}
             fill
             priority
             sizes="(min-width: 1024px) 36vw, 70vw"
             className="object-contain [-webkit-mask-image:radial-gradient(ellipse_80%_75%_at_50%_38%,#000_52%,transparent_100%)] [mask-image:radial-gradient(ellipse_80%_75%_at_50%_38%,#000_52%,transparent_100%)]"
-          />
+          /> */}
         </div>
 
         <div

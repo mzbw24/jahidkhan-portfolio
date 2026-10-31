@@ -7,7 +7,6 @@ import { MediaImage } from "@/components/shared/media-image";
 import { useLanguage } from "@/hooks/use-language";
 import { cn } from "@/lib/utils";
 
-/** "Together for a brighter Sylhet" banner — identical on every page, text comes from common content. */
 export function CtaBanner() {
   const { common } = useLanguage();
   const { cta } = common;

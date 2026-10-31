@@ -119,6 +119,46 @@
     transform: translateZ(0);
   }
 
+  .hero-home > div:first-of-type img,
+  .hero-vision > div:first-of-type img {
+    object-position: center 38%;
+  }
+
+  .hero-about > div:first-of-type img {
+    object-position: center 46%;
+  }
+
+  .hero-contact > div:first-of-type img {
+    object-position: center 42%;
+  }
+
+  .hero-home::after,
+  .hero-vision::after,
+  .hero-about::after,
+  .hero-contact::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background: linear-gradient(90deg, hsl(var(--navy) / 0.86) 0%, hsl(var(--navy) / 0.52) 42%, transparent 78%), linear-gradient(0deg, hsl(var(--navy) / 0.68), transparent 52%);
+  }
+
+  .hero-about::after {
+    background: linear-gradient(90deg, hsl(0 0% 100% / 0.92) 0%, hsl(0 0% 100% / 0.62) 42%, transparent 76%), linear-gradient(0deg, hsl(0 0% 100% / 0.65), transparent 54%);
+  }
+
+  @media (max-width: 640px) {
+    .hero-home > div:first-of-type img,
+    .hero-vision > div:first-of-type img,
+    .hero-about > div:first-of-type img {
+      object-position: 62% 34%;
+    }
+    .hero-about::after {
+      background: linear-gradient(180deg, hsl(0 0% 100% / 0.86), hsl(0 0% 100% / 0.5) 58%, hsl(0 0% 100% / 0.82));
+    }
+  }
+
   .dark-band {
     @apply relative isolate overflow-hidden bg-navy text-navy-foreground;
   }

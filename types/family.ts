@@ -1,3 +1,5 @@
+import type { PlayerLabels } from "@/types/gallery";
+
 export type FamilyCategory = "all" | "family-life" | "celebrations" | "children" | "travel";
 
 export interface FamilyPhoto {
@@ -27,5 +29,5 @@ export interface FamilyPageContent {
   videos: { eyebrow: string; title: string; subtitle: string; viewAll: string; items: FamilyVideo[] };
   story: { eyebrow: string; title: string; text: string; cta: string; quote: string; author: string };
   values: { eyebrow: string; title: string; text: string; items: Array<{ title: string; text: string }> };
-  ui: { close: string; previous: string; next: string; play: string; pause: string; video: string; photo: string };
+  ui: { close: string; previous: string; next: string; play: string; pause: string; video: string; photo: string; player: PlayerLabels };
 }

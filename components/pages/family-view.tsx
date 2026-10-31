@@ -16,6 +16,7 @@ import {
 import { gsap } from "gsap";
 import { useLanguage } from "@/hooks/use-language";
 import { Button } from "@/components/ui/button";
+import { FamilyVideoPlayer } from "@/components/shared/family-video-player";
 import { cn } from "@/lib/utils";
 import type { FamilyCategory, FamilyPageContent } from "@/types/family";
 import type { Localized } from "@/types/common";
@@ -53,6 +54,15 @@ export function FamilyView({
     [c.photos.items, category],
   );
   const currentPhoto = photoIndex === null ? null : filteredPhotos[photoIndex];
+
+  useEffect(() => {
+    if (!video) return;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [video]);
   const movePhoto = (direction: number) => {
     if (photoIndex === null || filteredPhotos.length === 0) return;
     setPhotoIndex(
@@ -384,6 +394,41 @@ export function FamilyView({
         </div>
       </section>
 
+      <section id="values" className="container section-y">
+        <div className="grid gap-10 lg:grid-cols-[.8fr_1.2fr] lg:items-center">
+          <div>
+            <p className="eyebrow">{c.values.eyebrow}</p>
+            <h2 className="mt-3 font-display text-4xl font-semibold text-navy dark:text-white sm:text-5xl">
+              {c.values.title}
+            </h2>
+            <p className="mt-4 max-w-md text-muted-foreground">
+              {c.values.text}
+            </p>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-3">
+            {c.values.items.map((item, index) => {
+              const Icon = [Users, Heart, Leaf][index] ?? Heart;
+              return (
+                <div
+                  key={item.title}
+                  className="card-surface card-hover p-6 text-center"
+                >
+                  <span className="mx-auto grid h-14 w-14 place-items-center rounded-full bg-primary/10 text-primary">
+                    <Icon className="h-6 w-6" />
+                  </span>
+                  <h3 className="mt-5 font-semibold text-navy dark:text-white">
+                    {item.title}
+                  </h3>
+                  <p className="mt-2 text-sm text-muted-foreground">
+                    {item.text}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
       {currentPhoto ? (
         <div
           role="dialog"
@@ -444,7 +489,7 @@ export function FamilyView({
           role="dialog"
           aria-modal="true"
           aria-label={c.ui.video}
-          className="fixed inset-0 z-[70] flex items-center justify-center bg-black/90 p-4 backdrop-blur-sm"
+          className="fixed inset-0 z-[70] flex items-center justify-center overflow-y-auto bg-black/90 p-3 backdrop-blur-sm sm:p-5"
           onClick={() => setVideo(null)}
           onKeyDown={(event) => {
             if (event.key === "Escape") setVideo(null);
@@ -452,26 +497,18 @@ export function FamilyView({
           tabIndex={0}
         >
           <div
-            className="relative w-full max-w-5xl"
+            className="relative flex w-full max-w-5xl items-center py-14 sm:py-10"
             onClick={(event) => event.stopPropagation()}
           >
             <button
               type="button"
               aria-label={c.ui.close}
               onClick={() => setVideo(null)}
-              className="absolute -right-2 -top-14 z-10 grid h-11 w-11 place-items-center rounded-full bg-white/10 text-white hover:bg-white/20"
+              className="absolute right-0 top-1 z-10 grid h-11 w-11 place-items-center rounded-full bg-white/10 text-white transition hover:bg-white/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white sm:-right-2 sm:-top-3"
             >
               <X />
             </button>
-            <video
-              src={video.src}
-              poster={video.poster}
-              controls
-              autoPlay
-              playsInline
-              preload="metadata"
-              className="max-h-[80vh] w-full rounded-xl bg-black object-contain"
-            />
+            <FamilyVideoPlayer video={video} labels={c.ui.player} />
           </div>
         </div>
       ) : null}

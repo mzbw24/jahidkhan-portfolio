@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Quote } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -13,18 +14,20 @@ interface PageHeroProps {
   content: HeroContent;
   /** Optional photo behind the hero. Without it a navy gradient is used (no decorative stock art). */
   background?: MediaKey;
+  banner?: string;
   portrait: MediaKey;
   /** Which side the pull-quote sits on (copy goes to the other side). */
   quotePosition?: "left" | "right";
   uppercaseTitle?: boolean;
   /** Reserve space for a floating strip (trust strip / contact cards) that overlaps the hero bottom. */
   overlap?: boolean;
-  variant?: "home" | "about" | "vision";
+  variant?: "home" | "about" | "vision" | "contact";
 }
 
 export function PageHero({
   content,
   background,
+  banner,
   portrait,
   quotePosition = "right",
   uppercaseTitle = false,
@@ -34,12 +37,17 @@ export function PageHero({
   const quoteLeft = quotePosition === "left";
   const isAbout = variant === "about";
   const isVision = variant === "vision";
+  const hasImage = Boolean(background || banner);
 
   return (
-    <section className={cn("dark-band relative isolate overflow-hidden", isAbout && "bg-sky-50 text-navy", isVision && "min-h-[35rem]")}>
-      {background ? (
+    <section className={cn("dark-band relative isolate overflow-hidden", `hero-${variant}`, isAbout && "bg-sky-50 text-navy", isVision && "min-h-[35rem]")}>
+      {banner ? (
         <div data-parallax="6" className="absolute inset-x-0 -top-[8%] -z-10 h-[116%]">
-          <MediaImage media={background} fill priority sizes="100vw" className="object-cover" />
+          <Image src={banner} alt="" fill priority sizes="100vw" className="object-cover object-center" />
+        </div>
+      ) : background ? (
+        <div data-parallax="6" className="absolute inset-x-0 -top-[8%] -z-10 h-[116%]">
+          <MediaImage media={background} alt="" fill priority sizes="100vw" className="object-cover" />
         </div>
       ) : (
         <>
@@ -53,7 +61,7 @@ export function PageHero({
       <div
         className={cn(
           "absolute inset-0 -z-10",
-          background && (quoteLeft
+          hasImage && (quoteLeft
             ? "bg-gradient-to-l from-navy via-navy/80 to-navy/20"
             : "bg-gradient-to-r from-navy via-navy/80 to-navy/20"),
         )}

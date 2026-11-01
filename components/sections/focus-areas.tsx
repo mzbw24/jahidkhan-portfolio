@@ -2,15 +2,21 @@ import { ArrowRight } from "lucide-react";
 import { IconBadge, toneAt } from "@/components/shared/icon-badge";
 import { MediaImage } from "@/components/shared/media-image";
 import type { HomeContent } from "@/types/content";
+import Link from "next/link";
 
 export function FocusAreas({ content }: { content: HomeContent["focus"] }) {
   return (
     <section id="focus-areas" className="section-y bg-muted/50">
       <div className="container">
         <div data-reveal>
-          <h2 className="font-display text-2xl font-bold sm:text-3xl">{content.title}</h2>
+          <h2 className="font-display text-2xl font-bold sm:text-3xl">
+            {content.title}
+          </h2>
           <p className="mt-2 flex items-center gap-3 text-sm text-muted-foreground">
-            <span aria-hidden="true" className="h-0.5 w-8 shrink-0 bg-primary" />
+            <span
+              aria-hidden="true"
+              className="h-0.5 w-8 shrink-0 bg-primary"
+            />
             {content.text}
           </p>
         </div>
@@ -22,7 +28,6 @@ export function FocusAreas({ content }: { content: HomeContent["focus"] }) {
           {content.areas.map((area, index) => (
             <li key={area.title}>
               <article className="card-surface card-hover group flex h-full flex-col overflow-hidden">
-                {/* The source posters are portrait (about 4:5), so the frame matches them and nothing is cropped. */}
                 <div className="relative aspect-[4/5] w-full overflow-hidden bg-muted">
                   <MediaImage
                     media={area.image}
@@ -46,12 +51,19 @@ export function FocusAreas({ content }: { content: HomeContent["focus"] }) {
                 </div>
                 <div className="flex flex-1 items-start justify-between gap-3 p-4">
                   <div>
-                    <h3 className="font-display text-base font-bold leading-snug">{area.title}</h3>
-                    <p className="mt-1.5 text-xs leading-relaxed text-muted-foreground">{area.text}</p>
+                    <h3 className="font-display text-base font-bold leading-snug">
+                      {area.title}
+                    </h3>
+                    <p className="mt-1.5 text-xs leading-relaxed text-muted-foreground">
+                      {area.text}
+                    </p>
                   </div>
-                  <span className="mt-0.5 inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
-                    <ArrowRight className="h-4 w-4" aria-hidden="true" />
-                  </span>
+                  <Link href="/vision-plan">
+                    {" "}
+                    <span className="mt-0.5 inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
+                      <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                    </span>
+                  </Link>
                 </div>
               </article>
             </li>

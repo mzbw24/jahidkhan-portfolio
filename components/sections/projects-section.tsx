@@ -3,7 +3,11 @@ import { PlaceholderBadge } from "@/components/shared/placeholder-badge";
 import { SectionHeading } from "@/components/shared/section-heading";
 import type { HomeContent } from "@/types/content";
 
-export function ProjectsSection({ content }: { content: HomeContent["projects"] }) {
+export function ProjectsSection({
+  content,
+}: {
+  content: HomeContent["projects"];
+}) {
   return (
     <section id="projects" className="section-y">
       <div className="container">
@@ -15,20 +19,26 @@ export function ProjectsSection({ content }: { content: HomeContent["projects"] 
           {content.items.map((project) => (
             <li key={project.title}>
               <article className="card-surface card-hover h-full overflow-hidden">
-                <div className="relative aspect-[16/10] overflow-hidden">
+                <div className="relative aspect-[4/5] w-full overflow-hidden bg-muted">
                   <MediaImage
                     media={project.image}
+                    alt={project.title}
                     fill
-                    sizes="(min-width: 768px) 33vw, 100vw"
-                    className="object-contain"
+                    sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 90vw"
+                    className="object-cover object-top transition-transform duration-500 ease-out group-hover:scale-[1.02]"
+                    style={{ objectPosition: "50% 0%" }}
                   />
                   <span className="absolute left-3 top-3 rounded bg-navy/85 px-2 py-0.5 text-[11px] font-semibold text-white">
                     {project.tag}
                   </span>
                 </div>
                 <div className="p-5">
-                  <h3 className="font-display text-lg font-bold">{project.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{project.text}</p>
+                  <h3 className="font-display text-lg font-bold">
+                    {project.title}
+                  </h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                    {project.text}
+                  </p>
                 </div>
               </article>
             </li>

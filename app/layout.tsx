@@ -1,5 +1,10 @@
 import type { Metadata, Viewport } from "next";
-import { Dancing_Script, Inter, Noto_Sans_Bengali, Playfair_Display } from "next/font/google";
+import {
+  Dancing_Script,
+  Inter,
+  Noto_Sans_Bengali,
+  Playfair_Display,
+} from "next/font/google";
 import type { ReactNode } from "react";
 import "./globals.css";
 import { Footer } from "@/components/layout/footer";
@@ -9,18 +14,59 @@ import { AppProviders } from "@/components/providers/app-providers";
 import { siteConfig } from "@/lib/config/site";
 import { contentService } from "@/lib/services/content-service";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-sans", display: "swap" });
-const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-display", display: "swap" });
-const script = Dancing_Script({ subsets: ["latin"], variable: "--font-script", display: "swap" });
-// Not preloaded: English visitors never download Bengali glyphs; the browser fetches them on demand.
-const bengali = Noto_Sans_Bengali({ subsets: ["bengali"], variable: "--font-bengali", display: "swap", preload: false });
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-sans",
+  display: "swap",
+});
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-display",
+  display: "swap",
+});
+const script = Dancing_Script({
+  subsets: ["latin"],
+  variable: "--font-script",
+  display: "swap",
+});
+const bengali = Noto_Sans_Bengali({
+  subsets: ["bengali"],
+  variable: "--font-bengali",
+  display: "swap",
+  preload: false,
+});
+
+const ogImage = {
+  url: "/images/og-cover.png",
+  width: 1200,
+  height: 630,
+  alt: "Jahid Khan — A Stronger Sylhet, Together",
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
-  title: { default: "Jahid Khan — A Stronger Sylhet, Together", template: "%s | Jahid Khan" },
+  title: {
+    default: "Jahid Khan — A Stronger Sylhet, Together",
+    template: "%s | Jahid Khan",
+  },
   description: siteConfig.description,
   applicationName: siteConfig.name,
-  openGraph: { type: "website", siteName: siteConfig.name, locale: "en_US", alternateLocale: ["bn_BD"] },
+  openGraph: {
+    type: "website",
+    siteName: siteConfig.name,
+    locale: "en_US",
+    alternateLocale: ["bn_BD"],
+    url: "/",
+    title: "Jahid Khan — A Stronger Sylhet, Together",
+    description: siteConfig.description,
+    images: [ogImage],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Jahid Khan — A Stronger Sylhet, Together",
+    description: siteConfig.description,
+    images: [ogImage.url],
+  },
 };
 
 export const viewport: Viewport = {
@@ -32,7 +78,11 @@ export const viewport: Viewport = {
   ],
 };
 
-export default async function RootLayout({ children }: { children: ReactNode }) {
+export default async function RootLayout({
+  children,
+}: {
+  children: ReactNode;
+}) {
   const common = await contentService.getCommonContent();
 
   return (

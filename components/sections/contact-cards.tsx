@@ -7,11 +7,10 @@ const TONES: Record<ContactCardKey, Tone> = {
   email: "red",
   phone: "blue",
   whatsapp: "green",
-  location: "orange",
   meeting: "purple",
 };
 
-/** Values for non-localized fields come from the central config (all PLACEHOLDERS until verified). */
+/** Values for non-localized fields come from the central config (siteConfig.contact). */
 function resolve(card: ContactCard): { value: string; href?: string } {
   if (card.value) return { value: card.value };
   switch (card.key) {
@@ -22,7 +21,7 @@ function resolve(card: ContactCard): { value: string; href?: string } {
     case "whatsapp": {
       if (isWhatsAppConfigured()) {
         const digits = normalizeNumber(siteConfig.whatsappNumber);
-        return { value: `+${digits}`, href: `https://wa.me/${digits}` };
+        return { value: siteConfig.contact.phoneDisplay, href: `https://wa.me/${digits}` };
       }
       return { value: siteConfig.contact.phoneDisplay };
     }
@@ -34,7 +33,7 @@ function resolve(card: ContactCard): { value: string; href?: string } {
 export function ContactCards({ cards }: { cards: ContactCard[] }) {
   return (
     <div className="container relative z-10 -mt-14">
-      <ul data-stagger className="card-surface grid gap-4 p-4 sm:grid-cols-2 lg:grid-cols-5 lg:p-5">
+      <ul data-stagger className="card-surface grid gap-4 p-4 sm:grid-cols-2 lg:grid-cols-4 lg:p-5">
         {cards.map((card) => {
           const { value, href } = resolve(card);
           return (

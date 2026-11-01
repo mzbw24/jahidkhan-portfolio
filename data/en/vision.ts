@@ -35,7 +35,7 @@ export const visionEn: VisionContent = {
     },
     facts: [
       { icon: "pin", title: "From Sylhet", text: "Rooted in Sylhet, connected globally" },
-      { icon: "flag", title: "Currently in New York, USA", text: "Building global networks for Sylhet" },
+      { icon: "flag", title: "Thinking Globally", text: "Building global networks for Sylhet" },
       { icon: "heart", title: "Always for the People", text: "Working beyond politics" },
     ],
     portraitAlt: "Campaign poster featuring Jahid Khan",
@@ -71,14 +71,14 @@ export const visionEn: VisionContent = {
   global: {
     title: "A Global Perspective for a Stronger",
     accent: "Sylhet",
-    text: "From California to Sylhet — connecting opportunities, investments and knowledge to build a brighter future.",
+    text: "From across the world to Sylhet — connecting opportunities, investments and knowledge to build a brighter future.",
     items: [
       { icon: "network", title: "Global Network", text: "USA, Canada & Beyond" },
       { icon: "trend", title: "Investment Opportunities", text: "Connecting businesses" },
       { icon: "book", title: "Knowledge Exchange", text: "Best practices for Sylhet" },
       { icon: "users", title: "Community Support", text: "Stronger diaspora network" },
     ],
-    californiaLabel: "New York, USA",
+    globalLabel: "Global Network",
     sylhetLabel: "Sylhet, Bangladesh",
   },
 };

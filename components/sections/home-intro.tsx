@@ -55,8 +55,8 @@ export function HomeIntro({ content }: { content: HomeContent["intro"] }) {
           </figure>
           <div className="card-surface flex items-center gap-3 overflow-hidden">
             <div className="min-w-0 flex-1 p-4">
-              <p className="text-[13px] font-semibold leading-snug">{content.californiaTitle}</p>
-              <p className="mt-1 text-xs text-muted-foreground">{content.californiaText}</p>
+              <p className="text-[13px] font-semibold leading-snug">{content.globalTitle}</p>
+              <p className="mt-1 text-xs text-muted-foreground">{content.globalText}</p>
             </div>
           </div>
         </div>

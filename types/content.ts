@@ -62,8 +62,6 @@ export interface CommonContent {
   footer: {
     quickLinks: string;
     contactTitle: string;
-    location: string;
-    locationNote: string;
     connect: string;
     socialLabel: string;
     rights: string;
@@ -101,8 +99,8 @@ export interface HomeContent {
     bullets: string[];
     cta: Cta;
     quote: string;
-    californiaTitle: string;
-    californiaText: string;
+    globalTitle: string;
+    globalText: string;
     portraitAlt: string;
   };
   vision: BandContent;
@@ -176,12 +174,12 @@ export interface VisionContent {
     titleEnd?: string;
     text: string;
     items: IconItem[];
-    californiaLabel: string;
+    globalLabel: string;
     sylhetLabel: string;
   };
 }
 
-export type ContactCardKey = "email" | "phone" | "whatsapp" | "location" | "meeting";
+export type ContactCardKey = "email" | "phone" | "whatsapp" | "meeting";
 export type SubjectKey = "general" | "support" | "volunteer" | "business" | "media" | "other";
 
 export interface ContactCard {
@@ -236,18 +234,13 @@ export interface ContactContent {
   hero: HeroContent;
   cards: ContactCard[];
   form: FormContent;
-  location: {
+  /** Direct contact panel: email, phone and meeting preference only (no address, map or hours). */
+  direct: {
     eyebrow: string;
     title: string;
     text: string;
-    mapTitle: string;
-    addressLabel: string;
-    address: string;
-    addressNote: string;
-    directions: string;
-    hoursLabel: string;
-    hours: string;
-    hoursValue: string;
+    emailLabel: string;
+    phoneLabel: string;
     meetingLabel: string;
     meeting: string;
     meetingNote: string;

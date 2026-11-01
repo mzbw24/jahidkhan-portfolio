@@ -4,7 +4,7 @@ import { createMetadata } from "@/lib/metadata";
 export const metadata = createMetadata({
   title: "A Stronger Sylhet, Together",
   description:
-    "Jahid Khan — independent public figure from Sylhet, Bangladesh, based in California. Explore the vision, focus areas, ventures and ways to get involved.",
+    "Jahid Khan — independent public figure from Sylhet, Bangladesh. Explore the vision, focus areas, ventures and ways to get involved.",
   path: "/",
 });
 

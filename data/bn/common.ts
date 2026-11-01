@@ -25,8 +25,6 @@ export const commonBn: CommonContent = {
   footer: {
     quickLinks: "দ্রুত লিংক",
     contactTitle: "যোগাযোগের তথ্য",
-    location: "সিলেট, বাংলাদেশ",
-    locationNote: "(মূলত সিলেটের, বর্তমানে ক্যালিফোর্নিয়া, যুক্তরাষ্ট্রে)",
     connect: "যোগাযোগ করুন",
     socialLabel: "সামাজিক যোগাযোগমাধ্যম",
     rights: "© ২০২৬ জাহিদ খান। সর্বস্বত্ব সংরক্ষিত।",

@@ -15,31 +15,43 @@ export function FocusAreas({ content }: { content: HomeContent["focus"] }) {
           </p>
         </div>
 
-        <ul data-stagger className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <ul
+          data-stagger
+          className="mx-auto mt-8 grid max-w-sm gap-6 sm:max-w-none sm:grid-cols-2 lg:grid-cols-4"
+        >
           {content.areas.map((area, index) => (
             <li key={area.title}>
-              <article className="card-surface card-hover h-full overflow-hidden">
-                <div className="relative aspect-[16/10] overflow-hidden">
+              <article className="card-surface card-hover group flex h-full flex-col overflow-hidden">
+                {/* The source posters are portrait (about 4:5), so the frame matches them and nothing is cropped. */}
+                <div className="relative aspect-[4/5] w-full overflow-hidden bg-muted">
                   <MediaImage
                     media={area.image}
+                    alt={area.title}
                     fill
-                    sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
-                    className="object-cover"
+                    sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 90vw"
+                    className="object-cover object-top transition-transform duration-500 ease-out group-hover:scale-[1.02]"
+                    style={{ objectPosition: "50% 0%" }}
+                  />
+                  <div
+                    aria-hidden="true"
+                    className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-black/25 to-transparent"
                   />
                   <IconBadge
                     icon={area.icon}
                     tone={toneAt(index)}
                     solidFill
                     square
-                    className="absolute bottom-3 left-3 shadow-md"
+                    className="absolute bottom-3 left-3 shadow-lg ring-2 ring-white/90"
                   />
                 </div>
-                <div className="flex items-start justify-between gap-3 p-4">
+                <div className="flex flex-1 items-start justify-between gap-3 p-4">
                   <div>
                     <h3 className="font-display text-base font-bold leading-snug">{area.title}</h3>
                     <p className="mt-1.5 text-xs leading-relaxed text-muted-foreground">{area.text}</p>
                   </div>
-                  <ArrowRight className="mt-1 h-4 w-4 shrink-0 text-primary" aria-hidden="true" />
+                  <span className="mt-0.5 inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
+                    <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                  </span>
                 </div>
               </article>
             </li>

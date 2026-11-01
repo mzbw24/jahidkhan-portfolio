@@ -20,7 +20,7 @@ export function ContactView({ content }: { content: Localized<ContactContent> })
     <div ref={scope}>
       <PageHero content={c.hero} banner="/images/banners/contact.png" portrait="portrait" quotePosition="right" variant="contact" />
       <ContactCards cards={c.cards} />
-      <ContactMain form={c.form} location={c.location} />
+      <ContactMain form={c.form} direct={c.direct} />
       <ConnectBand content={c.connect} />
       <FaqJoin faq={c.faq} join={c.join} />
     </div>

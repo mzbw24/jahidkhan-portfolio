@@ -2,6 +2,37 @@ import type { ContactFormErrors, ContactFormValues } from "@/types/site";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
+/** Hard limits for every contact field. Also applied as `maxLength` on the inputs and when building the WhatsApp message. */
+export const FIELD_LIMITS = {
+  name: 80,
+  email: 120,
+  phone: 20,
+  message: 1000,
+} as const;
+
+/** Drops control characters (they have no place in a chat message); optionally keeps line feeds. */
+function stripControlChars(value: string, keepLineFeeds: boolean): string {
+  let out = "";
+  for (const char of value) {
+    const code = char.codePointAt(0) ?? 0;
+    const isControl = code < 32 || code === 127;
+    if (!isControl || (keepLineFeeds && code === 10)) out += char;
+  }
+  return out;
+}
+
+/** Single-line fields: collapse any line breaks/tabs so a value can never fake an extra labelled line. */
+export function sanitizeLine(value: string, max: number): string {
+  const flat = value.replace(/[\r\n\t]+/g, " ");
+  return stripControlChars(flat, false).replace(/\s{2,}/g, " ").trim().slice(0, max);
+}
+
+/** Multi-line message: keep line breaks, drop other control characters, cap the length. */
+export function sanitizeMultiline(value: string, max: number): string {
+  const normalised = value.replace(/\r\n?/g, "\n").replace(/\t/g, " ");
+  return stripControlChars(normalised, true).trim().slice(0, max);
+}
+
 export function isValidEmail(value: string): boolean {
   return EMAIL_RE.test(value.trim());
 }

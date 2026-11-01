@@ -4,7 +4,7 @@ import { createMetadata } from "@/lib/metadata";
 export const metadata = createMetadata({
   title: "Contact",
   description:
-    "Get in touch with Jahid Khan: send a message via WhatsApp, find the location and meeting options, and read common questions.",
+    "Get in touch with Jahid Khan: send a message via WhatsApp, reach out by email or phone, see meeting options and read common questions.",
   path: "/contact",
 });
 

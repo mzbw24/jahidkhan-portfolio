@@ -1,4 +1,4 @@
-import { MapPin } from "lucide-react";
+import { Globe, MapPin } from "lucide-react";
 import { HeadingText } from "@/components/shared/heading-text";
 import { IconBadge, toneAt } from "@/components/shared/icon-badge";
 import type { VisionContent } from "@/types/content";
@@ -19,8 +19,8 @@ export function GlobalBand({ content }: { content: VisionContent["global"] }) {
           </div>
           <div data-reveal className="flex items-center gap-3 text-xs font-semibold" aria-hidden="false">
             <span className="inline-flex items-center gap-1.5 rounded-full bg-white/10 px-3 py-1.5 backdrop-blur">
-              <MapPin className="h-3.5 w-3.5 text-red-400" aria-hidden="true" />
-              {content.californiaLabel}
+              <Globe className="h-3.5 w-3.5 text-red-400" aria-hidden="true" />
+              {content.globalLabel}
             </span>
             <span aria-hidden="true" className="h-px w-8 border-t border-dashed border-white/50" />
             <span className="inline-flex items-center gap-1.5 rounded-full bg-white/10 px-3 py-1.5 backdrop-blur">

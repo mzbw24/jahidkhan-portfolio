@@ -1,4 +1,5 @@
 import { siteConfig } from "@/lib/config/site";
+import { FIELD_LIMITS, sanitizeLine, sanitizeMultiline } from "@/lib/validation";
 import type { ContactFormValues } from "@/types/site";
 
 interface MessageLabels {
@@ -26,15 +27,16 @@ export function buildWhatsAppMessage(
   labels: MessageLabels,
   heading: string,
 ): string {
-  const phone = values.phone.trim() ? `${values.countryCode} ${values.phone.trim()}` : "-";
+  const rawPhone = sanitizeLine(values.phone, FIELD_LIMITS.phone);
+  const phone = rawPhone ? `${sanitizeLine(values.countryCode, 6)} ${rawPhone}` : "-";
   return [
     `*${heading}*`,
     "",
-    `*${labels.name}:* ${values.name.trim()}`,
-    `*${labels.email}:* ${values.email.trim()}`,
+    `*${labels.name}:* ${sanitizeLine(values.name, FIELD_LIMITS.name)}`,
+    `*${labels.email}:* ${sanitizeLine(values.email, FIELD_LIMITS.email)}`,
     `*${labels.phone}:* ${phone}`,
-    `*${labels.subject}:* ${subjectLabel}`,
-    `*${labels.message}:* ${values.message.trim()}`,
+    `*${labels.subject}:* ${sanitizeLine(subjectLabel, 60)}`,
+    `*${labels.message}:* ${sanitizeMultiline(values.message, FIELD_LIMITS.message)}`,
   ].join("\n");
 }
 

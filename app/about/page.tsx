@@ -1,5 +1,7 @@
 import { AboutPage } from "@/components/pages/about-page";
+import { JsonLd } from "@/components/seo/json-ld";
 import { createMetadata } from "@/lib/metadata";
+import { profilePageSchema } from "@/lib/structured-data";
 
 export const metadata = createMetadata({
   title: "About",
@@ -9,5 +11,10 @@ export const metadata = createMetadata({
 });
 
 export default function Page() {
-  return <AboutPage />;
+  return (
+    <>
+      <JsonLd data={profilePageSchema("/about")} />
+      <AboutPage />
+    </>
+  );
 }

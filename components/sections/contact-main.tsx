@@ -1,5 +1,4 @@
-import Link from "next/link";
-import { CalendarDays, Clock } from "lucide-react";
+import { CalendarDays } from "lucide-react";
 import { IconBadge } from "@/components/shared/icon-badge";
 import { ContactForm } from "./contact-form";
 import { siteConfig } from "@/lib/config/site";
@@ -7,13 +6,11 @@ import type { ContactContent } from "@/types/content";
 
 interface ContactMainProps {
   form: ContactContent["form"];
-  location: ContactContent["location"];
+  direct: ContactContent["direct"];
 }
 
-export function ContactMain({ form, location }: ContactMainProps) {
-  const mapSrc = `https://maps.google.com/maps?q=${encodeURIComponent(siteConfig.mapQuery)}&z=6&output=embed`;
-  const directions = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(siteConfig.mapQuery)}`;
-
+/** Form on the left; direct email/phone on the right. No address, map or third-party embed is published. */
+export function ContactMain({ form, direct }: ContactMainProps) {
   return (
     <section id="contact-form" className="section-y">
       <div className="container grid gap-10 lg:grid-cols-2 lg:gap-12">
@@ -25,56 +22,40 @@ export function ContactMain({ form, location }: ContactMainProps) {
         </div>
 
         <div data-reveal>
-          <p className="eyebrow mb-2">{location.eyebrow}</p>
-          <h2 className="font-display text-3xl font-bold">{location.title}</h2>
-          <p className="mt-3 text-[15px] leading-relaxed text-muted-foreground">{location.text}</p>
+          <p className="eyebrow mb-2">{direct.eyebrow}</p>
+          <h2 className="font-display text-3xl font-bold">{direct.title}</h2>
+          <p className="mt-3 text-[15px] leading-relaxed text-muted-foreground">{direct.text}</p>
 
-          <div className="mt-6 aspect-[16/9] overflow-hidden rounded-xl border bg-muted">
-            <iframe
-              title={location.mapTitle}
-              src={mapSrc}
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              className="h-full w-full border-0"
-              allowFullScreen
-            />
-          </div>
+          <ul className="mt-6 space-y-4">
+            <li className="card-surface flex items-center gap-3 p-4">
+              <IconBadge icon="mail" tone="red" size="lg" />
+              <div className="min-w-0">
+                <p className="text-xs font-semibold">{direct.emailLabel}</p>
+                <a
+                  href={`mailto:${siteConfig.contact.email}`}
+                  className="block break-all text-sm hover:text-primary"
+                >
+                  {siteConfig.contact.email}
+                </a>
+              </div>
+            </li>
+            <li className="card-surface flex items-center gap-3 p-4">
+              <IconBadge icon="phone" tone="blue" size="lg" />
+              <div className="min-w-0">
+                <p className="text-xs font-semibold">{direct.phoneLabel}</p>
+                <a href={`tel:${siteConfig.contact.phoneHref}`} className="block text-sm hover:text-primary">
+                  {siteConfig.contact.phoneDisplay}
+                </a>
+              </div>
+            </li>
+          </ul>
 
-          <div className="card-surface mt-4 flex flex-wrap items-center justify-between gap-3 p-4">
-            <div className="flex items-center gap-3">
-              <IconBadge icon="building" tone="blue" size="lg" />
-              <div>
-                <p className="text-xs font-semibold">{location.addressLabel}</p>
-                <p className="text-sm">{location.address}</p>
-                <p className="text-xs text-muted-foreground">{location.addressNote}</p>
-              </div>
-            </div>
-            <Link
-              href={directions}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-xs font-semibold text-primary hover:underline"
-            >
-              {location.directions}
-            </Link>
-          </div>
-
-          <div className="mt-4 grid gap-4 sm:grid-cols-2">
-            <div className="flex items-center gap-3 rounded-xl bg-blue-500/10 p-4">
-              <Clock className="h-6 w-6 shrink-0 text-blue-600 dark:text-blue-400" aria-hidden="true" />
-              <div>
-                <p className="text-xs font-semibold">{location.hoursLabel}</p>
-                <p className="text-sm">{location.hours}</p>
-                <p className="text-xs text-muted-foreground">{location.hoursValue}</p>
-              </div>
-            </div>
-            <div className="flex items-center gap-3 rounded-xl bg-red-500/10 p-4">
-              <CalendarDays className="h-6 w-6 shrink-0 text-primary" aria-hidden="true" />
-              <div>
-                <p className="text-xs font-semibold">{location.meetingLabel}</p>
-                <p className="text-sm">{location.meeting}</p>
-                <p className="text-xs text-muted-foreground">{location.meetingNote}</p>
-              </div>
+          <div className="mt-4 flex items-center gap-3 rounded-xl bg-red-500/10 p-4">
+            <CalendarDays className="h-6 w-6 shrink-0 text-primary" aria-hidden="true" />
+            <div>
+              <p className="text-xs font-semibold">{direct.meetingLabel}</p>
+              <p className="text-sm">{direct.meeting}</p>
+              <p className="text-xs text-muted-foreground">{direct.meetingNote}</p>
             </div>
           </div>
         </div>

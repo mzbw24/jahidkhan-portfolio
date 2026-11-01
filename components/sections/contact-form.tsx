@@ -8,7 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
-import { validateContactForm } from "@/lib/validation";
+import { FIELD_LIMITS, validateContactForm } from "@/lib/validation";
 import { buildWhatsAppMessage, buildWhatsAppUrl, isWhatsAppConfigured } from "@/lib/whatsapp";
 import type { FormContent } from "@/types/content";
 import type { ContactFormErrors, ContactFormValues } from "@/types/site";
@@ -18,7 +18,7 @@ const COUNTRY_CODES = ["+1", "+880", "+44", "+61", "+971", "+966", "+65", "+60"]
 const INITIAL_VALUES: ContactFormValues = {
   name: "",
   email: "",
-  countryCode: "+1",
+  countryCode: "+880",
   phone: "",
   subject: "",
   message: "",
@@ -65,7 +65,7 @@ export function ContactForm({ content }: { content: FormContent }) {
 
     if (!isWhatsAppConfigured()) {
       console.warn(
-        "[contact form] WhatsApp number is not configured. Set NEXT_PUBLIC_WHATSAPP_NUMBER or siteConfig.whatsappNumber in lib/config/site.ts.",
+        "[contact form] WhatsApp number is not configured. Set siteConfig.whatsappNumber in lib/config/site.ts.",
       );
       setStatus("unavailable");
       toast.error(content.toast.notConfigured);
@@ -117,6 +117,7 @@ export function ContactForm({ content }: { content: FormContent }) {
             id="cf-name"
             name="name"
             autoComplete="name"
+            maxLength={FIELD_LIMITS.name}
             required
             aria-required="true"
             className="mt-2"
@@ -137,6 +138,7 @@ export function ContactForm({ content }: { content: FormContent }) {
             name="email"
             type="email"
             autoComplete="email"
+            maxLength={FIELD_LIMITS.email}
             required
             aria-required="true"
             className="mt-2"
@@ -172,6 +174,7 @@ export function ContactForm({ content }: { content: FormContent }) {
               type="tel"
               inputMode="tel"
               autoComplete="tel-national"
+              maxLength={FIELD_LIMITS.phone}
               placeholder={content.fields.phone.placeholder}
               value={values.phone}
               onChange={update("phone")}
@@ -214,6 +217,7 @@ export function ContactForm({ content }: { content: FormContent }) {
         <Textarea
           id="cf-message"
           name="message"
+          maxLength={FIELD_LIMITS.message}
           required
           aria-required="true"
           className="mt-2"

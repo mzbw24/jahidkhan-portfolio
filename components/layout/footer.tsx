@@ -2,14 +2,14 @@
 
 import Link from "next/link";
 import { useState, type FormEvent } from "react";
-import { ArrowRight, Facebook, Instagram, Linkedin, LucideFacebook, Mail, MapPin, Phone, Twitter, Youtube, type LucideIcon } from "lucide-react";
+import { ArrowRight, Facebook, Instagram, Linkedin, LucideFacebook, Mail, Phone, Twitter, Youtube, type LucideIcon } from "lucide-react";
 import { toast } from "sonner";
 import { BrandLogo } from "@/components/shared/brand-logo";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useLanguage } from "@/hooks/use-language";
 import { navItems } from "@/lib/config/navigation";
-import { siteConfig, socialLinks } from "@/lib/config/site";
+import { publishedSocialLinks, siteConfig } from "@/lib/config/site";
 import { isValidEmail } from "@/lib/validation";
 import type { SocialLink } from "@/types/site";
 
@@ -44,15 +44,15 @@ export function Footer() {
         <div className="space-y-5">
           <BrandLogo />
           <ul aria-label={footer.socialLabel} className="flex items-center gap-2">
-            {socialLinks.map((social) => {
+            {publishedSocialLinks.map((social) => {
               const SocialIcon = socialIcons[social.key];
-              const external = social.url !== "#";
               return (
                 <li key={social.key}>
                   <a
                     href={social.url}
                     aria-label={social.label}
-                    {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                    target="_blank"
+                    rel="noopener noreferrer me"
                     className="inline-flex h-9 w-9 items-center justify-center rounded-full text-white/85 transition-colors hover:bg-white/10 hover:text-white"
                   >
                     <SocialIcon className="h-[18px] w-[18px]" aria-hidden="true" />
@@ -79,13 +79,6 @@ export function Footer() {
         <div>
           <h2 className="mb-4 text-sm font-semibold">{footer.contactTitle}</h2>
           <ul className="space-y-3 text-sm text-white/75">
-            <li className="flex gap-3">
-              <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-white" aria-hidden="true" />
-              <span>
-                {footer.location}
-                <span className="block text-xs text-white/60">{footer.locationNote}</span>
-              </span>
-            </li>
             <li className="flex gap-3">
               <Mail className="mt-0.5 h-4 w-4 shrink-0 text-white" aria-hidden="true" />
               <a href={`mailto:${siteConfig.contact.email}`} className="break-all hover:text-white">

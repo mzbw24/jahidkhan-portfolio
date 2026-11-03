@@ -267,7 +267,7 @@ export function FamilyView({
         </div>
       </section>
 
-      <section id="videos" className="bg-muted/45 py-16">
+      {/* <section id="videos" className="bg-muted/45 py-16">
         <div className="container">
           <div className="mb-8 flex flex-col justify-between gap-4 md:flex-row md:items-end">
             <div>
@@ -302,7 +302,7 @@ export function FamilyView({
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       <section className="dark-band py-20">
         <div className="container grid gap-10 lg:grid-cols-[.8fr_1.2fr] lg:items-center">
@@ -331,7 +331,7 @@ export function FamilyView({
               />
             </div>
             <div className="flex flex-col justify-between gap-4">
-              <div className="relative min-h-[140px] overflow-hidden rounded-3xl">
+              <div className="relative min-h-[250px] overflow-hidden rounded-3xl">
                 <Image
                   src={c.photos.items[3]!.src}
                   alt={c.photos.items[3]!.alt}
@@ -387,7 +387,7 @@ export function FamilyView({
         </div>
       </section>
 
-      <section id="values" className="container section-y">
+      {/* <section id="values" className="container section-y">
         <div className="grid gap-10 lg:grid-cols-[.8fr_1.2fr] lg:items-center">
           <div>
             <p className="eyebrow">{c.values.eyebrow}</p>
@@ -420,7 +420,7 @@ export function FamilyView({
             })}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {currentPhoto ? (
         <div

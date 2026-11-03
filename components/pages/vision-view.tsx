@@ -14,13 +14,11 @@ import { useGsapAnimations } from "@/hooks/use-gsap-animations";
 import { useLocalized } from "@/hooks/use-language";
 import type { Localized } from "@/types/common";
 import type { VisionContent } from "@/types/content";
-import type { GalleryItem, MediaPageContent } from "@/types/gallery";
+import type { GalleryItem } from "@/types/gallery";
 
-export function VisionView({ content, featured, media }: { content: Localized<VisionContent>; featured: Localized<GalleryItem[]>; media: Localized<MediaPageContent> }) {
+export function VisionView({ content, featured }: { content: Localized<VisionContent>; featured: Localized<GalleryItem[]> }) {
   const c = useLocalized(content);
   const featuredItems = useLocalized(featured);
-  const mediaContent = useLocalized(media);
-  const visionVideo = mediaContent.items.find((item) => item.id === "video-22");
   const scope = useRef<HTMLDivElement>(null);
   useGsapAnimations(scope);
 
@@ -34,7 +32,7 @@ export function VisionView({ content, featured, media }: { content: Localized<Vi
         uppercaseTitle
         overlap={false}
       />
-      <VisionIntro content={c.intro} video={visionVideo} labels={mediaContent.labels} />
+      <VisionIntro content={c.intro} />
       <VisionVideos content={c.videos} />
       <TodayTomorrow content={c.todayTomorrow} />
       <FeaturedMedia items={featuredItems} />

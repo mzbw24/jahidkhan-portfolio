@@ -1,16 +1,14 @@
 import { Quote } from "lucide-react";
-import { VideoPlayer } from "@/components/shared/video-player";
 import { IconBadge, toneAt } from "@/components/shared/icon-badge";
 import { Icon } from "@/components/shared/icon";
 import { MediaImage } from "@/components/shared/media-image";
 import { Signature } from "@/components/shared/signature";
 import type { VisionContent } from "@/types/content";
-import type { GalleryItem, MediaLabels } from "@/types/gallery";
 
-export function VisionIntro({ content, video, labels }: { content: VisionContent["intro"]; video?: GalleryItem; labels: MediaLabels }) {
+export function VisionIntro({ content }: { content: VisionContent["intro"] }) {
   return (
     <section className="section-y">
-      <div className="container grid gap-8 lg:grid-cols-12 lg:gap-6">
+      <div className="container grid items-start gap-8 lg:grid-cols-12 lg:gap-8">
         <div data-reveal className="lg:col-span-5">
           <p className="eyebrow mb-3">{content.eyebrow}</p>
           <h2 className="font-display text-3xl font-bold leading-tight lg:text-[2.1rem]">{content.title}</h2>
@@ -35,9 +33,8 @@ export function VisionIntro({ content, video, labels }: { content: VisionContent
           />
         </div>
 
-        <div data-reveal className="space-y-3 lg:col-span-3">
-          {video?.kind === "video" ? <VideoPlayer video={video} title={video.title} labels={labels.player} autoPlay={false} className="w-full" /> : null}
-          <figure className="rounded-xl bg-tint p-5">
+        <div data-reveal className="space-y-4 lg:col-span-3">
+          <figure className="rounded-2xl bg-tint p-5 shadow-sm ring-1 ring-border/60">
             <Quote className="mb-2 h-6 w-6 fill-primary text-primary" aria-hidden="true" />
             <blockquote className="font-display text-lg font-medium leading-snug">{content.quote.text}</blockquote>
             <figcaption className="mt-3 flex items-center gap-3">

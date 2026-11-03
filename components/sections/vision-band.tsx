@@ -24,13 +24,13 @@ export function VisionBand({ content, background, layout }: VisionBandProps) {
           <MediaImage media={background} fill sizes="100vw" className="object-cover" />
         </div>
       ) : null}
-      <div
+      {/* <div
         aria-hidden="true"
         className={background ? "absolute inset-0 -z-10 bg-gradient-to-r from-navy/95 via-navy/80 to-navy/55" : "absolute inset-0 -z-10 bg-gradient-to-br from-navy via-navy-soft to-navy"}
       />
       {!background ? (
         <div aria-hidden="true" className="absolute inset-0 -z-10 bg-[radial-gradient(50%_100%_at_90%_0%,hsl(var(--primary)/0.22),transparent)]" />
-      ) : null}
+      ) : null} */}
 
       <div className={cn("container py-12 lg:py-14", split && "grid items-center gap-8 lg:grid-cols-2")}>
         <div data-reveal className={cn(!split && "flex flex-wrap items-end justify-between gap-6")}>

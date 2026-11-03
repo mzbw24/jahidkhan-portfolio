@@ -7,7 +7,7 @@ import { media } from "@/data/media";
 import type { VisionContent } from "@/types/content";
 
 export function TodayTomorrow({ content }: { content: VisionContent["todayTomorrow"] }) {
-  const [reveal, setReveal] = useState(0);
+  const [reveal, setReveal] = useState(50);
   const stageRef = useRef<HTMLDivElement>(null);
   const dragging = useRef(false);
   const updateFromPointer = useCallback((clientX: number) => {
@@ -15,7 +15,7 @@ export function TodayTomorrow({ content }: { content: VisionContent["todayTomorr
     if (!rect) return;
     setReveal(Math.min(100, Math.max(0, ((clientX - rect.left) / rect.width) * 100)));
   }, []);
-  const tomorrow = reveal > 48;
+  const tomorrow = reveal >= 50;
 
   return (
     <section className="section-y bg-muted/35" aria-labelledby="today-tomorrow-title">
@@ -44,7 +44,7 @@ export function TodayTomorrow({ content }: { content: VisionContent["todayTomorr
           aria-label={content.hint}
         >
           <ComparisonPanel content={content.today} />
-          <div className="absolute inset-0 overflow-hidden transition-[clip-path] duration-300 ease-out" style={{ clipPath: `inset(0 0 0 ${reveal}%)` }} aria-hidden={!tomorrow}>
+          <div className="absolute inset-0 overflow-hidden transition-[clip-path] duration-300 ease-out" style={{ clipPath: `inset(0 0 0 ${100 - reveal}%)` }} aria-hidden={!tomorrow}>
             <ComparisonPanel content={content.tomorrow} />
           </div>
           <div className="absolute inset-y-0 z-20 w-px bg-white/75 shadow-[0_0_24px_rgba(255,255,255,.55)] transition-[left] duration-300 ease-out" style={{ left: `${reveal}%` }}>

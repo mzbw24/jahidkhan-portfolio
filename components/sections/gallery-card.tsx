@@ -1,7 +1,8 @@
 import Image from "next/image";
 import { ImageIcon, Play } from "lucide-react";
+import { VideoPreview } from "@/components/shared/video-preview";
 import { fmt } from "@/lib/media";
-import type { GalleryItem, MediaLabels } from "@/types/gallery";
+import type { GalleryItem, GalleryVideoAsset, MediaLabels } from "@/types/gallery";
 
 interface GalleryCardProps {
   item: GalleryItem;
@@ -26,16 +27,20 @@ export function GalleryCard({ item, position, labels, onOpen }: GalleryCardProps
         className="group relative block w-full overflow-hidden rounded-xl border bg-muted text-left shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-lift motion-reduce:transform-none"
       >
         <div className="relative w-full" style={{ aspectRatio: `${thumb.width} / ${thumb.height}` }}>
-          <Image
-            src={thumb.thumb}
-            alt=""
-            fill
-            sizes="(min-width: 1280px) 20vw, (min-width: 1024px) 25vw, (min-width: 640px) 33vw, 50vw"
-            placeholder="blur"
-            blurDataURL={thumb.blur}
-            unoptimized
-            className="object-cover transition-transform duration-500 group-hover:scale-[1.04] motion-reduce:transform-none"
-          />
+          {isVideo ? (
+            <VideoPreview src={(item as GalleryVideoAsset).sources[0]?.src ?? ""} title={item.title} aspectRatio={`${thumb.width} / ${thumb.height}`} />
+          ) : (
+            <Image
+              src={thumb.thumb}
+              alt=""
+              fill
+              sizes="(min-width: 1280px) 20vw, (min-width: 1024px) 25vw, (min-width: 640px) 33vw, 50vw"
+              placeholder="blur"
+              blurDataURL={thumb.blur}
+              unoptimized
+              className="object-cover transition-transform duration-500 group-hover:scale-[1.04] motion-reduce:transform-none"
+            />
+          )}
         </div>
 
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent opacity-80 transition-opacity duration-300 group-hover:opacity-100" />

@@ -27,7 +27,6 @@ export function PageHero({
   content,
   background,
   banner,
-  portrait,
   quotePosition = "right",
   uppercaseTitle = false,
   overlap = true,

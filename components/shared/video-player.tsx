@@ -31,6 +31,8 @@ export function VideoPlayer({ video, title, labels, autoPlay = true, className }
   const [fullscreen, setFullscreen] = useState(false);
   const [failed, setFailed] = useState(false);
   const [attempt, setAttempt] = useState(0);
+  const [aspectRatio, setAspectRatio] = useState(`${video.width} / ${video.height}`);
+  const [pipSupported, setPipSupported] = useState(false);
 
   const fullscreenSupported =
     typeof document !== "undefined" &&
@@ -144,11 +146,14 @@ export function VideoPlayer({ video, title, labels, autoPlay = true, className }
         preload="metadata"
         playsInline
         aria-label={title}
-        className="h-full max-h-[70vh] w-full bg-black object-cover"
-        style={{ aspectRatio: `${video.width} / ${video.height}` }}
+        className="h-full max-h-[78vh] w-full bg-black object-contain"
+        style={{ aspectRatio }}
         onClick={togglePlay}
         onLoadedMetadata={(event) => {
-          setDuration(event.currentTarget.duration);
+          const current = event.currentTarget;
+          setDuration(current.duration);
+          if (current.videoWidth && current.videoHeight) setAspectRatio(`${current.videoWidth} / ${current.videoHeight}`);
+          setPipSupported(Boolean((current as HTMLVideoElement & { requestPictureInPicture?: unknown }).requestPictureInPicture));
           setFailed(false);
         }}
         onDurationChange={(event) => Number.isFinite(event.currentTarget.duration) && setDuration(event.currentTarget.duration)}
@@ -238,7 +243,7 @@ export function VideoPlayer({ video, title, labels, autoPlay = true, className }
                 <option value="1.5" className="text-black">1.5×</option>
                 <option value="2" className="text-black">2×</option>
               </select>
-              {typeof document !== "undefined" && "pictureInPictureEnabled" in document && (videoRef.current as HTMLVideoElement & { requestPictureInPicture?: unknown } | null)?.requestPictureInPicture ? (
+              {pipSupported ? (
                 <button type="button" onClick={enterPictureInPicture} aria-label={labels.pictureInPicture} className="media-btn"><PictureInPicture className="h-5 w-5" aria-hidden="true" /></button>
               ) : null}
               {fullscreenSupported ? (

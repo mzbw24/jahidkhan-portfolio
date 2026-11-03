@@ -8,6 +8,8 @@ import { FeaturedMedia } from "@/components/sections/featured-media";
 import { PageHero } from "@/components/sections/page-hero";
 import { TenPointPlan } from "@/components/sections/ten-point-plan";
 import { VisionIntro } from "@/components/sections/vision-intro";
+import { VisionVideos } from "@/components/sections/vision-videos";
+import { TodayTomorrow } from "@/components/sections/today-tomorrow";
 import { useGsapAnimations } from "@/hooks/use-gsap-animations";
 import { useLocalized } from "@/hooks/use-language";
 import type { Localized } from "@/types/common";
@@ -33,6 +35,8 @@ export function VisionView({ content, featured, media }: { content: Localized<Vi
         overlap={false}
       />
       <VisionIntro content={c.intro} video={visionVideo} labels={mediaContent.labels} />
+      <VisionVideos content={c.videos} />
+      <TodayTomorrow content={c.todayTomorrow} />
       <FeaturedMedia items={featuredItems} />
       <ChallengesSection content={c.challenges} />
       <TenPointPlan content={c.plan} />

@@ -1,5 +1,6 @@
 import type { Cta, IconItem, IconName } from "./common";
 import type { MediaKey } from "./media";
+import type { PlayerLabels } from "./gallery";
 
 export interface HeadingContent {
   eyebrow?: string;
@@ -159,6 +160,15 @@ export interface VisionContent {
     quote: QuoteContent;
     facts: IconItem[];
     portraitAlt: string;
+  };
+  videos: { eyebrow: string; title: string; subtitle: string; items: { title: string; poster: MediaKey; alt: string }[]; player: PlayerLabels };
+  todayTomorrow: {
+    eyebrow: string;
+    title: string;
+    text: string;
+    today: { label: string; title: string; text: string; image: MediaKey; alt: string };
+    tomorrow: { label: string; title: string; text: string; image: MediaKey; alt: string };
+    hint: string;
   };
   challenges: {
     title: string;

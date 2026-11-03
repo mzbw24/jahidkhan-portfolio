@@ -290,15 +290,8 @@ export function FamilyView({
                 onClick={() => setVideo(item)}
                 className="group relative aspect-[4/3] overflow-hidden rounded-2xl text-left shadow-lg transition duration-500 hover:-translate-y-1 hover:shadow-xl"
               >
-                <Image
-                  src={item.poster}
-                  alt={item.title}
-                  fill
-                  loading="lazy"
-                  sizes="(min-width: 1024px) 25vw, 100vw"
-                  className="object-cover transition duration-700 group-hover:scale-105"
-                />
-                <span className="absolute inset-0 bg-black/20 transition group-hover:bg-black/35" />
+                <span className="absolute inset-0 bg-[radial-gradient(circle_at_72%_18%,hsl(var(--primary)/.5),transparent_32%),linear-gradient(135deg,hsl(var(--navy)),hsl(var(--navy-soft)))] transition duration-700 group-hover:scale-105" aria-hidden="true" />
+                <span className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-transparent" />
                 <span className="absolute left-1/2 top-1/2 grid h-14 w-14 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full border border-white/70 bg-black/35 text-white backdrop-blur transition group-hover:scale-110">
                   <Play className="ml-1 h-6 w-6 fill-current" />
                 </span>

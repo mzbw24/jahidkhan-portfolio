@@ -3,7 +3,6 @@
 import Image from "next/image";
 import { ArrowLeft, ArrowRight, GripVertical } from "lucide-react";
 import { useCallback, useRef, useState } from "react";
-import { media } from "@/data/media";
 import type { VisionContent } from "@/types/content";
 
 export function TodayTomorrow({ content }: { content: VisionContent["todayTomorrow"] }) {
@@ -28,7 +27,7 @@ export function TodayTomorrow({ content }: { content: VisionContent["todayTomorr
 
         <div
           ref={stageRef}
-          className="relative mt-10 min-h-[30rem] overflow-hidden rounded-[2rem] bg-navy shadow-2xl touch-none select-none"
+          className="relative mt-10 min-h-[25rem] overflow-hidden rounded-[2rem] bg-navy shadow-2xl touch-none select-none sm:min-h-[32rem]"
           onPointerMove={(event) => { if (dragging.current) updateFromPointer(event.clientX); }}
           onPointerUp={() => { dragging.current = false; }}
           onPointerCancel={() => { dragging.current = false; }}
@@ -51,6 +50,10 @@ export function TodayTomorrow({ content }: { content: VisionContent["todayTomorr
             <button
               type="button"
               aria-label={tomorrow ? content.today.label : content.tomorrow.label}
+              aria-valuemin={0}
+              aria-valuemax={100}
+              aria-valuenow={Math.round(reveal)}
+              role="slider"
               onPointerDown={(event) => { event.currentTarget.setPointerCapture(event.pointerId); dragging.current = true; updateFromPointer(event.clientX); }}
               className="absolute left-1/2 top-1/2 grid h-14 w-14 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full border border-white/70 bg-primary text-white shadow-xl transition hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
             >
@@ -69,12 +72,11 @@ export function TodayTomorrow({ content }: { content: VisionContent["todayTomorr
 }
 
 function ComparisonPanel({ content }: { content: VisionContent["todayTomorrow"]["today"] }) {
-  const image = media[content.image];
   return (
     <article className="absolute inset-0 flex items-end">
-      <Image src={image.src} alt={content.alt} fill sizes="(min-width: 1024px) 90vw, 100vw" className="object-contain object-center opacity-65" />
+      <Image src={content.image} alt={content.alt} fill sizes="(min-width: 1024px) 90vw, 100vw" className="object-contain object-center opacity-65" />
       <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/55 to-navy/10" />
-      <div className="relative z-10 max-w-xl p-7 text-white sm:p-10">
+      <div className="relative z-10 max-w-xl p-5 text-white sm:p-10">
         <span className="inline-flex rounded-full border border-white/25 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em]">{content.label}</span>
         <h3 className="mt-4 font-display text-3xl font-semibold sm:text-5xl">{content.title}</h3>
         <p className="mt-3 max-w-lg text-white/75 sm:text-lg">{content.text}</p>

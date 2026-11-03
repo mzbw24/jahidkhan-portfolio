@@ -166,8 +166,8 @@ export interface VisionContent {
     eyebrow: string;
     title: string;
     text: string;
-    today: { label: string; title: string; text: string; image: MediaKey; alt: string };
-    tomorrow: { label: string; title: string; text: string; image: MediaKey; alt: string };
+    today: { label: string; title: string; text: string; image: string; alt: string };
+    tomorrow: { label: string; title: string; text: string; image: string; alt: string };
     hint: string;
   };
   challenges: {

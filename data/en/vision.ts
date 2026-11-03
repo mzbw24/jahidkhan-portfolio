@@ -59,8 +59,8 @@ export const visionEn: VisionContent = {
     eyebrow: "From today to tomorrow",
     title: "See the change we are working toward",
     text: "Drag the story across the line to move from the challenges Sylhet faces today to the cleaner, safer and more connected future we can build together.",
-    today: { label: "Today", title: "Challenges we cannot ignore", text: "Congestion, waste, limited access and uneven opportunity affect daily life across our city.", image: "challengeTraffic", alt: "Busy traffic on a Sylhet street" },
-    tomorrow: { label: "Tomorrow", title: "A city designed for people", text: "Practical systems, greener spaces and stronger services create room for every family to thrive.", image: "galleryFuture", alt: "Sylhet city representing a brighter future" },
+    today: { label: "Today", title: "Challenges we cannot ignore", text: "Congestion, waste, limited access and uneven opportunity affect daily life across our city.", image: "/media/images/today.png", alt: "Current challenges facing Sylhet" },
+    tomorrow: { label: "Tomorrow", title: "A city designed for people", text: "Practical systems, greener spaces and stronger services create room for every family to thrive.", image: "/media/images/tomorrow.png", alt: "Sylhet city representing a brighter future" },
     hint: "Drag right to reveal tomorrow. Use the arrow keys to explore.",
   },
   challenges: {

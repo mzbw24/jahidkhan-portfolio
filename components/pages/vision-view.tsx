@@ -12,13 +12,15 @@ import { VisionVideos } from "@/components/sections/vision-videos";
 import { TodayTomorrow } from "@/components/sections/today-tomorrow";
 import { useGsapAnimations } from "@/hooks/use-gsap-animations";
 import { useLocalized } from "@/hooks/use-language";
+import { visionEn } from "@/data/en/vision";
+import { visionBn } from "@/data/bn/vision";
 import type { Localized } from "@/types/common";
 import type { VisionContent } from "@/types/content";
 import type { GalleryItem } from "@/types/gallery";
 
 export function VisionView({ content, featured }: { content: Localized<VisionContent>; featured: Localized<GalleryItem[]> }) {
-  const c = useLocalized(content);
-  const featuredItems = useLocalized(featured);
+  const c = useLocalized(content ?? { en: visionEn, bn: visionBn });
+  const featuredItems = useLocalized(featured ?? { en: [], bn: [] });
   const scope = useRef<HTMLDivElement>(null);
   useGsapAnimations(scope);
 

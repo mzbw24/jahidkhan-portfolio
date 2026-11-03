@@ -2,7 +2,11 @@ import Image from "next/image";
 import { ImageIcon, Play } from "lucide-react";
 import { VideoPreview } from "@/components/shared/video-preview";
 import { fmt } from "@/lib/media";
-import type { GalleryItem, GalleryVideoAsset, MediaLabels } from "@/types/gallery";
+import type {
+  GalleryItem,
+  GalleryVideoAsset,
+  MediaLabels,
+} from "@/types/gallery";
 
 interface GalleryCardProps {
   item: GalleryItem;
@@ -11,24 +15,41 @@ interface GalleryCardProps {
   onOpen: () => void;
 }
 
-export function GalleryCard({ item, position, labels, onOpen }: GalleryCardProps) {
+export function GalleryCard({
+  item,
+  position,
+  labels,
+  onOpen,
+}: GalleryCardProps) {
   const isVideo = item.kind === "video";
   const thumb = isVideo ? item.poster : item;
 
   return (
     <li
       className="mb-3 break-inside-avoid animate-fade-up sm:mb-4"
-      style={{ animationDelay: `${Math.min(position, 12) * 40}ms`, animationFillMode: "both" }}
+      style={{
+        animationDelay: `${Math.min(position, 12) * 40}ms`,
+        animationFillMode: "both",
+      }}
     >
       <button
         type="button"
         onClick={onOpen}
-        aria-label={fmt(isVideo ? labels.openVideo : labels.open, { title: item.title })}
+        aria-label={fmt(isVideo ? labels.openVideo : labels.open, {
+          title: item.title,
+        })}
         className="group relative block w-full overflow-hidden rounded-xl border bg-muted text-left shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-lift motion-reduce:transform-none"
       >
-        <div className="relative w-full" style={{ aspectRatio: `${thumb.width} / ${thumb.height}` }}>
+        <div
+          className="relative w-full"
+          style={{ aspectRatio: `${thumb.width} / ${thumb.height}` }}
+        >
           {isVideo ? (
-            <VideoPreview src={(item as GalleryVideoAsset).sources[0]?.src ?? ""} title={item.title} aspectRatio={`${thumb.width} / ${thumb.height}`} />
+            <VideoPreview
+              src={(item as GalleryVideoAsset).sources[0]?.src ?? ""}
+              title={item.title}
+              aspectRatio={`${thumb.width} / ${thumb.height}`}
+            />
           ) : (
             <Image
               src={thumb.thumb}
@@ -54,12 +75,17 @@ export function GalleryCard({ item, position, labels, onOpen }: GalleryCardProps
           ) : (
             <ImageIcon className="h-3 w-3" aria-hidden="true" />
           )}
-          <span className="sr-only">{isVideo ? labels.videoBadge : labels.imageBadge}</span>
+          <span className="sr-only">
+            {isVideo ? labels.videoBadge : labels.imageBadge}
+          </span>
         </span>
 
         {isVideo ? (
-          <span className="pointer-events-none absolute left-1/2 top-1/2 flex h-12 w-12 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-black/55 ring-1 ring-white/60 backdrop-blur transition-transform group-hover:scale-110">
-            <Play className="ml-0.5 h-5 w-5 fill-white text-white" aria-hidden="true" />
+          <span className="pointer-events-none absolute left-1/2 top-1/2 flex h-12 w-12 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-black/55 ring-1 ring-white/60 backdrop-blur transition-transform group-hover:scale-110 bg-rose-500">
+            <Play
+              className="ml-0.5 h-5 w-5 fill-white text-white"
+              aria-hidden="true"
+            />
           </span>
         ) : null}
 

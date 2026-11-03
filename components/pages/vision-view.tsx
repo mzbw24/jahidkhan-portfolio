@@ -32,9 +32,9 @@ export function VisionView({ content, featured }: { content: Localized<VisionCon
         uppercaseTitle
         overlap={false}
       />
-      <VisionIntro content={c.intro} />
       <VisionVideos content={c.videos} />
       <TodayTomorrow content={c.todayTomorrow} />
+      <VisionIntro content={c.intro} />
       <FeaturedMedia items={featuredItems} />
       <ChallengesSection content={c.challenges} />
       <TenPointPlan content={c.plan} />

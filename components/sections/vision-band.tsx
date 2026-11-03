@@ -31,7 +31,6 @@ export function VisionBand({ content, background, layout }: VisionBandProps) {
       {!background ? (
         <div aria-hidden="true" className="absolute inset-0 -z-10 bg-[radial-gradient(50%_100%_at_90%_0%,hsl(var(--primary)/0.22),transparent)]" />
       ) : null} */}
-
       <div className={cn("container py-12 lg:py-14", split && "grid items-center gap-8 lg:grid-cols-2")}>
         <div data-reveal className={cn(!split && "flex flex-wrap items-end justify-between gap-6")}>
           <div className="max-w-xl">

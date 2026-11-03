@@ -1,7 +1,6 @@
 import { cache } from "react";
 import { contentRepository } from "@/lib/repositories";
 
-/** UI-facing service. Components/pages depend on this, never on /data or a concrete repository. */
 export const contentService = {
   getCommonContent: cache(() => contentRepository.getCommon()),
   getHomeContent: cache(() => contentRepository.getHome()),
@@ -11,4 +10,5 @@ export const contentService = {
   getFamilyContent: cache(() => contentRepository.getFamily()),
   getMediaContent: cache(() => contentRepository.getMedia()),
   getFeaturedMedia: cache(() => contentRepository.getFeaturedMedia()),
+   getJcdoContent: cache(() => contentRepository.getJcdo()),
 };

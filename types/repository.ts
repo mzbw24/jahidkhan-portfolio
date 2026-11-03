@@ -8,6 +8,7 @@ import type {
   HomeContent,
   VisionContent,
 } from "./content";
+import { JcdoPageData } from "./jcdo";
 
 export interface ContentRepository {
   getCommon(): Promise<Localized<CommonContent>>;
@@ -16,7 +17,7 @@ export interface ContentRepository {
   getVision(): Promise<Localized<VisionContent>>;
   getContact(): Promise<Localized<ContactContent>>;
   getFamily(): Promise<Localized<FamilyPageContent>>;
-  /** Full gallery (all items + localized UI strings). */
   getMedia(): Promise<Localized<MediaPageContent>>;
   getFeaturedMedia(): Promise<Localized<GalleryItem[]>>;
+    getJcdo(): Promise<JcdoPageData>;
 }

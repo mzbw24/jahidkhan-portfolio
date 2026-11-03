@@ -20,6 +20,8 @@ import { contactEn } from "@/data/en/contact";
 import { contactBn } from "@/data/bn/contact";
 import { familyEn } from "@/data/en/family";
 import { familyBn } from "@/data/bn/family";
+import { buildJcdoPhotos } from "@/data/jcdo/photos";
+import { jcdoContent } from "@/data/jcdo/content";
 
 const itemText: Localized<Record<string, GalleryItemText>> = {
   en: { ...mediaItemsEn, ...mediaVideosEn },
@@ -64,5 +66,8 @@ export const localContentRepository: ContentRepository = {
       en: buildItems("en").filter((item) => item.featured),
       bn: buildItems("bn").filter((item) => item.featured),
     };
+  },
+  async getJcdo() {
+    return { content: jcdoContent, photos: buildJcdoPhotos() };
   },
 };

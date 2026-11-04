@@ -3,9 +3,9 @@ import type { NavItem } from "@/types/site";
 export const navItems: NavItem[] = [
   { key: "about", href: "/about", isRoute: true },
   { key: "vision", href: "/vision-plan", isRoute: true },
-  { key: "service", href: "/#focus-areas", isRoute: false },
+  { key: "service", href: "/organizations", isRoute: true },
   { key: "business", href: "/#business", isRoute: false },
-  { key: "projects", href: "/jcdo", isRoute: true },
+  { key: "projects", href: "/#projects", isRoute: false },
   { key: "media", href: "/media", isRoute: true },
   { key: "family", href: "/family", isRoute: true },
   { key: "contact", href: "/contact", isRoute: true },

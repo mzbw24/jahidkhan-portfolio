@@ -11,4 +11,6 @@ export const contentService = {
   getMediaContent: cache(() => contentRepository.getMedia()),
   getFeaturedMedia: cache(() => contentRepository.getFeaturedMedia()),
    getJcdoContent: cache(() => contentRepository.getJcdo()),
+     getYisContent: cache(() => contentRepository.getYis()),
+  getOrganizationsContent: cache(() => contentRepository.getOrganizations()),
 };

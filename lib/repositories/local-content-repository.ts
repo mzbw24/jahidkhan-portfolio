@@ -22,13 +22,15 @@ import { familyEn } from "@/data/en/family";
 import { familyBn } from "@/data/bn/family";
 import { buildJcdoPhotos } from "@/data/jcdo/photos";
 import { jcdoContent } from "@/data/jcdo/content";
+import { yisContent } from "@/data/yis/content";
+import { buildYisPhotos, getYisLogo } from "@/data/yis/photos";
+import { buildOrganizationsPageData } from "@/data/organizations/build";
 
 const itemText: Localized<Record<string, GalleryItemText>> = {
   en: { ...mediaItemsEn, ...mediaVideosEn },
   bn: { ...mediaItemsBn, ...mediaVideosBn },
 };
 
-/** Joins non-localized assets with their localized text. Fails loudly if any asset has no text. */
 function buildItems(lang: Lang): GalleryItem[] {
   return galleryAssets.map((asset) => {
     const text = itemText[lang][asset.id];
@@ -69,5 +71,11 @@ export const localContentRepository: ContentRepository = {
   },
   async getJcdo() {
     return { content: jcdoContent, photos: buildJcdoPhotos() };
+  },
+    async getYis() {
+    return { content: yisContent, photos: buildYisPhotos(), logo: getYisLogo() };
+  },
+  async getOrganizations() {
+    return buildOrganizationsPageData();
   },
 };

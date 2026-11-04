@@ -9,6 +9,8 @@ import type {
   VisionContent,
 } from "./content";
 import { JcdoPageData } from "./jcdo";
+import { OrganizationsPageData } from "./organizations";
+import { YisPageData } from "./yis";
 
 export interface ContentRepository {
   getCommon(): Promise<Localized<CommonContent>>;
@@ -19,5 +21,7 @@ export interface ContentRepository {
   getFamily(): Promise<Localized<FamilyPageContent>>;
   getMedia(): Promise<Localized<MediaPageContent>>;
   getFeaturedMedia(): Promise<Localized<GalleryItem[]>>;
-    getJcdo(): Promise<JcdoPageData>;
+  getJcdo(): Promise<JcdoPageData>;
+  getYis(): Promise<YisPageData>;
+  getOrganizations(): Promise<OrganizationsPageData>;
 }

@@ -41,7 +41,12 @@ export function profilePageSchema(path: string) {
   };
 }
 
-export function jcdoOrganizationSchema(input: { path: string; logoUrl: string; website: string; facebook: string }) {
+export function jcdoOrganizationSchema(input: {
+  path: string;
+  logoUrl: string;
+  website: string;
+  facebook: string;
+}) {
   const orgId = `${siteConfig.url}${input.path}#organization`;
   return [
     {
@@ -67,4 +72,57 @@ export function jcdoOrganizationSchema(input: { path: string; logoUrl: string; w
       about: { "@id": orgId },
     },
   ];
+}
+
+export function yisOrganizationSchema(input: {
+  path: string;
+  logoUrl: string;
+}) {
+  const orgId = `${siteConfig.url}${input.path}#organization`;
+  return [
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "@id": orgId,
+      name: "Youth Is Strength (YIS)",
+      alternateName: ["YIS", "Tarunnoi Shakti"],
+      url: `${siteConfig.url}${input.path}`,
+      logo: `${siteConfig.url}${input.logoUrl}`,
+      areaServed: { "@type": "Country", name: "Bangladesh" },
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "@id": `${siteConfig.url}${input.path}#webpage`,
+      url: `${siteConfig.url}${input.path}`,
+      name: "Youth Is Strength (YIS) — Youth-led social organization",
+      inLanguage: ["en", "bn"],
+      isPartOf: { "@id": websiteId },
+      about: { "@id": orgId },
+    },
+  ];
+}
+
+export function organizationsCollectionSchema(input: {
+  path: string;
+  items: { name: string; href: string }[];
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "@id": `${siteConfig.url}${input.path}#webpage`,
+    url: `${siteConfig.url}${input.path}`,
+    name: "Organizations & Initiatives",
+    inLanguage: ["en", "bn"],
+    isPartOf: { "@id": websiteId },
+    mainEntity: {
+      "@type": "ItemList",
+      itemListElement: input.items.map((item, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name: item.name,
+        url: `${siteConfig.url}${item.href}`,
+      })),
+    },
+  };
 }

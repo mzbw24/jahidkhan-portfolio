@@ -59,4 +59,4 @@ export const yisImageMeta: Record<number, YisImageMeta> = {
   52: { file: "ys (52).jpeg", width: 1024, height: 814, blur: "data:image/webp;base64,UklGRj4AAABXRUJQVlA4IDIAAACwAQCdASoIAAYABABoJQBOgCHXV1BAAMot+v4cw/9wfvZojEJWv2rRu7Ebx6ElYAAAAA==" },
 };
 
-export const yisLogoMeta: YisImageMeta = { file: "ys-logo.jpeg", width: 1320, height: 1512, blur: "data:image/webp;base64,UklGRjgAAABXRUJQVlA4ICwAAABQAQCdASoHAAgABABoJZQABDOAAP7xQ+FIRlTuzdwWk7bIJ7AzWpmpxrmQAA==" };
+export const yisLogoMeta: YisImageMeta = { file: "ys (15).jpeg", width: 1320, height: 1512, blur: "data:image/webp;base64,UklGRjgAAABXRUJQVlA4ICwAAABQAQCdASoHAAgABABoJZQABDOAAP7xQ+FIRlTuzdwWk7bIJ7AzWpmpxrmQAA==" };

@@ -221,7 +221,7 @@ export function PageHero({
                   size="lg"
                   className="w-full border-white/25 bg-white/5 text-white hover:bg-white/15 hover:text-white sm:w-auto"
                 >
-                  <Link href="/media?filter=videos#videos">
+                  <Link href="/vision-plan#vision-videos">
                     <VideoIcon className="h-4 w-4" aria-hidden="true" />
                     {content.secondaryCta.label}
                   </Link>

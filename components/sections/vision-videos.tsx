@@ -31,7 +31,7 @@ export function VisionVideos({
   }, [selected]);
 
   return (
-    <section className="section-y" aria-labelledby="vision-videos-title">
+    <section id="vision-videos" className="section-y" aria-labelledby="vision-videos-title">
       <div className="container">
         <div className="mb-8 max-w-2xl">
           <p className="eyebrow">{content.eyebrow}</p>

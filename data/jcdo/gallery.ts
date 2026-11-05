@@ -9,7 +9,11 @@ export const jcdoGalleryRows: readonly Row[] = [
   [4, "events", "Teams together after the match"],
   [5, "events", "Champion banner presentation"],
   [6, "organization", "Organization document"],
-  [7, "organization", "JCDO emblem — Jalalabad Community Development Organization, Sylhet, Bangladesh"],
+  [
+    7,
+    "organization",
+    "JCDO emblem — Jalalabad Community Development Organization, Sylhet, Bangladesh",
+  ],
   [8, "organization", "Organization document — member list"],
   [9, "organization", "Organization document — official letter"],
   [10, "safety", "Make walkways safer"],
@@ -88,11 +92,10 @@ export const jcdoGalleryRows: readonly Row[] = [
   [83, "safety", "Keep paths safe for elders (Bangla)"],
 ];
 
-/** Gallery ids shown in the hero slider, in order (all full-composition posters / photos). */
 export const heroPhotoNumbers = [58, 72, 65, 5, 68, 44, 70] as const;
 
-/** Gallery ids shown in the "Recent Activities & Highlights" strip. */
-export const highlightPhotoNumbers = [3, 5, 2, 58, 72, 75, 70, 64, 7, 1] as const;
+export const highlightPhotoNumbers = [
+  3, 5, 2, 58, 72, 75, 70, 64, 7, 1,
+] as const;
 
-/** Image used for Open Graph / social previews (square poster, full composition). */
-export const jcdoOgPhotoNumber = 58;
+export const jcdoOgPhotoNumber = 7;

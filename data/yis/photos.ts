@@ -2,7 +2,6 @@ import type { YisPhoto } from "@/types/yis";
 import { yisGalleryRows } from "./gallery";
 import { yisImageMeta, yisLogoMeta } from "./images.generated";
 
-/** Public URL of an original image (file names contain spaces/brackets, so they are encoded). */
 export function yisImageSrc(file: string): string {
   return `/images/ys/${encodeURIComponent(file)}`;
 }

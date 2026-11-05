@@ -1,9 +1,5 @@
 import type { YisCategory } from "@/types/yis";
 
-/**
- * One row per file in /public/images/ys (ys (N).jpeg; there is no ys (7)). Captions only describe what is
- * visible; no names, dates, places or outcomes are claimed.
- */
 type Row = readonly [n: number, category: YisCategory, title: string];
 
 export const yisGalleryRows: readonly Row[] = [
@@ -60,13 +56,10 @@ export const yisGalleryRows: readonly Row[] = [
   [52, "sports", "Scouts and guests with a certificate"],
 ];
 
-/** Hero slider images, in order (all landscape group/event photos). */
 export const yisHeroNumbers = [15, 47, 5, 10, 46, 30, 45] as const;
 
-/** "Activities in pictures" strip. */
 export const yisHighlightNumbers = [15, 5, 10, 22, 47, 30, 46, 8, 13, 38] as const;
 
-/** Representative image per activity card. */
 export const yisCoverNumbers = { gatherings: 27, recognition: 22, programs: 30, sports: 5, public: 47 } as const;
 
 export const yisOgPhotoNumber = 15;

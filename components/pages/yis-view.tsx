@@ -12,12 +12,13 @@ import { YisImpact } from "@/components/yis/yis-impact";
 import { YisMission } from "@/components/yis/yis-mission";
 import { yisCoverNumbers, yisHeroNumbers, yisHighlightNumbers } from "@/data/yis/gallery";
 import { useGsapAnimations } from "@/hooks/use-gsap-animations";
-import { useLocalized } from "@/hooks/use-language";
+import { useLanguage, useLocalized } from "@/hooks/use-language";
 import { useScrollRefresh } from "@/hooks/use-scroll-refresh";
 import { countYisByCategory, filterYisPhotos, pickYisPhotos, yisPhotoByNumber } from "@/lib/yis";
 import type { YisCategory, YisFilter, YisPageData, YisPhoto } from "@/types/yis";
 
 export function YisView({ data }: { data: YisPageData }) {
+  const { lang } = useLanguage();
   const content = useLocalized(data.content);
   const { photos, logo } = data;
   const scope = useRef<HTMLDivElement>(null);
@@ -48,7 +49,7 @@ export function YisView({ data }: { data: YisPageData }) {
   return (
     <div ref={scope}>
       <YisHero content={content.hero} slides={heroSlides} categoryLabel={categoryLabel} onOpen={openInAll} />
-      <YisAbout content={content.about} logo={logo} />
+      <YisAbout content={content.about} logo={logo} lang={lang} />
       <YisMission content={content.mission} />
       <YisActivities content={content.activities} covers={covers} counts={counts} onSelectFilter={setFilter} />
       <PhotoStrip content={content.highlights} photos={highlights} openLabel={content.gallery.openPhoto} onOpen={openInAll} />

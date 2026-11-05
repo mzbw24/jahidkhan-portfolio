@@ -7,9 +7,13 @@ const pillarIcons: LucideIcon[] = [Users, Sprout, HeartHandshake];
 interface YisAboutProps {
   content: YisContent["about"];
   logo: YisPageData["logo"];
+  lang: "en" | "bn";
 }
 
-export function YisAbout({ content, logo }: YisAboutProps) {
+export function YisAbout({ content, logo, lang }: YisAboutProps) {
+  const leadership = lang === "bn"
+    ? { eyebrow: "সভাপতির বার্তা", title: "জাহিদ খান — জেসিডিও ও ইয়ুথ ইজ স্ট্রেংথ-এর সভাপতি", text: "তরুণদের শক্তি, দায়িত্বশীল নেতৃত্ব ও সামাজিক উদ্যোগকে একত্র করে জাহিদ খান একটি সহায়ক ও অংশগ্রহণমূলক ভবিষ্যৎ গড়ার কাজ করছেন।", alt: "জাহিদ খানের প্রতিকৃতি" }
+    : { eyebrow: "Leadership & youth empowerment", title: "Jahid Khan — President of JCDO and Youth Is Strength", text: "By connecting youth empowerment with social responsibility, Jahid Khan helps create space for young people to contribute, learn and support community-led initiatives.", alt: "Portrait of Jahid Khan" };
   return (
     <section aria-labelledby="yis-about-title" className="section-y">
       <div className="container grid grid-cols-1 items-center gap-10 lg:grid-cols-[minmax(0,0.7fr)_minmax(0,1.3fr)] lg:gap-16">
@@ -17,6 +21,13 @@ export function YisAbout({ content, logo }: YisAboutProps) {
           {/* Full seal on white — contain, never cropped. */}
           <div className="relative aspect-square overflow-hidden rounded-3xl bg-white p-3 shadow-lift ring-1 ring-border">
             <div className="relative h-full w-full">
+              <Image
+                src="/media/images/portrait-copy.jpeg"
+                alt={leadership.alt}
+                fill
+                sizes="(min-width: 1024px) 320px, 80vw"
+                className="object-contain object-bottom"
+              />
               <Image
                 src={logo.src}
                 alt={content.logoAlt}
@@ -33,7 +44,10 @@ export function YisAbout({ content, logo }: YisAboutProps) {
         </figure>
 
         <div data-reveal>
-          <p className="eyebrow">{content.eyebrow}</p>
+          <p className="eyebrow">{leadership.eyebrow}</p>
+          <h2 className="mt-2 font-display text-3xl font-bold leading-tight sm:text-4xl">{leadership.title}</h2>
+          <p className="mt-4 max-w-2xl leading-relaxed text-muted-foreground">{leadership.text}</p>
+          <p className="eyebrow mt-8">{content.eyebrow}</p>
           <h2 id="yis-about-title" className="mt-2 font-display text-3xl font-bold leading-tight sm:text-4xl">
             {content.title}
           </h2>

@@ -11,7 +11,7 @@ import { JcdoPrograms } from "@/components/jcdo/jcdo-programs";
 import { JcdoStats } from "@/components/jcdo/jcdo-stats";
 import { JcdoUpdates } from "@/components/jcdo/jcdo-updates";
 import { useGsapAnimations } from "@/hooks/use-gsap-animations";
-import { useLocalized } from "@/hooks/use-language";
+import { useLanguage, useLocalized } from "@/hooks/use-language";
 import { useScrollRefresh } from "@/hooks/use-scroll-refresh";
 import { countByCategory, photoByNumber, pickPhotos } from "@/lib/jcdo";
 import { heroPhotoNumbers, highlightPhotoNumbers } from "@/data/jcdo/gallery";
@@ -35,6 +35,7 @@ const COVER_NUMBERS: Partial<Record<JcdoCategory, number>> = {
 };
 
 export function JcdoView({ data }: { data: JcdoPageData }) {
+  const { lang } = useLanguage();
   const content = useLocalized(data.content);
   const { photos } = data;
   const scope = useRef<HTMLDivElement>(null);
@@ -76,7 +77,7 @@ export function JcdoView({ data }: { data: JcdoPageData }) {
   return (
     <div ref={scope} className="jcdo-theme bg-background text-foreground">
       <JcdoHero content={content.hero} slides={heroSlides} categoryLabel={categoryLabel} onOpen={openInAll} />
-      {logo ? <JcdoAbout content={content.about} logo={logo} website={jcdoFacts.website} /> : null}
+      {logo ? <JcdoAbout content={content.about} logo={logo} website={jcdoFacts.website} lang={lang} /> : null}
       <JcdoStats content={content.stats} counts={{ photos: photos.length, posters, events: counts.events, themes }} />
       <JcdoPrograms content={content.programs} covers={covers} counts={counts} onSelectFilter={setFilter} />
       <JcdoActivities content={content.activities} photos={highlights} openLabel={content.gallery.openPhoto} onOpen={openInAll} />

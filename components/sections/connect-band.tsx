@@ -9,7 +9,7 @@ export function ConnectBand({ content }: { content: ContactContent["connect"] })
   return (
     <section className="dark-band">
       <div data-parallax="5" className="absolute inset-x-0 -top-[10%] -z-10 h-[120%]">
-        <MediaImage media="connectBand" fill sizes="100vw" className="object-cover" />
+        <MediaImage media="connectBand" fill sizes="100vw" className="object-cover object-top" />
       </div>
       <div className="absolute inset-0 -z-10 bg-gradient-to-r from-navy via-navy/85 to-navy/40" />
 

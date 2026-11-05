@@ -18,7 +18,6 @@ import { heroPhotoNumbers, highlightPhotoNumbers } from "@/data/jcdo/gallery";
 import { jcdoFacts } from "@/data/jcdo/facts";
 import type { JcdoCategory, JcdoFilter, JcdoPageData, JcdoPhoto } from "@/types/jcdo";
 
-/** Representative image per topic (first poster of that topic). */
 function coversFor(photos: JcdoPhoto[]): Partial<Record<JcdoCategory, JcdoPhoto>> {
   const covers: Partial<Record<JcdoCategory, JcdoPhoto>> = {};
   for (const photo of photos) covers[photo.category] ??= photo;
@@ -66,7 +65,6 @@ export function JcdoView({ data }: { data: JcdoPageData }) {
 
   const categoryLabel = useCallback((photo: JcdoPhoto) => content.gallery.categories[photo.category], [content]);
 
-  /** Opens the viewer over the full gallery, starting at `photo`. */
   const openInAll = useCallback(
     (photo: JcdoPhoto) => {
       setLightbox({ photos, index: Math.max(0, photos.findIndex((item) => item.id === photo.id)) });

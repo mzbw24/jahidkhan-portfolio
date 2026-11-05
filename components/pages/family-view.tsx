@@ -72,8 +72,8 @@ export function FamilyView({
 
   return (
     <div className="bg-background">
-      <section className="relative isolate overflow-hidden bg-[#f6f1ea] dark:bg-navy">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_15%,rgba(255,255,255,.8),transparent_35%),linear-gradient(120deg,rgba(246,241,234,.98)_0%,rgba(246,241,234,.82)_43%,rgba(7,20,38,.18)_100%)] dark:bg-[linear-gradient(120deg,rgba(7,15,29,.96),rgba(7,15,29,.45))]" />
+      <section className="relative isolate overflow-hidden">
+        <div className="absolute inset-0" />
         <div className="container relative grid min-h-[640px] items-center gap-10 pt-10 pb-16 lg:grid-cols-[.9fr_1.1fr] lg:py-20">
           <div data-family-reveal className="relative z-10 max-w-xl">
             <p className="eyebrow mb-5 flex items-center gap-2">
@@ -105,9 +105,9 @@ export function FamilyView({
                 size="lg"
                 className="group rounded-full border-navy/20 bg-white/60 px-6 text-navy transition-transform duration-300 ease-in-out hover:scale-[1.03] dark:border-white/20 dark:bg-white/10 dark:text-white"
               >
-                <a href="#videos">
+                <a href="#photos">
                   <Play className="h-4 w-4 fill-current" />
-                  {c.hero.videoCta}
+                  {c.hero.albumCta}
                 </a>
               </Button>
             </div>
@@ -203,7 +203,7 @@ export function FamilyView({
         </div>
       </section>
 
-      <section className="container section-y">
+      <section id="photos" className="container section-y">
         <div
           data-family-reveal
           className="mb-8 flex flex-col justify-between gap-5 md:flex-row md:items-end"
@@ -256,7 +256,7 @@ export function FamilyView({
                 fill
                 loading="lazy"
                 sizes="(min-width: 1024px) 25vw, 50vw"
-                className="object-contain bg-black/5 transition duration-700 group-hover:scale-[1.02] dark:bg-white/5"
+                className="object-cover object-center top-5 bg-black/5 transition duration-700 group-hover:scale-[1.02] dark:bg-white/5"
               />
               <span className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
               <span className="absolute bottom-3 left-3 text-sm font-medium text-white opacity-0 transition-opacity group-hover:opacity-100">

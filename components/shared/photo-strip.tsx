@@ -44,7 +44,7 @@ export function PhotoStrip<T extends GalleryPhoto>({
   return (
     <section
       aria-labelledby="photo-strip-title"
-      className="bg-tint section-y"
+      className="section-y"
     >
       <div className="container">
         <div

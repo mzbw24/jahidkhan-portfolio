@@ -3,7 +3,7 @@ import type { YisContent } from "@/types/yis";
 
 export function YisMission({ content }: { content: YisContent["mission"] }) {
   return (
-    <section aria-labelledby="yis-mission-title" className="bg-tint section-y">
+    <section aria-labelledby="yis-mission-title" className="section-y">
       <div className="container">
         <div data-reveal className="mx-auto max-w-2xl text-center">
           <p className="eyebrow">{content.eyebrow}</p>

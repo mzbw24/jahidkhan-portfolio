@@ -56,9 +56,9 @@ export const yisGalleryRows: readonly Row[] = [
   [52, "sports", "Scouts and guests with a certificate"],
 ];
 
-export const yisHeroNumbers = [15, 47, 5, 10, 46, 30, 45] as const;
+export const yisHeroNumbers = [18, 47, 5, 10, 46, 30, 45] as const;
 
-export const yisHighlightNumbers = [15, 5, 10, 22, 47, 30, 46, 8, 13, 38] as const;
+export const yisHighlightNumbers = [18, 5, 10, 22, 47, 30, 46, 8, 13, 38] as const;
 
 export const yisCoverNumbers = { gatherings: 27, recognition: 22, programs: 30, sports: 5, public: 47 } as const;
 

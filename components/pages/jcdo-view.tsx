@@ -10,6 +10,7 @@ import { JcdoLightbox, type JcdoLightboxState } from "@/components/jcdo/jcdo-lig
 import { JcdoPrograms } from "@/components/jcdo/jcdo-programs";
 import { JcdoStats } from "@/components/jcdo/jcdo-stats";
 import { JcdoUpdates } from "@/components/jcdo/jcdo-updates";
+import { JcdoVideoSection } from "@/components/jcdo/jcdo-video-section";
 import { useGsapAnimations } from "@/hooks/use-gsap-animations";
 import { useLanguage, useLocalized } from "@/hooks/use-language";
 import { useScrollRefresh } from "@/hooks/use-scroll-refresh";
@@ -76,6 +77,7 @@ export function JcdoView({ data }: { data: JcdoPageData }) {
     <div ref={scope} className="jcdo-theme bg-background text-foreground">
       <JcdoHero content={content.hero} slides={heroSlides} categoryLabel={categoryLabel} onOpen={openInAll} />
       {logo ? <JcdoAbout content={content.about} logo={logo} website={jcdoFacts.website} lang={lang} /> : null}
+      <JcdoVideoSection lang={lang} />
       <JcdoStats content={content.stats} counts={{ photos: photos.length, posters, events: counts.events, themes }} />
       <JcdoPrograms content={content.programs} covers={covers} counts={counts} onSelectFilter={setFilter} />
       <JcdoActivities content={content.activities} photos={highlights} openLabel={content.gallery.openPhoto} onOpen={openInAll} />

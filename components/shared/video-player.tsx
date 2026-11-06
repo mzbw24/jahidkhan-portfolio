@@ -146,7 +146,7 @@ export function VideoPlayer({ video, title, labels, autoPlay = true, className }
         preload="metadata"
         playsInline
         aria-label={title}
-        className="h-full max-h-[78vh] w-full bg-black object-cover"
+        className="h-full max-h-[78vh] w-full bg-black object-contain"
         style={{ aspectRatio }}
         onClick={togglePlay}
         onLoadedMetadata={(event) => {

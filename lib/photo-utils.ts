@@ -1,5 +1,4 @@
-// Small helpers shared by every photo slideshow / gallery.
-/** Wraps around: next of the last is the first. */
+
 export function wrapIndex(current: number, delta: number, length: number): number {
   if (length <= 0) return 0;
   return (((current + delta) % length) + length) % length;

@@ -48,7 +48,7 @@ export function JcdoUpdates({ content, covers, facebook, onSelectFilter }: JcdoU
                       <JcdoPhotoImage
                         photo={cover}
                         sizes="(min-width: 768px) 30vw, (min-width: 640px) 40vw, 92vw"
-                        className="relative h-full w-auto max-w-full p-1.5"
+                        className="relative h-full w-full max-w-full"
                       />
                     </div>
                   ) : null}

@@ -20,7 +20,6 @@ interface YisActivitiesProps {
   onSelectFilter: (filter: YisFilter) => void;
 }
 
-/** Topic cards; each jumps to the gallery filtered to that topic. */
 export function YisActivities({ content, covers, counts, onSelectFilter }: YisActivitiesProps) {
   return (
     <section id="activities" aria-labelledby="yis-activities-title" className="section-y scroll-mt-20">
@@ -49,7 +48,7 @@ export function YisActivities({ content, covers, counts, onSelectFilter }: YisAc
                       <PhotoImage
                         photo={cover}
                         sizes="(min-width: 1024px) 400px, (min-width: 640px) 45vw, 92vw"
-                        className="relative h-full w-auto max-w-full"
+                        className="relative h-full w-full max-w-full"
                       />
                     </div>
                   ) : null}

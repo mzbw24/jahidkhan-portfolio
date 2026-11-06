@@ -41,7 +41,7 @@ export function VisionBand({ content, background, layout }: VisionBandProps) {
             {content.text ? <p className="mt-3 text-[15px] leading-relaxed text-white/85">{content.text}</p> : null}
           </div>
           {content.cta ? (
-            <Button asChild variant={split ? "primary" : "outline"} className={cn(split ? "mt-6" : "bg-white text-navy hover:bg-white/90")}>
+            <Button asChild variant={"primary"}>
               <Link href={content.cta.href}>
                 {content.cta.label}
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />

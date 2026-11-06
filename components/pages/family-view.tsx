@@ -256,7 +256,7 @@ export function FamilyView({
                 fill
                 loading="lazy"
                 sizes="(min-width: 1024px) 25vw, 50vw"
-                className="object-cover object-center top-5 bg-black/5 transition duration-700 group-hover:scale-[1.02] dark:bg-white/5"
+                className="object-cover object-fit bg-black/5 transition duration-700 group-hover:scale-[1.02] dark:bg-white/5"
               />
               <span className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
               <span className="absolute bottom-3 left-3 text-sm font-medium text-white opacity-0 transition-opacity group-hover:opacity-100">

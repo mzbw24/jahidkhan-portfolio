@@ -49,6 +49,7 @@ export function GalleryCard({
               src={(item as GalleryVideoAsset).sources[0]?.src ?? ""}
               title={item.title}
               aspectRatio={`${thumb.width} / ${thumb.height}`}
+              poster={{ src: thumb.thumb, blur: thumb.blur, unoptimized: true }}
             />
           ) : (
             <Image

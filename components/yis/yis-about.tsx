@@ -14,14 +14,14 @@ export function YisAbout({ content, lang }: YisAboutProps) {
   const leadership =
     lang === "bn"
       ? {
-          eyebrow: "সভাপতির বার্তা",
-          title: "জাহিদ খান — তারুণ্যই শক্তি-এর সভাপতি",
+          eyebrow: "উপদেষ্টার বার্তা",
+          title: "জাহিদ খান — তারুণ্যই শক্তি-এর উপদেষ্টা",
           text: "তরুণদের শক্তি, দায়িত্বশীল নেতৃত্ব ও সামাজিক উদ্যোগকে একত্র করে জাহিদ খান একটি সহায়ক ও অংশগ্রহণমূলক ভবিষ্যৎ গড়ার কাজ করছেন।",
           alt: "জাহিদ খানের প্রতিকৃতি",
         }
       : {
           eyebrow: "Leadership & youth empowerment",
-          title: "Jahid Khan — President of Youth Is Strength",
+          title: "Jahid Khan — Advisor of Youth Is Strength",
           text: "By connecting youth empowerment with social responsibility, Jahid Khan helps create space for young people to contribute, learn and support community-led initiatives.",
           alt: "Portrait of Jahid Khan",
         };

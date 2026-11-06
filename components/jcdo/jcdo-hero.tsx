@@ -92,7 +92,7 @@ export function JcdoHero({ content, slides, categoryLabel, onOpen }: JcdoHeroPro
           <div
             onPointerDown={swipe.onPointerDown}
             style={{ touchAction: "pan-y" }}
-            className="relative aspect-square max-h-[70vh] w-full overflow-hidden rounded-2xl bg-black/30 ring-1 ring-white/15 sm:aspect-[4/3] lg:aspect-[5/4]"
+            className="relative aspect-square max-h-[70vh] w-full overflow-hidden rounded-2xl bg-black/30 ring-1 ring-white/15 sm:aspect-[4/3] lg:aspect-square"
           >
             {slides.map((slide, i) => {
               const near = i === active || i === wrapIndex(active, 1, total) || i === wrapIndex(active, -1, total);
@@ -130,7 +130,7 @@ export function JcdoHero({ content, slides, categoryLabel, onOpen }: JcdoHeroPro
                         placeholder="blur"
                         blurDataURL={slide.blur}
                         draggable={false}
-                        className="select-none object-contain drop-shadow-2xl"
+                        className="select-none object-center object-fit drop-shadow-2xl"
                       />
                     ) : null}
                   </button>

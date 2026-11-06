@@ -23,7 +23,7 @@ export function JcdoPhotoImage({ photo, sizes, priority, quality = 75, className
       placeholder="blur"
       blurDataURL={photo.blur}
       draggable={false}
-      className={cn("h-auto w-full select-none object-contain", className)}
+      className={cn("h-auto w-full select-none object-fit object-center", className)}
     />
   );
 }

@@ -14,14 +14,14 @@ export function JcdoAbout({ content, website, lang }: JcdoAboutProps) {
   const leadership =
     lang === "bn"
       ? {
-          eyebrow: "সভাপতির বার্তা",
-          title: "জাহিদ খান — জেসিডিও-এর সভাপতি",
+          eyebrow: "উপদেষ্টার বার্তা",
+          title: "জাহিদ খান — জেসিডিও-এর উপদেষ্টা",
           text: "মানুষের মর্যাদা, সামাজিক দায়িত্ব ও কমিউনিটি উন্নয়নের প্রতি অঙ্গীকার নিয়ে জাহিদ খান জেসিডিওর উদ্যোগগুলোকে এগিয়ে নিচ্ছেন।",
           alt: "জাহিদ খানের প্রতিকৃতি",
         }
       : {
-          eyebrow: "President's message",
-          title: "Jahid Khan — President of JCDO",
+          eyebrow: "Advisor's message",
+          title: "Jahid Khan — Advisor of JCDO",
           text: "With a commitment to dignity, social responsibility and community development, Jahid Khan supports JCDO initiatives that serve people and create practical opportunities.",
           alt: "Portrait of Jahid Khan",
         };

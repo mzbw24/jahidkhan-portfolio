@@ -35,7 +35,6 @@ export function JcdoActivities({
   return (
     <section
       aria-labelledby="jcdo-activities-title"
-      className="bg-tint section-y"
     >
       <div className="container">
         <div

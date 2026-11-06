@@ -5,10 +5,10 @@ type PhotoCategory = Exclude<FamilyCategory, "all">;
 const familyFiles = [
   "image-family.jpeg",
   ...Array.from(
-    { length: 66 },
+    { length: 64 },
     (_, index) => `image-family (${index + 1}).jpeg`,
   ),
-  ...Array.from({ length: 44 }, (_, index) => `image (${index + 1}).jpeg`),
+  ...Array.from({ length: 36 }, (_, index) => `image (${index + 1}).jpeg`),
 ];
 const familyPath = (file: string) => `/images/family/${file}`;
 const familyCategories: PhotoCategory[] = [

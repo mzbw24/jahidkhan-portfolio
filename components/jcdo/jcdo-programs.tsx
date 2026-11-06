@@ -58,7 +58,7 @@ export function JcdoPrograms({ content, covers, counts, onSelectFilter }: JcdoPr
                       <JcdoPhotoImage
                         photo={cover}
                         sizes="(min-width: 1024px) 400px, (min-width: 640px) 45vw, 92vw"
-                        className="relative h-full w-auto max-w-full p-2 drop-shadow-lg"
+                        className="relative h-full w-full max-w-full drop-shadow-lg"
                       />
                     </div>
                   ) : null}

@@ -21,6 +21,11 @@ export function Navbar() {
   const pathname = usePathname();
   const { common } = useLanguage();
   const [open, setOpen] = useState(false);
+  const [hydrated, setHydrated] = useState(false);
+
+  useEffect(() => {
+    setHydrated(true);
+  }, []);
 
   useEffect(() => {
     setOpen(false);
@@ -41,7 +46,7 @@ export function Navbar() {
         <BrandLogo />
 
         <nav aria-label={common.nav.ariaLabel} className="hidden xl:block">
-          <ul className="flex items-center gap-7">
+          {hydrated ? <ul className="flex items-center gap-7">
             {navItems.map((item) => {
               const active = isActive(pathname, item.href, item.isRoute);
               return (
@@ -59,7 +64,7 @@ export function Navbar() {
                 </li>
               );
             })}
-          </ul>
+          </ul> : null}
         </nav>
 
         <div className="flex items-center gap-1 sm:gap-2">

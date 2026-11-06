@@ -267,43 +267,6 @@ export function FamilyView({
         </div>
       </section>
 
-      {/* <section id="videos" className="bg-muted/45 py-16">
-        <div className="container">
-          <div className="mb-8 flex flex-col justify-between gap-4 md:flex-row md:items-end">
-            <div>
-              <p className="eyebrow">{c.videos.eyebrow}</p>
-              <h2 className="mt-2 font-display text-4xl font-semibold text-navy dark:text-white sm:text-5xl">
-                {c.videos.title}
-              </h2>
-              <p className="mt-2 text-muted-foreground">{c.videos.subtitle}</p>
-            </div>
-            <Button variant="outline" className="w-fit rounded-full">
-              {c.videos.viewAll}
-              <ArrowRight className="h-4 w-4" />
-            </Button>
-          </div>
-          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
-            {c.videos.items.map((item) => (
-              <button
-                key={item.id}
-                type="button"
-                onClick={() => setVideo(item)}
-                className="group relative aspect-[4/3] overflow-hidden rounded-2xl text-left shadow-lg transition duration-500 hover:-translate-y-1 hover:shadow-xl"
-              >
-                <span className="absolute inset-0 bg-[radial-gradient(circle_at_72%_18%,hsl(var(--primary)/.5),transparent_32%),linear-gradient(135deg,hsl(var(--navy)),hsl(var(--navy-soft)))] transition duration-700 group-hover:scale-105" aria-hidden="true" />
-                <span className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-transparent" />
-                <span className="absolute left-1/2 top-1/2 grid h-14 w-14 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full border border-white/70 bg-black/35 text-white backdrop-blur transition group-hover:scale-110">
-                  <Play className="ml-1 h-6 w-6 fill-current" />
-                </span>
-                <span className="absolute inset-x-4 bottom-4 text-sm font-semibold text-white">
-                  {item.title}
-                </span>
-              </button>
-            ))}
-          </div>
-        </div>
-      </section> */}
-
       <section className="dark-band py-20">
         <div className="container grid gap-10 lg:grid-cols-[.8fr_1.2fr] lg:items-center">
           <div data-family-reveal>
@@ -386,41 +349,6 @@ export function FamilyView({
           </div>
         </div>
       </section>
-
-      {/* <section id="values" className="container section-y">
-        <div className="grid gap-10 lg:grid-cols-[.8fr_1.2fr] lg:items-center">
-          <div>
-            <p className="eyebrow">{c.values.eyebrow}</p>
-            <h2 className="mt-3 font-display text-4xl font-semibold text-navy dark:text-white sm:text-5xl">
-              {c.values.title}
-            </h2>
-            <p className="mt-4 max-w-md text-muted-foreground">
-              {c.values.text}
-            </p>
-          </div>
-          <div className="grid gap-4 sm:grid-cols-3">
-            {c.values.items.map((item, index) => {
-              const Icon = [Users, Heart, Leaf][index] ?? Heart;
-              return (
-                <div
-                  key={item.title}
-                  className="card-surface card-hover p-6 text-center"
-                >
-                  <span className="mx-auto grid h-14 w-14 place-items-center rounded-full bg-primary/10 text-primary">
-                    <Icon className="h-6 w-6" />
-                  </span>
-                  <h3 className="mt-5 font-semibold text-navy dark:text-white">
-                    {item.title}
-                  </h3>
-                  <p className="mt-2 text-sm text-muted-foreground">
-                    {item.text}
-                  </p>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section> */}
 
       {currentPhoto ? (
         <div

@@ -1,6 +1,5 @@
 import type { VisionContent } from "@/types/content";
 
-// NOTE: The 10-point plan wording is drawn from the design reference and must be approved by Jahid Khan.
 export const visionEn: VisionContent = {
   hero: {
     eyebrow: "Vision for Sylhet",

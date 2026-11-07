@@ -4,13 +4,12 @@ import { useEffect, useState } from "react";
 import { Play, X } from "lucide-react";
 import { VideoPlayer } from "@/components/shared/video-player";
 import { VideoPreview } from "@/components/shared/video-preview";
+import { media } from "@/data/media";
 import type { GalleryVideoAsset } from "@/types/gallery";
 import type { VisionContent } from "@/types/content";
 
 const videoSrc = (index: number) =>
   `/media/videos/vision/vision-video%20(${index + 1}).mp4`;
-const thumbSrc = (index: number) =>
-  `/media/videos/vision/thumbs/vision-video%20(${index + 1}).webp`;
 
 export function VisionVideos({
   content,
@@ -63,7 +62,6 @@ export function VisionVideos({
                 <VideoPreview
                   src={videoSrc(index)}
                   title={video.alt}
-                  poster={{ src: thumbSrc(index) }}
                   sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
                 />
                 <span className="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/15 to-transparent" />
@@ -103,7 +101,7 @@ export function VisionVideos({
               <X aria-hidden="true" />
             </button>
             <VideoPlayer
-              video={toVideoAsset(selected)}
+              video={toVideoAsset(selected, item.poster)}
               title={item.title}
               labels={content.player}
               className="w-full"
@@ -115,18 +113,22 @@ export function VisionVideos({
   );
 }
 
-function toVideoAsset(index: number): GalleryVideoAsset {
+function toVideoAsset(
+  index: number,
+  posterKey: keyof typeof media,
+): GalleryVideoAsset {
+  const poster = media[posterKey];
   return {
     kind: "video",
     id: `vision-video-${index + 1}`,
     category: "events",
     sources: [{ src: videoSrc(index), type: "video/mp4" }],
     poster: {
-      src: thumbSrc(index),
-      thumb: thumbSrc(index),
-      width: 640,
-      height: 360,
-      blur: "",
+      src: poster.src,
+      thumb: poster.src,
+      width: poster.width,
+      height: poster.height,
+      blur: poster.blur ?? "",
     },
     duration: 0,
     width: 16,

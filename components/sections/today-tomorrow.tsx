@@ -92,6 +92,7 @@ export function TodayTomorrow({ content }: { content: VisionContent["todayTomorr
                 fill
                 sizes="(min-width: 1280px) 1200px, 100vw"
                 quality={80}
+                unoptimized
                 draggable={false}
                 className="object-cover"
               />

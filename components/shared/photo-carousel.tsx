@@ -123,7 +123,7 @@ export function PhotoCarousel<T extends GalleryPhoto>({ slides, labels, category
                 i === active ? "ring-gold" : "opacity-65 ring-transparent hover:opacity-100",
               )}
             >
-              <Image src={slide.src} alt="" fill sizes="48px" quality={40} className="object-contain" />
+              <Image src={slide.src} alt="" fill sizes="48px" quality={40} unoptimized className="object-contain" />
             </button>
           ))}
         </div>

@@ -40,7 +40,7 @@ export const familyEn: FamilyPageContent = {
         category: "family-life",
         title: "Family life",
         text: "Everyday moments",
-        image: familyPath(familyFiles[0]!),
+        image: familyPath(familyFiles[34]!),
       },
       {
         category: "celebrations",

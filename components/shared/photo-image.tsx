@@ -19,6 +19,7 @@ export function PhotoImage({ photo, sizes, priority, quality = 75, className }: 
       height={photo.height}
       sizes={sizes}
       quality={quality}
+      unoptimized
       priority={priority}
       placeholder="blur"
       blurDataURL={photo.blur}

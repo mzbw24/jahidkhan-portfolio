@@ -135,7 +135,7 @@ export function FamilyView({
           >
             <div className="absolute inset-x-4 bottom-0 top-6 overflow-hidden rounded-[2rem] shadow-2xl ring-1 ring-white/50 lg:inset-x-0">
               <Image
-                src={c.photos.items[0]!.src}
+                src={"/images/family/image-family.jpeg"}
                 alt={c.hero.imageAlt}
                 fill
                 priority

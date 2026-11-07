@@ -84,7 +84,7 @@ export function OrganizationsHero({
         >
           <div className="relative aspect-[5/4] overflow-hidden rounded-[2rem] border border-white/20 bg-white/5 shadow-2xl">
             <Image
-              src={"/images/ys/ys (14).jpeg"}
+              src="/images/ys/ys%20(14).jpeg"
               alt={"Hero Image for Organizations"}
               fill
               priority

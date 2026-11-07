@@ -66,6 +66,7 @@ export function PhotoCarousel<T extends GalleryPhoto>({ slides, labels, category
                     sizes="(min-width: 1024px) 55vw, 100vw"
                     priority={i === 0}
                     quality={80}
+                    unoptimized
                     placeholder="blur"
                     blurDataURL={slide.blur}
                     draggable={false}

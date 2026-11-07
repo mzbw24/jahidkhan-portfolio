@@ -47,9 +47,10 @@ export function PageHero({
             <Image
               src={banner}
               alt=""
-              width={0}
-              height={0}
+              width={1983}
+              height={793}
               priority
+              unoptimized
               sizes="100vw"
               className="block h-auto w-full"
             />
@@ -69,6 +70,7 @@ export function PageHero({
               alt=""
               fill
               priority
+              unoptimized
               sizes="100vw"
               className="object-cover object-center"
             />
@@ -84,6 +86,7 @@ export function PageHero({
             alt=""
             fill
             priority
+            unoptimized
             sizes="100vw"
             className="object-cover"
           />

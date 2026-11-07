@@ -285,8 +285,8 @@ export function FamilyView({
           <div className="grid gap-4 sm:grid-cols-[1.5fr_1fr]">
             <div className="relative min-h-[300px] overflow-hidden rounded-3xl">
               <Image
-                src={c.photos.items[1]!.src}
-                alt={c.photos.items[1]!.alt}
+                src={c.photos.items[34]!.src}
+                alt={c.photos.items[34]!.alt}
                 fill
                 loading="lazy"
                 sizes="50vw"
